@@ -1,0 +1,28 @@
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-12 section-header">
+				<h2 class="float-left"><%= t(:question,scope: [:activerecord,:models]) %></h2>
+				<div class="float-right">
+					<%=link_to questions_path,class: 'more-link' do %>
+						<span><%=t(:more) %></span>
+					<% end %>
+				</div>
+			</div>
+<% @question_categories.each do |question_category| %>
+<article class="col-12 col-lg-6">
+  <h3><%=question_category.title %></h3>
+	<% unless question_category.questions_count.zero? %>
+	<ul>
+		<% question_category.questions.each do |question| %>
+		<li><%=link_to(question.title,question,question_category:question_category) %> <span class="float-right text-secondary d-none d-sm-block"><%= question.created_at.to_date %></span></li>
+		<% end %>
+	</ul>
+	<% else %>
+	<p><%=t(:no_data) %></p>
+	<% end %>
+</article>
+<% end %>
+	</div>
+	</div>
+</section>

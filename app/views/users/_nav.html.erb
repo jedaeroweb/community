@@ -1,0 +1,71 @@
+<div class="col-12">
+<%
+  summary_class='nav-link'
+  order_class='nav-link'
+  my_class='nav-link'
+
+  summary_select=''
+  ad_select=''
+  my_select=''
+
+  if current_page?(mypage_path)
+    summary_class+=' active'
+    summary_select=' selected'
+  end
+
+  if current_page?(my_ads_path)
+    order_class+=' active'
+    ad_select=' selected'
+  end
+
+  if current_page?(my_path)
+    my_class+=' active'
+    my_select=' selected'
+  end
+
+%>
+<select class="form-control mobile-sub-menu d-block d-lg-none">
+      <option value="<%=mypage_path %>"<%=summary_select %>><%=t(:summary)%></option>
+      <option value="<%=my_ads_path %>"<%=ad_select %>><%=t(:ad,scope: [:activerecord,:models]) %></option>
+      <% if session[:company_id].present?
+           bidding_select=''
+           company_select=''
+
+           if current_page?(my_biddings_path)
+             bidding_select=' selected'
+           end
+
+           if current_page?(my_companies_path)
+             company_select=' selected'
+           end
+
+      %>
+      <option value="<%=my_biddings_path %>"<%=bidding_select %>><%=t(:bidding,scope: [:activerecord,:models]) %></option>
+      <option value="<%=my_companies_path %>"<%=company_select %>><%=t(:company,scope: [:activerecord,:models]) %></option>
+      <% end %>
+      <option value="<%=my_path %>"<%=my_select %>><%=t(:myinfo)%></option>
+</select>
+  <nav class="sub_nav d-none d-lg-block">
+    <ul class="nav nav-pills">
+      <li class="nav-item"><%=link_to t(:summary),mypage_path,class: summary_class %></li>
+      <li class="nav-item"><%=link_to t(:order,scope: [:activerecord,:models]),my_orders_path,class: order_class %></li>
+      <% if session[:company_id].present?
+           bidding_class='nav-link'
+           comapny_class='nav-link'
+
+           if current_page?(my_biddings_path)
+             bidding_class+=' active'
+           end
+
+           if current_page?(my_companies_path)
+             comapny_class+=' active'
+           end
+
+      %>
+        <li class="nav-item"><%=link_to t(:bidding,scope: [:activerecord,:models]),my_biddings_path,class: bidding_class %></li>
+        <li class="nav-item"><%=link_to t(:company,scope: [:activerecord,:models]),my_companies_path,class: comapny_class %></li>
+      <% end %>
+      <li class="nav-item"><%=link_to t(:myinfo),my_path,class: my_class %></li>
+    </ul>
+  </nav>
+</div>

@@ -1,0 +1,24 @@
+
+<section class="blogs">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 section-header">
+        <h2 class="float-left"><%= t(:blog,scope: [:activerecord,:models]) %></h2>
+        <div class="float-right">
+          <%=link_to blogs_path,class: 'more-link' do %>
+            <span><%=t(:more) %></span>
+          <% end %>
+        </div>
+      </div>
+      <% unless @blog_count.zero? %>
+        <% @blogs.each do |blog| %>
+          <%=render 'blogs/index_media',blog: blog %>
+        <% end %>
+      <% else %>
+        <div class="blog col-12">
+          <%= t(:no_data) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

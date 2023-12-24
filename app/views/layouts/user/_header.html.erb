@@ -1,0 +1,17 @@
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <h1><%=link_to t(:service_name),'/' %></h1>
+      </div>
+      <div class="col-12 col-lg-6">
+        <nav>
+          <ul class="nav nav">
+            <li class="<% if current_page?(new_user_registration_path) %> active<% end %>"><%=link_to t(:new_user),new_user_registration_path %></li>
+            <li class="<% if current_page?(new_user_session_path) %> active<% end %>"><%=link_to t(:login),new_user_session_path %></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>

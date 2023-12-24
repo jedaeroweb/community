@@ -1,0 +1,21 @@
+<article class="question col-12 col-sm-6 col-md-3 col-xxl-2">
+  <div class="row">
+    <div class="col-5 col-sm-12">
+      <% if question.question_picture.present? %>
+        <%= link_to question_path(question) do %>
+          <figure class="figure">
+          <% if question.question_pictures_count.zero? %>
+              <%= image_tag 'none.gif',class: 'figure-img img-fluid rounded'  %>
+            <% else %>
+              <%= image_tag question.question_picture.picture.medium_thumb.url,class: 'figure-img img-fluid rounded'  %>
+          <% end %>
+          </figure>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col-7 col-sm-12">
+      <h3><%= link_to question.title, question_path(question) %></h3>
+      <p><%=t(:view_count) %> : <%=question.impressionist_count(:filter=>:ip_address) %></p>
+    </div>
+  </div>
+</article>

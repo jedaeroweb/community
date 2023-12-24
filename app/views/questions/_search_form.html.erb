@@ -1,0 +1,62 @@
+<div class="col-12">
+<%=form_tag blogs_path,{method:'get'} do %>
+  <input type="hidden" name="search" value="1">
+    <%
+      search_params={search_detail:true}
+
+      aa_class='nav-link'
+      if @question_category.present?
+        search_params[:category]=@question_category
+      else
+        aa_class+=' active'
+      end
+      %>
+    <select name="category" class="form-control mobile-sub-menu d-block d-lg-none"<% if params[:search_form_show].present? %> style="display:block !important;"<% end %>>
+      <option><%=t(:all) %></option>
+      <% unless @question_categories.empty? %>
+        <% @question_categories.each do |question_category|
+          a_class=''
+
+          if @question_category.present?
+            if @question_category.id==question_category.id
+              a_class=' selected'
+            end
+          end
+
+          if question_category.questions_count.zero?
+            a_class=' disabled'
+          end
+        %>
+          <option value="<%=url_for(:category=>question_category) %>"<%=a_class %>><%= question_category.title %></option>
+        <% end %>
+      <% end %>
+    </select>
+    <nav class="sub_nav d-none d-lg-block">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><%=link_to t(:all),questions_path,class: aa_class %></li>
+        <%  @question_categories.each do |question_category|
+          a_class='nav-link'
+
+          if @question_category.present?
+            if @question_category.id==question_category.id
+              a_class+=' active'
+            end
+          end
+
+          if question_category.questions_count.zero?
+            a_class+=' disabled'
+          end
+
+        %>
+          <li class="nav-item">
+            <%=link_to url_for(category: question_category),{:class=>a_class} do %>
+              <%=question_category.title %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+  <%=link_to blogs_path(search_params),id: "search-detail" do %><span class="material-icons">search</span><%=t(:search) %><% end  %>
+  <!-- <%=submit_tag t(:search),class: 'btn btn-primary btn-block btn-search' %> -->
+  <% end %>
+</div>

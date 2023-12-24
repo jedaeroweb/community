@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-12">
+    <div id="ad-main" class="table-responsive">
+      <table class="table">
+        <colgroup>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col style="width:100px">
+          <col style="width:220px">
+        </colgroup>
+        <thead class="thead-default">
+        <tr>
+          <th><%= t(:user_id, scope: [:activerecord, :attributes, :blog]) %></th>
+          <th><%= t(:blog_category_id, scope: [:activerecord, :attributes, :blog]) %></th>
+          <th><%= t(:title, scope: [:activerecord, :attributes, :blog]) %></th>
+          <th class="text-right"><%= t(:picture, scope: [:activerecord, :attributes, :blog_picture]) %></th>
+          <th class="text-right"><%= t(:label_count) %></th>
+          <th class="text-right"><%= t(:created_at, scope: [:activerecord, :attributes, :blog]) %></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% unless @talk_count.zero? %>
+          <% @talks.each do |talk| %>
+            <tr>
+              <td><%=display_user_photo(talk.user) %>&nbsp;&nbsp;<%= talk.user.name.truncate_bytes(16) %></td>
+              <td></td>
+              <td><%= link_to talk.title, talk %></td>
+              <td class="text-right"></td>
+              <td class="text-right"><%= talk.impressionist_count(:filter => :ip_address) %></td>
+              <td class="text-right text-secondary"><%= I18n.l talk.created_at.to_date, :format => :long %></td>
+            </tr>
+          <% end %>
+        <% else %>
+          <tr>
+            <td colspan="6"><%= t(:no_data) %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <div id="sl_bottom_menu">
+        <%= paginate @talks %>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <%=link_to t(:new_talk),new_blog_path,class: 'btn btn-primary btn-large' %>
+  </div>
+</div>
