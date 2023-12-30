@@ -6,6 +6,7 @@ class CreateQuestions < ActiveRecord::Migration[6.0]
       t.string :title, null: false, limit: 60
       t.integer :question_comments_count, null: false, default: 0
       t.integer :question_pictures_count, null: false, default: 0
+      t.integer :answers_count, null: false, default: 0
       t.integer :count, null: false, default: 0
       t.boolean :enable, null: false, default: true
       t.timestamps null: false

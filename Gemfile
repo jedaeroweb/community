@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 6.1.6'
+gem 'rails', '~> 6.1.7', '>= 6.1.7.6'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
@@ -37,15 +37,9 @@ gem 'sitemap_generator'
 gem 'meta-tags'
 gem 'gretel'
 gem 'nokogiri', '>= 1.12.5'
-gem 'net-smtp'
 gem 'impressionist'
 gem 'acts-as-taggable-on'
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
-gem 'i18n-js'
 gem 'trix'
-
-#gem 'acts-as-taggable-on', '~> 9.0'
 
 gem 'omniauth'
 gem 'oauth2', '1.4.11'
@@ -108,4 +102,4 @@ group :production do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-#gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

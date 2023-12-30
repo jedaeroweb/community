@@ -1,7 +1,4 @@
 Admin.create!(:id => 1, :email => 'theloss@jedaeroweb.co.kr', :name => '잠자는사자', :password => 'a12345', :password_confirmation => 'a12345')
-Admin.create!(:id => 2, :email => 'a@edaeroweb.co.kr', :name => 'test2', :password => 'a12345', :password_confirmation => 'a12345')
-Admin.create!(:id => 3, :email => 'b@edaeroweb.co.kr', :name => 'test3', :password => 'a12345', :password_confirmation => 'a12345')
-
 
 User.create!(:id => 1, :email => 'user1@jedaeroweb.co.kr', :name => '사용자1', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "1.jpg")) }])
 User.create!(:id => 2, :email => 'user2@jedaeroweb.co.kr', :name => '사용자2', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "2.jpg")) }])
@@ -318,8 +315,8 @@ BlogCategory.create!(id: 4, title: '배포')
 Blog.create!(id: 1, user_id:1, blog_category_id:1, title: '루비설치',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png"))}, content: '루비 온 레일즈 프로그램을 설치하려면 당연히 루비 부터 설치해야 됩니다.
           이름부터가 루비 온 레일즈로 루비로 만들어진 프레임워크입니다.
           루비를 설치하기 위해서는 여러 선택지가 존재하며 각 OS마다 약간의 차이가 있습니다.')
-Blog.create!(id: 2, user_id:1, blog_category_id:1, title: '레일즈설치', content: 'asdgfsdg' ,blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) }, enable: true)
-Blog.create!(id: 3, user_id:1, blog_category_id:1, title: 'gem,bundler', content: 'asdgfsdg',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) }, enable: true)
+Blog.create!(id: 2, user_id:1, blog_category_id:1, title: '레일즈설치', content: 'asdgfsdg' ,blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
+Blog.create!(id: 3, user_id:1, blog_category_id:1, title: 'gem,bundler', content: 'asdgfsdg',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
 Blog.create!(id: 4, user_id:1, blog_category_id:1, title: 'rake migrate',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) }, content: 'rake는 레일즈의 여러 필요작업들을 처리해주는 명령어로 어느 책에서 봤던것 처럼 든든한 조수를 데리고 작업하는 것과 같은 느낌입니다.
 rake(조수) 이것(옵션) 처리해줘  하는 식으로 명령어를 주면 레일즈를 제작, 배치 하면서 처리해야 하는 일들을 편리하게 처리해 줍니다.
 
@@ -332,11 +329,11 @@ rake db:seed    => rake, 시작 데이터 입력 해줘
 
 이런 식으로 rake를 이용하여 DB생성, 마이그레이션, 시작데이터 입력을 처리할 수 있습니다.
 ')
-Blog.create!(id: 5, user_id:1, blog_category_id:1, title: 'npm, yarn',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) },content: '')
-Blog.create!(id: 6, user_id:1, blog_category_id:1, title: '개발서버 설치설정', content: 'asdgfsdg',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) }, enable: true)
-Blog.create!(id: 7, user_id:1, blog_category_id:1, title: '실서버 설치설정', content: 'asdgfsdg',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) }, enable: true)
-Blog.create!(id: 8, user_id:1, blog_category_id:4, title: 'git', content: 'asdgfsdg',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) }, enable: true)
-Blog.create!(id: 9, user_id:1, blog_category_id:4, title: '카피스트라노(capistrano)를 이용한 배포',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) }, content: '')
+Blog.create!(id: 5, user_id:1, blog_category_id:1, title: 'npm, yarn',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) },content: 'ㅁㄴㅇㅎㅁㄶ')
+Blog.create!(id: 6, user_id:1, blog_category_id:1, title: '개발서버 설치설정', content: 'asdgfsdg',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
+Blog.create!(id: 7, user_id:1, blog_category_id:1, title: '실서버 설치설정', content: 'asdgfsdg',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
+Blog.create!(id: 8, user_id:1, blog_category_id:4, title: 'git', content: 'asdgfsdg',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
+Blog.create!(id: 9, user_id:1, blog_category_id:4, title: '카피스트라노(capistrano)를 이용한 배포',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) }, content: 'ㄴㅇ론ㅇ로')
 
 QuestionCategory.create!(id: 1, title: '설치,설정')
 QuestionCategory.create!(id: 2, title: 'Gem, Bundler')
@@ -348,7 +345,31 @@ QuestionCategory.create!(id: 6, title: '기타')
 Question.create!(id: 1, question_category_id: 1, user_id: 1, title: '뭐지요', content: '적산의뢰1 내용')
 Question.create!(id: 2, question_category_id: 1, user_id: 2, title: '뭐지요', content: '적산의뢰2 내용')
 Question.create!(id: 3, question_category_id: 2, user_id: 3, title: '뭐지요', content: '설계의뢰1 내용')
-Question.create!(id: 4, question_category_id: 3, user_id: 4, title: '뭐지요', content: '디자인의뢰1 내용')
+Question.create!(id: 4, question_category_id: 3, user_id: 4, title: '날짜표시 예쁘게 하려면 어떻게 하나요?', content: '날짜 나오게 하면 2024-01-01 이런식으로 나오는데
+이거 다른 방법으로 예쁘게 나오게 만들수 있나요?')
+
+
+Answer.create!(id: 1, user_id:1, question_id: 4, content: '날짜 나오게 하려면 <%= I18n.l article.created_at.to_date, :format => :long %>
+이런식으로 하면 2023년 12월 30일 (토)이런 날짜로 나오고
+<%= time_ago_in_words article.created_at.to_date %> 로 하면 몇일전, 몇주전, 몇년전  이런식으로 표시 되며 해당 표시 방법은
+config/locales/ko.yml 에서 설정하면 됩니다.
+예)
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: 약 한 시간
+        other: 약 %{count}시간
+      about_x_months:
+        one: 약 한 달
+        other: 약 %{count}달
+      about_x_years:
+        one: 약 일 년
+        other: 약 %{count}년
+      almost_x_years:
+        one: 일 년 이하
+        other: ! %{count}년 이하
+      half_a_minute: 30초
+')
 
 Gallery.create!(user_id: 1, title: '멋진나1', content: '멋진나1',:photo=>File.open(Rails.root.join("app", "assets", "images", "1.jpg")))
 Gallery.create!(user_id: 1, title: '멋진나2', content: '멋진나2',:photo=>File.open(Rails.root.join("app", "assets", "images", "2.jpg")))

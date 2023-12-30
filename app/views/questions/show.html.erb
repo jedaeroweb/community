@@ -6,7 +6,14 @@
         <p class="text-end"><%= t(:created_at, scope: [:activerecord, :attributes, :question]) %> : <%= I18n.l @question.created_at.to_date, :format => :long %></p>
       </div>
       <div class="sl_content_main">
-        <div class="sl_content_text" itemprop="text"><%=@question.content %></div>
+        <div class="sl_content_text" itemprop="text"><%=simple_format @question.content.to_s %></div>
+      </div>
+      <div class="answers">
+        <% @answers.each do |answer| %>
+        <div class="answer">
+          <%=simple_format answer.content.to_s %>
+        </div>
+        <% end %>
       </div>
     </article>
   </div>
