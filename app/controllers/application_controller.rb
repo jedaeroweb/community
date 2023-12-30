@@ -65,6 +65,6 @@ class ApplicationController < ActionController::Base
   end
 
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to root_path, :notice => t(:login_first)
+    redirect_to new_user_session_path, :notice => t(:login_first)
   end
 end

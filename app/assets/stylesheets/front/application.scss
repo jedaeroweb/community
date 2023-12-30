@@ -47,7 +47,7 @@
 }
 
 
-$default-bg : #ddd;
+$default-bg : #ccc;
 $default-color: $body-color;
 $secondary-bg :#f1f1f1;
 $color-mode-type: data;
@@ -102,7 +102,7 @@ mark, rp, rt, ruby, summary, time {display:inline;}
 .table thead th {background-color:$header_light_background }
 .table th, .table td {border-color: $header_light_background }
 .sl_content_header h3 {padding:0.7em;background-color:$header_light_background;color:$header_light_default_color}
-
+.sl_content_main {padding:1rem 2rem}
 
 #mobile-menu,#mobile-back {position: absolute; top:8px;z-index: 7}
 #mobile-menu span,#mobile-back span  {font-size:30px;cursor:pointer}
@@ -469,8 +469,7 @@ footer address {margin-top:1em;line-height:150%;text-align:center}
 }
 
 @include color-mode(light) {
-
-
+  .sl_content_main {background:#fff}
   .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link,.nav-tabs {border-color:#ccc}
   .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {border-bottom-color:#f1f1f1}
   a.btn-primary,a.btn-primary:visited {color:#fff}

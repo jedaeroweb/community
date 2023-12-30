@@ -342,14 +342,18 @@ QuestionCategory.create!(id: 4, title: 'View, ERB,Builder')
 QuestionCategory.create!(id: 5, title: 'Model,ORM,Database')
 QuestionCategory.create!(id: 6, title: '기타')
 
-Question.create!(id: 1, question_category_id: 1, user_id: 1, title: '뭐지요', content: '적산의뢰1 내용')
+Question.create!(id: 1, question_category_id: 1, user_id: 1, title: 'capistrano deploy sshkit 애러', content: 'capistrano deploy하는데
+sshkit rescue in block (2 levels) : Exception while executing as deploy@deploy_server: fingerprint does not match xxx in execute SSHKit::Runner::ExecuteError
+애러 나오는면서 중지 되는데 어떻게 해결해야될까요?')
 Question.create!(id: 2, question_category_id: 1, user_id: 2, title: '뭐지요', content: '적산의뢰2 내용')
 Question.create!(id: 3, question_category_id: 2, user_id: 3, title: '뭐지요', content: '설계의뢰1 내용')
 Question.create!(id: 4, question_category_id: 3, user_id: 4, title: '날짜표시 예쁘게 하려면 어떻게 하나요?', content: '날짜 나오게 하면 2024-01-01 이런식으로 나오는데
 이거 다른 방법으로 예쁘게 나오게 만들수 있나요?')
 
 
-Answer.create!(id: 1, user_id:1, question_id: 4, content: '날짜 나오게 하려면 <%= I18n.l article.created_at.to_date, :format => :long %>
+Answer.create!(id: 1, user_id:1, question_id: 1, content: 'deploy.rb에 "set :ssh_options, verify_host_key: :never" 추가해주시면 넘어갑니다.')
+
+Answer.create!(id: 2, user_id:1, question_id: 4, content: '날짜 나오게 하려면 <%= I18n.l article.created_at.to_date, :format => :long %>
 이런식으로 하면 2023년 12월 30일 (토)이런 날짜로 나오고
 <%= time_ago_in_words article.created_at.to_date %> 로 하면 몇일전, 몇주전, 몇년전  이런식으로 표시 되며 해당 표시 방법은
 config/locales/ko.yml 에서 설정하면 됩니다.
@@ -371,6 +375,8 @@ config/locales/ko.yml 에서 설정하면 됩니다.
       half_a_minute: 30초
 ')
 
+
+
 Gallery.create!(user_id: 1, title: '멋진나1', content: '멋진나1',:photo=>File.open(Rails.root.join("app", "assets", "images", "1.jpg")))
 Gallery.create!(user_id: 1, title: '멋진나2', content: '멋진나2',:photo=>File.open(Rails.root.join("app", "assets", "images", "2.jpg")))
 Gallery.create!(user_id: 1, title: '멋진나3', content: '멋진나3',:photo=>File.open(Rails.root.join("app", "assets", "images", "3.jpg")))
@@ -390,3 +396,24 @@ Talk.create!(id: 2, user_id: 1, title: '어제 지나가다 울던 아이', cont
 Talk.create!(id: 3, user_id: 1, title: '박 공주님 당선되었을때', content: '한국은 희망없다.
   중국으로 이민가볼까 해서 살펴봤는데 중국은 이민 안 받더라고요, 세계적 명성 높은 경우만 가능할때 있음
 그 때 그냥 동남아 쪽도 알아봤어야 되나....')
+
+Talk.create!(id: 4, user_id: 1, title: '30대 중반인데 프로그래머 시작할수 있을까요?', content: '
+예전에 약간의 프로그래밍,HTML 수업은 들어서 기초는 있고요
+그 후에는 다른일 하다가 이제 다시 시작해 보려고 합니다.
+이제 시작해도 괜찮은것지 걱정입니다.
+')
+
+Talk.create!(id: 5, user_id: 1, title: 'PHP is King', content: '
+ㅋㅋㅋㅋ
+
+역시 웹 언어는 PHP가 짱이지요?? ㅋㅎ
+
+https://www.reddit.com/r/ProgrammerHumor/comments/lwhqp8/php_is_king/
+
+이 짤 응용한것은 언제봐도 웃기네요
+
+https://www.reddit.com/r/ProgrammerHumor/comments/p9u8uy/so_php_is_dead_right_its_not_dead_it_is_evolving/
+
+PHP관련 개발자들중에도 뛰어난 사람이 많은거겠지요??, 오픈소스로 참여해서 저런 성과를 올리는건가??
+PHP8은 이제 까일 거리 없어진거 아닌가요??
+')

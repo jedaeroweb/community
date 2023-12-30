@@ -30,9 +30,7 @@
           <div class="sub-main">
             <%= render :partial => 'layouts/ad' %>
             <div class="container">
-            <div class="row">
               <%= render :partial => 'layouts/notice', :locals=>{ :notice=>notice,:alert=>alert} %>
-            </div>
             </div>
             <%= yield %>
           </div>
