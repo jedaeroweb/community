@@ -408,11 +408,11 @@ Talk.create!(id: 5, user_id: 1, title: 'PHP is King', content: '
 
 역시 웹 언어는 PHP가 짱이지요?? ㅋㅎ
 
-https://www.reddit.com/r/ProgrammerHumor/comments/lwhqp8/php_is_king/
+<a href="https://www.reddit.com/r/ProgrammerHumor/comments/lwhqp8/php_is_king/" target="_blank">PHP is King</a>
 
 이 짤 응용한것은 언제봐도 웃기네요
 
-https://www.reddit.com/r/ProgrammerHumor/comments/p9u8uy/so_php_is_dead_right_its_not_dead_it_is_evolving/
+<a href="https://www.reddit.com/r/ProgrammerHumor/comments/p9u8uy/so_php_is_dead_right_its_not_dead_it_is_evolving/ target="_blank">so_php_is_dead_right_its_not_dead_it_is_evolving</a>
 
 PHP관련 개발자들중에도 뛰어난 사람이 많은거겠지요??, 오픈소스로 참여해서 저런 성과를 올리는건가??
 PHP8은 이제 까일 거리 없어진거 아닌가요??
@@ -429,3 +429,47 @@ Talk.create!(id: 7, user_id: 1, title: '손목터널증후군 조심하세요', 
 손목에 안 좋은 느낌 오시는 분들은 당장 버티컬 마우스로 바꾸세요
 저도 방심하고 오랜시간 일반 마우스 쓰다가 터널증후군 증상 와서 바로 버티컬 마우스로 바꿔 쓴 이후로는 괜찮아졌습니다.')
 
+Talk.create!(id: 8, user_id: 1, title: '불법복제 절대로 안되요', content: '
+예전에는 저도 mp3고 영화고 불법다운받어 썼었는데
+그 때도 10손가락에 뽑을 정도였지요 <= 비겁한 변명입니다
+
+그러다가 나쁜것이라는것을 점점 더 알게 되고 불법은 안 한지 10년은 넘은것 같네요
+노래도 결제해서 듣고, 영화는 영화관 가서 보고 아니면 마냥 기달리면 케이블 TV에서 해주니  불법을 저지를 일이 없지요
+특히 프로그램을 만드는 우리, 회사에서 불법프로그램 쓰는것은 정말 말이 안됨
+지네도 만들어서 납품하고 돈 못받아도 할 말 없는것이지요
+그런데 당당히 불법 프로그램 써서 돈 버는거 보면 참 어이가 없음, 사장들 마인드가 글러 먹었음,  왜 요즘은 단속 안하지요??
+
+윈도우나 오피스, 포토샵등 프로그램도 돈 주고 정품 써야지요
+저는 불법 안 저지르고 리눅스에 오픈 오피스 씁니다.')
+
+
+Talk.create!(id: 9, user_id: 1, title: '대단한 여성프로그래머들', content: '
+뭐 최초의 프로그래머가 여성인 "에이다"인것은 알았지만
+호퍼는 몰랐었네요
+<a href="https://namu.wiki/w/%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%8A%A4%20%ED%98%B8%ED%8D%BC" target="_blank">호퍼</a>
+컴파일러도 그랬군요, 코볼도 만들었고, 디버그도 최초로 했고
+
+
+최초의 프로그래머가 여자이고 발전에도 저렇게 많이 공헌을 했는데,
+저런거 보면 프로그래밍은 여자가 하기에 좋은 직업인것 같은데
+왜 여자프로그래머는 이리 적을까요? 한국만 그런가?
+여성들도 프로그래밍의 세계로 와서 여자 프로그래머가 50%가 넘었으면 좋겠습니다.
+
+
+  ///////////////////////////////////
+에이다 아버지가 바이런인거 알고 진짜 신기하다고 생각했는데, 피는 못 속이는게 이런건가요?
+서로 교류라도 많이 했었으면 역사가 더 재미있었을듯한데 아쉽네요')
+
+Talk.create!(id: 10, user_id: 1, title: 'MS 클라우드(Azure) 좋네요??', content: '
+예전에 해볼라고 깔작대다가 안하고 AWS만 쓰고 있었는데
+
+이번  AWS사태도 있고 해서 옮길라고 해봤더니
+
+인터페이스를 비롯해서 여러면에서 마음에 드네요
+
+
+무료1년으로 주는 사양도 지금 유료로 쓰는 AWS보다도 좋은듯? -.-;;
+
+VScode도 그렇고 이번 Azure까지 MS팬 될 듯, 아 IIS,MSSQL도 좋아합니다
+
+단지 OS는 집이던 회사던 리눅스지만..  ㅎㅎ')
