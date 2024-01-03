@@ -5,7 +5,7 @@
     </div>
     <div class="col-5 col-sm-12">
         <%= link_to talk_path(talk) do %>
-        <%=simple_format talk.content.to_s %>
+        <%=truncate(strip_tags(talk.content.to_s), escape: false, length: 50)  %>
         <% end %>
     </div>
 
