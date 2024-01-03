@@ -35,7 +35,7 @@
                 <% end %>
               </td>
               <td class="text-end"><%= question.impressionist_count(:filter => :ip_address) %></td>
-              <td class="text-end text-secondary"><%= I18n.l question.created_at.to_date, :format => :long %></td>
+              <td class="text-end text-secondary"><%= time_ago_in_words question.created_at.to_date %></td>
             </tr>
           <% end %>
         <% else %>

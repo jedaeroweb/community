@@ -314,20 +314,63 @@ BlogCategory.create!(id: 4, title: '배포')
 
 Blog.create!(id: 1, user_id:1, blog_category_id:1, title: '루비설치',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png"))}, content: '루비 온 레일즈 프로그램을 설치하려면 당연히 루비 부터 설치해야 됩니다.
           이름부터가 루비 온 레일즈로 루비로 만들어진 프레임워크입니다.
-          루비를 설치하기 위해서는 여러 선택지가 존재하며 각 OS마다 약간의 차이가 있습니다.')
-Blog.create!(id: 2, user_id:1, blog_category_id:1, title: '레일즈설치', content: 'asdgfsdg' ,blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
-Blog.create!(id: 3, user_id:1, blog_category_id:1, title: 'gem,bundler', content: 'asdgfsdg',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
+          루비를 설치하기 위해서는 여러 선택지가 존재하며 각 OS마다 약간의 차이가 있습니다.
+
+  리눅스나 맥이라면 해당 패키지관리자(apt,brew)를 이용하여 설치하면 되겠지만 이상하게 애네들도 버전이 낮아서 이걸로는 영 못 쓰겠더라고요
+  그러고 보면 ruby뿐 아니라 nodejs도 그런데 nodejs도 기본 패키지 대신 nvm을 써서 설치하는 것처럼
+  ruby도 rvm이 있습니다.(요즘엔 renv가 더 좋은듯?)
+
+  이렇듯 기본 패키지 관리자로도 설치할수 있지만 버전이 낮아서 많은 문제가 있는만큼
+  renv,rvm 을 이용한 설치방법을 설명해드리겠습니다.
+
+')
+Blog.create!(id: 2, user_id:1, blog_category_id:1, title: 'gem,bundler', content: 'asdgfsdg',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
+Blog.create!(id: 3, user_id:1, blog_category_id:1, title: '레일즈 설치,시작', content: '레일즈도 gem으로 되어 있어 ' ,blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
 Blog.create!(id: 4, user_id:1, blog_category_id:1, title: 'rake migrate',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) }, content: 'rake는 레일즈의 여러 필요작업들을 처리해주는 명령어로 어느 책에서 봤던것 처럼 든든한 조수를 데리고 작업하는 것과 같은 느낌입니다.
 rake(조수) 이것(옵션) 처리해줘  하는 식으로 명령어를 주면 레일즈를 제작, 배치 하면서 처리해야 하는 일들을 편리하게 처리해 줍니다.
 
 migrate 지금은 다른 프레임워크들도 사용하여 얼마간 익숙한 개념일것이라고 생각됩니다.
 레일즈의 마이그레이션은 역시 든든한 조수인 rake에 의해 처리 됩니다.
+레일즈의 경우 DB접속 정보는 /config/database.yml에서 관리되며
+SQLite의 경우 이런식으로 구성되어 있습니다.
 
+# SQLite. Versions 3.8.0 and up are supported.
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem \'sqlite3\'
+#
+default: &default
+  adapter: sqlite3
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: db/development.sqlite3
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: db/test.sqlite3
+
+production:
+  <<: *default
+  database: db/production.sqlite3
+
+
+이렇게 접속설정이 문제 없이되어있는 경우 rake를 통해서
+DB 생성,삭제, 마이그레이션(table생성,수정), 시작데이터 입력 등을 처리할수 있습니다.
+
+rake db:drop  => rake DB 삭제해줘
 rake db:create  => rake, DB 만들어줘
 rake db:migrate => rake, 마이그레션 해줘
 rake db:seed    => rake, 시작 데이터 입력 해줘
 
 이런 식으로 rake를 이용하여 DB생성, 마이그레이션, 시작데이터 입력을 처리할 수 있습니다.
+시작데이터 입력(rake db:seed)은 /db/seed.rb에서 관리되며 모델을 이용하여 초기 데이터 생성을 처리합니다.
 ')
 Blog.create!(id: 5, user_id:1, blog_category_id:1, title: 'npm, yarn',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) },content: 'ㅁㄴㅇㅎㅁㄶ')
 Blog.create!(id: 6, user_id:1, blog_category_id:1, title: '개발서버 설치설정', content: 'asdgfsdg',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })

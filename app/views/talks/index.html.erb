@@ -13,7 +13,7 @@
   <div class="row">
     <div class="col-12">
       <div class="table-responsive">
-        <table class="table">
+        <table class="table table-striped">
           <colgroup>
             <col>
             <col>
@@ -35,7 +35,7 @@
                 <td><%=display_user_photo(talk.user) %>&nbsp;&nbsp;<%= talk.user.name.truncate_bytes(16) %></td>
                 <td><%= link_to talk.title, talk %></td>
                 <td class="text-end"><%= talk.impressionist_count(:filter => :ip_address) %></td>
-                <td class="text-end text-secondary d-none d-lg-table-cell"><%= I18n.l talk.created_at.to_date, :format => :long %></td>
+                <td class="text-end text-secondary d-none d-lg-table-cell"><%= time_ago_in_words talk.created_at.to_date %></td>
               </tr>
             <% end %>
           <% else %>
