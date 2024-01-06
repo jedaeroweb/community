@@ -319,5 +319,5 @@ Devise.setup do |config|
     team_id: ENV['TEAM_ID'],
     key_id: ENV['KEY_ID'],
     pem: ENV['PRIVATE_KEY']
-  }  
+  }
 end
