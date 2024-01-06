@@ -20,7 +20,7 @@ module ClassMethods
     }
     create(attributes)
   end
-  
+
   def facebook params
     (params['info']['email'] = "dummy#{SecureRandom.hex(10)}@dummy.com") if params['info']['email'].blank?
     attributes = {
@@ -32,6 +32,16 @@ module ClassMethods
   end
 
   def twitter params
+    (params['info']['email'] = "dummy#{SecureRandom.hex(10)}@dummy.com") if params['info']['email'].blank?
+    attributes = {
+      email: params['info']['email'],
+      name: params['info']['name'],
+      password: Devise.friendly_token,
+    }
+    create(attributes)
+  end
+
+  def github params
     (params['info']['email'] = "dummy#{SecureRandom.hex(10)}@dummy.com") if params['info']['email'].blank?
     attributes = {
       email: params['info']['email'],
