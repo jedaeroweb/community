@@ -100,7 +100,7 @@ mark, rp, rt, ruby, summary, time {display:inline;}
 }
 
 .table thead th {background-color:$header_light_background }
-.table th, .table td {border-color: $header_light_background }
+.table th, .table td {border-color: $header_light_background;padding:15px}
 .sl_content_header h3 {padding:0.7em;background-color:$header_light_background;color:$header_light_default_color}
 .sl_content_header p {margin-bottom:0;padding:0.7em}
 .sl_content_main {padding:1rem 2rem}

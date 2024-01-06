@@ -1,3 +1,11 @@
+AuthenticationProvider.create!(name: 'kakao')
+AuthenticationProvider.create!(name: 'twitter')
+AuthenticationProvider.create!(name: 'google_oauth2')
+AuthenticationProvider.create!(name: 'apple')
+AuthenticationProvider.create!(name: 'facebook')
+AuthenticationProvider.create!(name: 'naver')
+AuthenticationProvider.create!(name: 'github')
+
 Admin.create!(:id => 1, :email => 'theloss@jedaeroweb.co.kr', :name => '잠자는사자', :password => 'a12345', :password_confirmation => 'a12345')
 
 User.create!(:id => 1, :email => 'user1@jedaeroweb.co.kr', :name => '사용자1', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "1.jpg")) }])
@@ -324,8 +332,17 @@ Blog.create!(id: 1, user_id:1, blog_category_id:1, title: '루비설치',blog_pi
   renv,rvm 을 이용한 설치방법을 설명해드리겠습니다.
 
 ')
-Blog.create!(id: 2, user_id:1, blog_category_id:1, title: 'gem,bundler', content: 'asdgfsdg',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
-Blog.create!(id: 3, user_id:1, blog_category_id:1, title: '레일즈 설치,시작', content: '레일즈도 gem으로 되어 있어 ' ,blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
+Blog.create!(id: 2, user_id:1, blog_category_id:1, title: 'gem,bundler', content: 'gem은 ruby의 패키지 관리자로
+  <code>gem install 설치할프로그램 이름</code>
+이렇게 입력하고 실행하면 프로그램이 설치 됩니다.
+
+bundler는 gem의 의존성관리를 위한 프로그램
+  <code>gem install bundler</code>
+이렇게 입력하고 실행하여 설치합니다.
+이렇게 설치하면 bundle이란 명령어가 생성되며
+
+ <code>bundle install</code>을 통해 한번에 여러 gem 프로그램들을 설치할수 있습니다.',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
+Blog.create!(id: 3, user_id:1, blog_category_id:1, title: '레일즈 설치,시작', content: '레일즈도 gem으로 되어 있어 gem install rails하면 설치가 끝납니다.' ,blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
 Blog.create!(id: 4, user_id:1, blog_category_id:1, title: 'rake migrate',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) }, content: 'rake는 레일즈의 여러 필요작업들을 처리해주는 명령어로 어느 책에서 봤던것 처럼 든든한 조수를 데리고 작업하는 것과 같은 느낌입니다.
 rake(조수) 이것(옵션) 처리해줘  하는 식으로 명령어를 주면 레일즈를 제작, 배치 하면서 처리해야 하는 일들을 편리하게 처리해 줍니다.
 

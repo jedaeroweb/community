@@ -313,11 +313,13 @@ Devise.setup do |config|
   config.omniauth :naver, ENV['NAVER_KEY'], ENV['NAVER_SECRET']
   config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET']
   config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], { }
-  config.omniauth :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET']
+  config.omniauth :twitter,  ENV['TWITTER_KEY'] ,  ENV['TWITTER_SECRET'], :scope => 'email'
   config.omniauth :apple, ENV['CLIENT_ID'], '', {
     scope: 'email name',
     team_id: ENV['TEAM_ID'],
     key_id: ENV['KEY_ID'],
+    pem: ENV['PRIVATE_KEY']
+  }    key_id: ENV['KEY_ID'],
     pem: ENV['PRIVATE_KEY']
   }
 end

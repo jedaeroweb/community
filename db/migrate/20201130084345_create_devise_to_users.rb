@@ -1,7 +1,7 @@
 class CreateDeviseToUsers < ActiveRecord::Migration[6.0]
   def change
     create_table :users do |t|
-      t.string :email, null: false, limit: 100
+      t.string :email, limit: 200
       t.string :name
       t.string :encrypted_password, null: false, limit: 60
 

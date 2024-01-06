@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   include OmniauthAttributesConcern
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:kakao, :naver, :twitter, :facebook, :apple, :google_oauth2, :github]
 
   before_create :default_values
   has_many :orders, dependent: :destroy
@@ -8,9 +8,9 @@ class User < ApplicationRecord
   has_many :user_pictures, dependent: :destroy
   has_one :user_content, dependent: :destroy
 
-  validates_presence_of :email
-  validates_length_of :email, within: 4..40
-  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  #validates_presence_of :email
+  validates_length_of :email, within: 4..40, allow_blank: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, allow_blank: true
   validates_uniqueness_of :email
   validates_length_of :name, within: 0..60, allow_blank: true
   validates_length_of :password, :within => 5..255, allow_blank: true

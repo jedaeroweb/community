@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'agreement', :to=>'intro#agreement', as: 'agreement'
   get 'mypage',:to=>'users#index', as: 'mypage'
 
-  devise_for :users, :controllers => { :sessions => "users/sessions", :registrations => "users/registrations", :passwords => "users/passwords" }, :path_names => { :sign_up => 'new', :sign_in => 'login', :sign_out => 'logout' } do
+  devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks', :sessions => "users/sessions", :registrations => "users/registrations", :passwords => "users/passwords" }, :path_names => { :sign_up => 'new', :sign_in => 'login', :sign_out => 'logout' } do
     get 'edit', :to => 'users::Registrations#edit'
     get 'login', :to => 'users::Sessions#new'
     get 'logout', :to=> 'users::Sessions#destroy'
