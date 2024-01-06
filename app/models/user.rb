@@ -4,17 +4,18 @@ class User < ApplicationRecord
 
   before_create :default_values
   has_many :orders, dependent: :destroy
-  has_many :user_authorizations
+  has_many :user_authentications, dependent: :destroy
   has_many :user_pictures, dependent: :destroy
   has_one :user_content, dependent: :destroy
 
-  #validates_presence_of :email
-  validates_length_of :email, within: 4..40, allow_blank: true
-  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, allow_blank: true
+  validates_presence_of :email
+  validates_length_of :email, within: 4..40
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates_uniqueness_of :email
   validates_length_of :name, within: 0..60, allow_blank: true
   validates_length_of :password, :within => 5..255, allow_blank: true
 
+  accepts_nested_attributes_for :user_authentications, allow_destroy: true
   accepts_nested_attributes_for :user_content, :allow_destroy => true
   accepts_nested_attributes_for :user_pictures, :allow_destroy => true
 
