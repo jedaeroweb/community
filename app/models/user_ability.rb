@@ -5,11 +5,11 @@ class UserAbility
     cannot :manage, :all
     can :read, [User]
     if user
-      can :manage, [User, Ad, Review, UserSimulationMaterial, Request, Question, Answer, Blog]
-      can :read, [Bidding]
-      can :create, [Company,Contact]
+      can :manage, [User, Job, Question, Answer, Blog]
+      can :read, []
+      can :create, [Company]
       unless user.companies_count.zero?
-        can :manage, [Product, Bidding, Company]
+        can :manage, [ Company]
       end
     end
   end

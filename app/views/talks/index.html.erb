@@ -1,7 +1,31 @@
-<section id="talks" class="container sub-main">
+<%
+  render_templete='index_default'
+
+  if session[:talk_list_type].present?
+    if session[:talk_list_type]=='list'
+      render_templete='index_list'
+    end
+  end
+
+%>
+<div id="questions" class="container">
   <div class="row">
+    <%= render :partial => 'layouts/notice', :locals=>{:errors=>nil, :notice=>notice,:alert=>alert} %>
+  </div>
+  <div class="row">
+    <% if session[:search_detail].present? %>
+      <%=render 'search_form_detail' %>
+    <%  else %>
+      <%=render 'search_form' %>
+    <% end %>
     <div class="col-12">
-      <h2 class="float-left d-none d-lg-block"><%= t(:talk,scope: [:activerecord,:models]) %></h2>
+      <ul class="type-selector">
+        <li><%=link_to url_for(list_type: 'list') do %><span class="material-icons">view_list</span><% end %></li>
+        <li><%=link_to url_for(list_type: 'module') do %><span class="material-icons">view_module</span><% end %></li>
+      </ul>
+    </div>
+    <div class="col-12">
+      <h2 class="float-left hidden-title"><%= t(:talk,scope: [:activerecord,:models]) %></h2>
       <div class="float-right">
         <p class="summary text-end">
           <span id="list_count" style="display:none"><%= @talk_count %></span>
@@ -10,46 +34,5 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-12">
-      <div class="table-responsive">
-        <table class="table table-striped">
-          <colgroup>
-            <col>
-            <col>
-            <col style="width:100px">
-            <col style="width:220px" class="none d-lg-table-cell">
-          </colgroup>
-          <thead class="thead-default">
-          <tr>
-            <th><%= t(:user_id, scope: [:activerecord, :attributes, :question]) %></th>
-            <th><%= t(:title, scope: [:activerecord, :attributes, :question]) %></th>
-            <th class="text-end"><%= t(:label_count) %></th>
-            <th class="text-end d-none d-lg-table-cell"><%= t(:created_at, scope: [:activerecord, :attributes, :question]) %></th>
-          </tr>
-          </thead>
-          <tbody>
-          <% unless @talk_count.zero? %>
-            <% @talks.each do |talk| %>
-              <tr>
-                <td><%=display_user_photo(talk.user) %>&nbsp;&nbsp;<%= talk.user.name.truncate_bytes(16) %></td>
-                <td><%= link_to talk.title, talk %></td>
-                <td class="text-end"><%= talk.impressionist_count(:filter => :ip_address) %></td>
-                <td class="text-end text-secondary d-none d-lg-table-cell"><%= time_ago_in_words talk.created_at.to_date %></td>
-              </tr>
-            <% end %>
-          <% else %>
-            <tr>
-              <td colspan="4"><%= t(:no_data) %></td>
-            </tr>
-          <% end %>
-          </tbody>
-        </table>
-        <div id="sl_bottom_menu">
-          <%= paginate @talks %>
-        </div>
-        <%= link_to t(:add), new_talk_path, :class => "btn btn-primary" %>
-      </div>
-    </div>
-  </div>
-</section>
+  <%=render render_templete %>
+</div>

@@ -39,7 +39,7 @@ class TalksController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
-    @talk_comments=@talk.talk_comment.order('id desc').page(params[:page]).per(10)
+    @talk_comments=@talk.talk_comments.order('id desc').page(params[:page]).per(10)
     @talk_comment=BlogComment.new
 
     respond_to do |format|
@@ -51,7 +51,7 @@ class TalksController < ApplicationController
   # GET /talks/new
   def new
     @talk = Talk.new
-    @talk.build_talk_picture
+    @talk.talk_pictures.build
   end
 
   # GET /talks/1/edit

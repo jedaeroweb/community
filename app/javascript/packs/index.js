@@ -56,6 +56,16 @@ $(document).ready(function() {
         }
     });
 
+    $(".sl-table tbody tr").css('cursor','pointer').click(function(){
+        location.href=$(this).find('a:first').attr('href');
+    });
+
+    $(".sl-table tbody tr td a").css('cursor','pointer').click(function(){
+        location.href=$(this).attr('href');
+        return false;
+    });
+
+
     var csrf_token=$('meta[name="csrf-token"]').attr('content');
 
 

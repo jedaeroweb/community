@@ -35,6 +35,7 @@ class CreateDeviseToUsers < ActiveRecord::Migration[6.0]
 
       t.integer :user_pictures_count, null: false, default: 0
       t.integer :blogs_count, null: false, default: 0
+      t.integer :companies_count, null: false, default: 0
       t.integer :contacts_count, null: false, default: 0
       t.integer :questions_count, null: false, default: 0
       t.integer :answers_count, null: false, default: 0
