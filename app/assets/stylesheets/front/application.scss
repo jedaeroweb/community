@@ -53,7 +53,7 @@ $secondary-bg :#f1f1f1;
 $color-mode-type: data;
 $header_light_background: #C33;
 $header_light_default_color : #eee;
-$header_light_point_color : #fff;
+$header_light_point_color : #333;
 
 
 [data-bs-theme="light"] {
@@ -198,9 +198,9 @@ mark, rp, rt, ruby, summary, time {display:inline;}
 
 
 /* header */
-header {position:relative;display:flex;z-index:8;border-bottom:3px solid var(--bs-border-color)}
+header {position:relative;display:flex;z-index:8;border-bottom:3px solid var(--bs-border-color);background-color:$secondary-bg}
 header h1 {margin-top:0;padding:0}
-header h1 a:hover {color:$header_light_default_color;text-decoration: none}
+header h1 a:hover {text-decoration: none}
 header h1 a:active {color:$header_light_default_color}
 
 
@@ -473,15 +473,16 @@ article.talk {margin-bottom:1.5rem}
   }
 
   .page-header h1, .page-header h2 {color: var(--bs-body-color)}
-   footer,.jumbotron,.media,.card-body,aside article,#faqList dt a.title,.modal-body, .modal-footer,.sl_content_header,.thead-default th,.breadcrumb,.box_content {background-color:var(--bs-secondary-bg)}
+   header,.jumbotron,.media,.card-body,aside article,#faqList dt a.title,.modal-body, .modal-footer,.sl_content_header,.thead-default th,.breadcrumb,.box_content {background-color:var(--bs-secondary-bg)}
   .box_header , .section-header h2 {border-color:var(--bs-border-color)}
   .box_header {background: #666;}
   .box_header h2 {text-shadow: none;color:#ccc}
+  header nav .active > a.main-menu {color:#0cf}
 }
 
 @include color-mode(light) {
-  .sl_content_header,.sl_content_main,.media {background-color:#fff}
+  .sl_content_header,.sl_content_main,.media {background-color:#f1f1f1}
   .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link,.nav-tabs {border-color:#ccc}
   .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {border-bottom-color:#f1f1f1}
-  a.btn-primary,a.btn-primary:visited {color:#fff}
+  a.btn-primary,a.btn-primary:visited {color:#ccc}
 }
