@@ -39,6 +39,8 @@ class CreateDeviseToUsers < ActiveRecord::Migration[6.0]
       t.integer :questions_count, null: false, default: 0
       t.integer :answers_count, null: false, default: 0
       t.integer :talks_count, null: false, default: 0
+      t.integer :markets_count, null: false, default: 0
+      t.integer :jobs_count, null: false, default: 0
 
       t.integer :point, null: false, default: 3000
 

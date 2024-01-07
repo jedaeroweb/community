@@ -1,8 +1,8 @@
 ko:
-  application_name : 'Ruby 개발자들'
-  service_name : 'Ruby 개발자들'
+  application_name : '제대로 개발자모임'
+  service_name : '제대로 개발자모임'
   meta_description : 'Rails,RoR,RubyOnRails,ruby,Sinatra,개발,개발자'
-  meta_keywords : 'ruby, ror, sinatra, 개잘자 커뮤니티, 개발자'
+  meta_keywords : '개발자 커뮤니티, 개발자, 개발공부, ruby, nodejs, ror, sinatra'
   meta_image : 'https://assets.sleepinglion.pe.kr/sl.jpg'
   meta_url : 'https://community.jedaeroweb.co.kr'
 
@@ -441,6 +441,8 @@ ko:
       faq : '일반적인질문'
       question : '질문,답변'
       talk : '이야기마당'
+      market : '제작의뢰'
+      job : '구인,구직'
     attributes :
       ad:
         ad_category_id : '분류'

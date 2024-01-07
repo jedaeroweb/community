@@ -198,9 +198,8 @@ mark, rp, rt, ruby, summary, time {display:inline;}
 
 
 /* header */
-header {position:relative;display:flex;z-index:8;background:$header_light_background}
+header {position:relative;display:flex;z-index:8;border-bottom:3px solid var(--bs-border-color)}
 header h1 {margin-top:0;padding:0}
-header a {color:$header_light_default_color}
 header h1 a:hover {color:$header_light_default_color;text-decoration: none}
 header h1 a:active {color:$header_light_default_color}
 
@@ -273,9 +272,9 @@ header nav ul.nav li.sl-dropdown {
 }
 
 header h1 {margin-top:0.5rem}
-header nav a {border-bottom:5px solid $header_light_background}
-header nav .active>a.main-menu {border-bottom:5px solid $header_light_background}
-header nav .active>a.main-menu {font-weight: bold;color:$header_light_point_color;border-color: #0CF  }
+header nav a {}
+header nav .active>a.main-menu {}
+header nav .active>a.main-menu {font-weight: bold;color:$header_light_point_color}
 header nav ul li ul li a {font-wegiht:normal;color:#333;border:none}
 header nav ul li ul li.active a {font-wegiht:normal;color:#000}
 
@@ -292,7 +291,7 @@ footer address {margin-top:1em;line-height:150%;text-align:center}
 
 #search-detail {position: absolute;top:10px;right:10px;}
 
-
+article.talk {margin-bottom:1.5rem}
 
 .login-box {margin:3rem auto}
 #sl_login_form {margin-top:10px }
@@ -357,7 +356,7 @@ footer address {margin-top:1em;line-height:150%;text-align:center}
 
 .more-link {position:absolute;top:1.5rem;right:15px}
 .more-link:hover {text-decoration: none}
-.more-link span {display:inline-block;vertical-align: top;line-height: 24px;color:$header_light_background}
+.more-link span {display:inline-block;vertical-align: top;line-height: 24px}
 
 
 .type-selector {text-align: right;list-style: none}

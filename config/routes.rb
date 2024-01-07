@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :talks
   resources :questions
   resources :galleries
+  resources :markets
+  resources :jobs
 
   #intro
   get 'intro', :to=>'intro#index', as: 'intro'

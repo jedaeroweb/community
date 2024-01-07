@@ -82,6 +82,16 @@
                 <li<% if ['questions'].include? params[:controller] %> class="active"<% end %>><%= link_to t(:question,scope:[:activerecord,:models]), questions_path %></li>
               </ul>
             </li>
+            <li class="sl-dropdown<% if ['markets'].include? params[:controller] %> active<% end %>">
+              <%= link_to markets_path,class:'main-menu' do %>
+                <%= t(:market,scope:[:activerecord,:models]) %>
+              <% end %>
+            </li>
+            <li class="sl-dropdown<% if ['jobs'].include? params[:controller] %> active<% end %>">
+              <%= link_to jobs_path,class:'main-menu' do %>
+                <%= t(:job,scope:[:activerecord,:models]) %>
+              <% end %>
+            </li>
             <li class="sl-dropdown<% if ['blogs'].include? params[:controller] %> active<% end %>">
               <%= link_to blogs_path,class:'main-menu' do %>
                 <%= t(:blog,scope:[:activerecord,:models]) %>

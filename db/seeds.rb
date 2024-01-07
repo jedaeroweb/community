@@ -395,11 +395,11 @@ Blog.create!(id: 7, user_id:1, blog_category_id:1, title: '실서버 설치설�
 Blog.create!(id: 8, user_id:1, blog_category_id:4, title: 'git', content: 'asdgfsdg',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
 Blog.create!(id: 9, user_id:1, blog_category_id:4, title: '카피스트라노(capistrano)를 이용한 배포',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) }, content: 'ㄴㅇ론ㅇ로')
 
-QuestionCategory.create!(id: 1, title: '설치,설정')
-QuestionCategory.create!(id: 2, title: 'Gem, Bundler')
-QuestionCategory.create!(id: 3, title: 'Controller, 함수,기능')
-QuestionCategory.create!(id: 4, title: 'View, ERB,Builder')
-QuestionCategory.create!(id: 5, title: 'Model,ORM,Database')
+QuestionCategory.create!(id: 1, title: '서버 설치,설정')
+QuestionCategory.create!(id: 2, title: '프레임워크, 패키지 설치, 설정')
+QuestionCategory.create!(id: 3, title: '함수,기능, Controller')
+QuestionCategory.create!(id: 4, title: 'HTML, CSS, Javascript')
+QuestionCategory.create!(id: 5, title: 'Database,Model,ORM')
 QuestionCategory.create!(id: 6, title: '기타')
 
 Question.create!(id: 1, question_category_id: 1, user_id: 1, title: 'capistrano deploy sshkit 애러', content: 'capistrano deploy하는데
