@@ -74,8 +74,8 @@ class QuestionsController < ApplicationController
         format.html { redirect_to @question, notice: 'question was successfully created.' }
         format.json { render :show, status: :created, location: @question }
       else
-        format.html { render :show }
-        format.json { render json: @bidding.errors, status: :unprocessable_entity }
+        format.html { render :new }
+        format.json { render json: @question.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -113,6 +113,6 @@ class QuestionsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def question_params
-    params.require(:question).permit(:title, :content, :enable).merge(user_id: current_user.id)
+    params.require(:question).permit(:question_category_id, :title, :content, :enable).merge(user_id: current_user.id)
   end
 end

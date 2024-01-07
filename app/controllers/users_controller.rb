@@ -7,19 +7,9 @@ class UsersController < ApplicationController
   def index
     condition = { user_id: current_user }
 
-    @ad_count = Ad.where(condition).count
-    @ads = Ad.where(condition).page(0).per(5).order('id desc')
 
     if session[:company_id].present?
       condition = { company_id: session[:company_id] }
-
-      @bidding_count = Bidding.where(condition).count
-      @biddings = Bidding.where(condition).page(0).per(5).order('id desc')
-
-      condition = {  user_id: current_user, enable: true }
-
-      @company_count = Company.where(condition).count
-      @companies= Company.where(condition).page(0).per(5).order('id desc')
     end
   end
 
@@ -33,9 +23,6 @@ class UsersController < ApplicationController
     params[:per_page] = 12 unless params[:per_page].present?
 
     condition = { user_id: @user,enable: true }
-
-    @ad_count = Ad.where(condition).count
-    @ads = Ad.where(condition).page(params[:page]).per(params[:per_page]).order('orders_count asc, id desc')
   end
 
   # GET /Users/complete

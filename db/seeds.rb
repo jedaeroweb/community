@@ -31,6 +31,22 @@ Role.create!(id: 6, title: '알바생', role: 'reader')
 RoleAdmin.create!(role_id: 1, admin_id: 1)
 
 
+ProgramLanguage.create!(id: 1,:title=>'ruby',:link=>'https://www.ruby-lang.org/',:enable=>1)
+ProgramLanguage.create!(id: 2,:title=>'PHP',:link=>'https://www.php.net/',:enable=>1)
+ProgramLanguage.create!(id: 3,:title=>'javascript',:link=>nil,:enable=>1)
+ProgramLanguage.create!(id: 4,:title=>'python',:link=>'https://www.python.org/',:enable=>1)
+ProgramLanguage.create!(id: 5,:title=>'java',:link=>'https://www.java.com/',:enable=>1)
+ProgramLanguage.create!(id: 6,:title=>'CSS',:link=>nil,:enable=>1)
+
+ProgramCategory.create!(:id=>1,:program_language_id=>1,:title=>'Ruby on Rails',:link=>'http://rubyonrails.org/')
+ProgramCategory.create!(:id=>2,:program_language_id=>2,:title=>'Pure PHP')
+ProgramCategory.create!(:id=>3,:program_language_id=>2,:title=>'Wordpress',:link=>'https://wordpress.org/')
+ProgramCategory.create!(:id=>4,:program_language_id=>2,:title=>'Mediawiki',:link=>'https://www.mediawiki.org/wiki/MediaWiki')
+ProgramCategory.create!(:id=>5,:program_language_id=>2,:title=>'Codeigniter',:link=>'https://codeigniter.com/')
+ProgramCategory.create!(:id=>7,:program_language_id=>3,:title=>'Boostrap',:link=>'http://getbootstrap.com/',:main=>false)
+ProgramCategory.create!(:id=>8,:program_language_id=>4,:title=>'Jquery',:link=>'https://jquery.com/',:main=>false)
+
+
 AddressLevel.create!(id: 1, title: '광역시,도')
 AddressLevel.create!(id: 2, title: '시,군')
 AddressLevel.create!(id: 3, title: '구')
