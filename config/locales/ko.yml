@@ -170,6 +170,9 @@ ko:
   new_job: '공고등록'
   edit_job: '공고수정'
 
+  new_market: '제작의뢰'
+  edit_market: '제작의뢰수정'
+
   ad_list: '공고목록'
   blog_category_list: '블로그분류목록'
   blog_list: '블로그목록'

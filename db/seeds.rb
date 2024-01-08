@@ -40,13 +40,14 @@ ProgramLanguage.create!(id: 6,:title=>'java',:link=>'https://www.java.com/',:ena
 ProgramLanguage.create!(id: 7,:title=>'CSS',:link=>nil,:enable=>1)
 
 ProgramCategory.create!(id: 1,:program_language_id=>1,:title=>'Ruby on Rails',:link=>'http://rubyonrails.org/')
-ProgramCategory.create!(id: 1,:program_language_id=>1,:title=>'Sinatra',:link=>'http://rubyonrails.org/')
-ProgramCategory.create!(id: 2,:program_language_id=>2,:title=>'Pure PHP')
-ProgramCategory.create!(id: 3,:program_language_id=>2,:title=>'Wordpress',:link=>'https://wordpress.org/')
-ProgramCategory.create!(id: 4,:program_language_id=>2,:title=>'Mediawiki',:link=>'https://www.mediawiki.org/wiki/MediaWiki')
-ProgramCategory.create!(id: 5,:program_language_id=>2,:title=>'Codeigniter',:link=>'https://codeigniter.com/')
-ProgramCategory.create!(id: 7,:program_language_id=>3,:title=>'Boostrap',:link=>'http://getbootstrap.com/',:main=>false)
-ProgramCategory.create!(id: 8,:program_language_id=>4,:title=>'Jquery',:link=>'https://jquery.com/',:main=>false)
+ProgramCategory.create!(id: 2,:program_language_id=>1,:title=>'Sinatra',:link=>'http://rubyonrails.org/')
+ProgramCategory.create!(id: 3,:program_language_id=>2,:title=>'laravel',:link=>'https://laravel.com/')
+ProgramCategory.create!(id: 4,:program_language_id=>2,:title=>'Wordpress',:link=>'https://wordpress.org/')
+ProgramCategory.create!(id: 5,:program_language_id=>2,:title=>'Mediawiki',:link=>'https://www.mediawiki.org/wiki/MediaWiki')
+ProgramCategory.create!(id: 6,:program_language_id=>2,:title=>'Codeigniter',:link=>'https://codeigniter.com/')
+ProgramCategory.create!(id: 7,:program_language_id=>2,:title=>'Pure PHP')
+ProgramCategory.create!(id: 8,:program_language_id=>4,:title=>'Boostrap',:link=>'http://getbootstrap.com/',:main=>false)
+ProgramCategory.create!(id: 9,:program_language_id=>4,:title=>'Jquery',:link=>'https://jquery.com/',:main=>false)
 
 
 AddressLevel.create!(id: 1, title: '광역시,도')
@@ -421,12 +422,12 @@ QuestionCategory.create!(id: 4, title: 'HTML, CSS, Javascript')
 QuestionCategory.create!(id: 5, title: 'Database,Model,ORM')
 QuestionCategory.create!(id: 6, title: '기타')
 
-Question.create!(id: 1, question_category_id: 1, user_id: 1, title: 'capistrano deploy sshkit 애러', content: 'capistrano deploy하는데
+Question.create!(id: 1, program_language_id: 2, question_category_id: 1, user_id: 1, title: 'capistrano deploy sshkit 애러', content: 'capistrano deploy하는데
 sshkit rescue in block (2 levels) : Exception while executing as deploy@deploy_server: fingerprint does not match xxx in execute SSHKit::Runner::ExecuteError
 애러 나오는면서 중지 되는데 어떻게 해결해야될까요?')
-Question.create!(id: 2, question_category_id: 1, user_id: 2, title: '뭐지요', content: '적산의뢰2 내용')
-Question.create!(id: 3, question_category_id: 2, user_id: 3, title: '뭐지요', content: '설계의뢰1 내용')
-Question.create!(id: 4, question_category_id: 3, user_id: 4, title: '날짜표시 예쁘게 하려면 어떻게 하나요?', content: '날짜 나오게 하면 2024-01-01 이런식으로 나오는데
+Question.create!(id: 2, program_language_id: 2, question_category_id: 1, user_id: 2, title: '뭐지요', content: '적산의뢰2 내용')
+Question.create!(id: 3, program_language_id: 2, question_category_id: 2, user_id: 3, title: '뭐지요', content: '설계의뢰1 내용')
+Question.create!(id: 4, program_language_id: 2, question_category_id: 3, user_id: 4, title: '날짜표시 예쁘게 하려면 어떻게 하나요?', content: '날짜 나오게 하면 2024-01-01 이런식으로 나오는데
 이거 다른 방법으로 예쁘게 나오게 만들수 있나요?')
 
 
