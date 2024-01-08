@@ -29,9 +29,9 @@
               <td><%= link_to question.title, question %></td>
               <td class="text-end">
                 <% if question.question_pictures_count.zero? %>
-                  <%= image_tag 'none.gif',class: 'figure-img img-fluid rounded'  %>
+                  <%= image_tag 'none.gif',class: 'figure-img img-fluid rounded',width: 150,height:150  %>
                 <% else %>
-                  <%= image_tag question.question_picture.picture.medium_thumb.url,class: 'figure-img img-fluid rounded'  %>
+                  <%= image_tag question.question_picture.picture.small_thumb.url,class: 'figure-img img-fluid rounded'  %>
                 <% end %>
               </td>
               <td class="text-end"><%= question.impressionist_count(:filter => :ip_address) %></td>

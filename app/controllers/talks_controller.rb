@@ -65,11 +65,10 @@ class TalksController < ApplicationController
 
     respond_to do |format|
       if @talk.save
-
         format.html { redirect_to @talk, notice: 'blog was successfully created.' }
         format.json { render :show, status: :created, location: @talk }
       else
-        @talk.build_blog_picture
+        @talk.talk_pictures.build
 
         format.html { render :new }
         format.json { render json: @talk.errors, status: :unprocessable_entity }
@@ -109,6 +108,6 @@ class TalksController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def talk_params
-    params.require(:talk).permit(:title, :description, :content, blog_picture_attributes: [:picture]).merge(user_id: current_user.id)
+    params.require(:talk).permit(:title, :description, :content, talk_pictures_attributes: [:picture]).merge(user_id: current_user.id)
   end
 end

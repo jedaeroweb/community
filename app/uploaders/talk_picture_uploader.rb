@@ -29,12 +29,12 @@ class TalkPictureUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :tiny_thumb do
-    process resize_to_fill: [30, 30]
+    process resize_to_fill: [50, 50]
   end
 
   # Create different versions of your uploaded files:
   version :small_thumb do
-    process resize_to_fill: [100, 100]
+    process resize_to_fill: [150, 150]
   end
 
   version :medium_thumb do

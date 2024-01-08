@@ -1,6 +1,13 @@
 <article class="talk col-12 col-sm-6 col-md-3 col-xxl-2">
   <div class="row">
     <div class="col-12">
+      <% unless talk.talk_pictures_count.zero? %>
+        <figure class="figure">
+          <%= image_tag talk.talk_pictures[0].picture.medium_thumb.url, width:200, height:200,class: 'figure-img img-fluid rounded'  %>
+        </figure>
+      <% end %>
+    </div>
+    <div class="col-12">
       <h3><%= link_to talk.title, talk_path(talk) %></h3>
     </div>
     <div class="col-12">
@@ -8,6 +15,5 @@
         <%=truncate(strip_tags(talk.content.to_s), escape: false, length: 50)  %>
         <% end %>
     </div>
-
   </div>
 </article>

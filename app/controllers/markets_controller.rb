@@ -10,7 +10,7 @@ class MarketsController < ApplicationController
     condition = {  enable: true }
 
     @market_count = Market.where(condition).count
-    @market = Market.where(condition).page(params[:page]).per(params[:per_page]).order('id desc')
+    @markets = Market.where(condition).page(params[:page]).per(params[:per_page]).order('id desc')
   end
 
   # GET /notices/1
@@ -18,10 +18,64 @@ class MarketsController < ApplicationController
   def show
   end
 
-  private
+  # GET /talks/new
+  def new
+    @market = Market.new
+    #@market.market_pictures.build
+  end
 
+  # GET /talks/1/edit
+  def edit
+  end
+
+  # POST /talks
+  # POST /talks.json
+  def create
+    @market = Market.new(market_params)
+
+    respond_to do |format|
+      if @market.save
+        format.html { redirect_to @market, notice: 'blog was successfully created.' }
+        format.json { render :show, status: :created, location: @market }
+      else
+        format.html { render :new }
+        format.json { render json: @market.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /companies/1
+  # PATCH/PUT /companies/1.json
+  def update
+    respond_to do |format|
+      if @market.update(market_params)
+        format.html { redirect_to @market, notice: 'blog was successfully updated.' }
+        format.json { render :show, status: :ok, location: @market }
+      else
+        format.html { render :edit }
+        format.json { render json: @market.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /companies/1
+  # DELETE /companies/1.json
+  def destroy
+    @market.destroy
+    respond_to do |format|
+      format.html { redirect_to markets_url, notice: 'blog was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  private
   # Use callbacks to share common setup or constraints between actions.
   def set_market
     @market = Market.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def market_params
+    params.require(:market).permit(:title, :description, :content, talk_pictures_attributes: [:picture]).merge(user_id: current_user.id)
   end
 end

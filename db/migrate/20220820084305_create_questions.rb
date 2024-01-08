@@ -3,6 +3,8 @@ class CreateQuestions < ActiveRecord::Migration[6.0]
     create_table :questions do |t|
       t.references :question_category, null: false
       t.references :user, null: false
+      t.references :program_language, null: false
+      t.references :program_category
       t.string :title, null: false, limit: 60
       t.integer :question_comments_count, null: false, default: 0
       t.integer :question_pictures_count, null: false, default: 0

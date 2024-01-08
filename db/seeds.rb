@@ -31,20 +31,22 @@ Role.create!(id: 6, title: '알바생', role: 'reader')
 RoleAdmin.create!(role_id: 1, admin_id: 1)
 
 
-ProgramLanguage.create!(id: 1,:title=>'ruby',:link=>'https://www.ruby-lang.org/',:enable=>1)
-ProgramLanguage.create!(id: 2,:title=>'PHP',:link=>'https://www.php.net/',:enable=>1)
-ProgramLanguage.create!(id: 3,:title=>'javascript',:link=>nil,:enable=>1)
-ProgramLanguage.create!(id: 4,:title=>'python',:link=>'https://www.python.org/',:enable=>1)
-ProgramLanguage.create!(id: 5,:title=>'java',:link=>'https://www.java.com/',:enable=>1)
-ProgramLanguage.create!(id: 6,:title=>'CSS',:link=>nil,:enable=>1)
+ProgramLanguage.create!(id: 1,:title=>'공통',:link=>nil,:enable=>1)
+ProgramLanguage.create!(id: 2,:title=>'ruby',:link=>'https://www.ruby-lang.org/',:enable=>1)
+ProgramLanguage.create!(id: 3,:title=>'PHP',:link=>'https://www.php.net/',:enable=>1)
+ProgramLanguage.create!(id: 4,:title=>'javascript',:link=>nil,:enable=>1)
+ProgramLanguage.create!(id: 5,:title=>'python',:link=>'https://www.python.org/',:enable=>1)
+ProgramLanguage.create!(id: 6,:title=>'java',:link=>'https://www.java.com/',:enable=>1)
+ProgramLanguage.create!(id: 7,:title=>'CSS',:link=>nil,:enable=>1)
 
-ProgramCategory.create!(:id=>1,:program_language_id=>1,:title=>'Ruby on Rails',:link=>'http://rubyonrails.org/')
-ProgramCategory.create!(:id=>2,:program_language_id=>2,:title=>'Pure PHP')
-ProgramCategory.create!(:id=>3,:program_language_id=>2,:title=>'Wordpress',:link=>'https://wordpress.org/')
-ProgramCategory.create!(:id=>4,:program_language_id=>2,:title=>'Mediawiki',:link=>'https://www.mediawiki.org/wiki/MediaWiki')
-ProgramCategory.create!(:id=>5,:program_language_id=>2,:title=>'Codeigniter',:link=>'https://codeigniter.com/')
-ProgramCategory.create!(:id=>7,:program_language_id=>3,:title=>'Boostrap',:link=>'http://getbootstrap.com/',:main=>false)
-ProgramCategory.create!(:id=>8,:program_language_id=>4,:title=>'Jquery',:link=>'https://jquery.com/',:main=>false)
+ProgramCategory.create!(id: 1,:program_language_id=>1,:title=>'Ruby on Rails',:link=>'http://rubyonrails.org/')
+ProgramCategory.create!(id: 1,:program_language_id=>1,:title=>'Sinatra',:link=>'http://rubyonrails.org/')
+ProgramCategory.create!(id: 2,:program_language_id=>2,:title=>'Pure PHP')
+ProgramCategory.create!(id: 3,:program_language_id=>2,:title=>'Wordpress',:link=>'https://wordpress.org/')
+ProgramCategory.create!(id: 4,:program_language_id=>2,:title=>'Mediawiki',:link=>'https://www.mediawiki.org/wiki/MediaWiki')
+ProgramCategory.create!(id: 5,:program_language_id=>2,:title=>'Codeigniter',:link=>'https://codeigniter.com/')
+ProgramCategory.create!(id: 7,:program_language_id=>3,:title=>'Boostrap',:link=>'http://getbootstrap.com/',:main=>false)
+ProgramCategory.create!(id: 8,:program_language_id=>4,:title=>'Jquery',:link=>'https://jquery.com/',:main=>false)
 
 
 AddressLevel.create!(id: 1, title: '광역시,도')
@@ -405,7 +407,8 @@ rake db:seed    => rake, 시작 데이터 입력 해줘
 이런 식으로 rake를 이용하여 DB생성, 마이그레이션, 시작데이터 입력을 처리할 수 있습니다.
 시작데이터 입력(rake db:seed)은 /db/seed.rb에서 관리되며 모델을 이용하여 초기 데이터 생성을 처리합니다.
 ')
-Blog.create!(id: 5, user_id:1, blog_category_id:1, title: 'npm, yarn',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) },content: 'ㅁㄴㅇㅎㅁㄶ')
+Blog.create!(id: 5, user_id:1, blog_category_id:1, title: 'npm, yarn',content: 'npm, yarn은 bundler와 마찬가지로 패키지 설치를 도와주는 프로그램입니다.
+bundler와 거의 유사하며 bundler가 ruby에서 사용되는것이라면 npm,yarn은 nodejs에서 사용됩니다.',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
 Blog.create!(id: 6, user_id:1, blog_category_id:1, title: '개발서버 설치설정', content: 'asdgfsdg',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
 Blog.create!(id: 7, user_id:1, blog_category_id:1, title: '실서버 설치설정', content: 'asdgfsdg',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
 Blog.create!(id: 8, user_id:1, blog_category_id:4, title: 'git', content: 'asdgfsdg',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })

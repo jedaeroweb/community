@@ -122,6 +122,8 @@ ko:
   there_are_n_admins : "관리자가 <strong class=\"mark\">%{count}명</strong> 있습니다"
   there_are_n_talks : "이야기가 <strong class=\"mark\">%{count}개</strong> 있습니다"
   there_are_n_questions : "질문,답변이 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_jobs : "구인구직이 <strong class=\"mark\">%{count}개</strong> 있습니다"
+  there_are_n_markets : "제작의뢰가 <strong class=\"mark\">%{count}개</strong> 있습니다"
 
   success_title : '처리되었습니다'
   error_title : '죄송합니다'
@@ -161,6 +163,12 @@ ko:
   edit_question: '질문수정'
   new_request: '신규의뢰'
   edit_request: '의뢰수정'
+
+  new_talk: '이야기하기'
+  edit_talk: '이야기수정'
+
+  new_job: '공고등록'
+  edit_job: '공고수정'
 
   ad_list: '공고목록'
   blog_category_list: '블로그분류목록'
@@ -558,6 +566,9 @@ ko:
         updated_at: '수정일'
         created_at: '작성일'
       question :
+        question_category_id : '질문분류'
+        program_language_id : '프로그램언어'
+        program_category_id : '프레임워크'
         user_id : '작성자'
         title : '제목'
         enable : '보임'
@@ -565,8 +576,12 @@ ko:
         created_at : '작성일'
       question_content :
         content : '내용'
+      question_picture :
+        picture : '사진'
       talk :
         title : '제목'
+      talk_picture :
+        picture : '사진'
       portfolio :
         updated_at: '수정일'
         created_at: '작성일'

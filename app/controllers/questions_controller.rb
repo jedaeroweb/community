@@ -58,6 +58,7 @@ class QuestionsController < ApplicationController
   # GET /questions/complete
   def new
     @question = Question.new
+    @question.build_question_picture
   end
 
   # GET /questions/1/edit
@@ -74,6 +75,8 @@ class QuestionsController < ApplicationController
         format.html { redirect_to @question, notice: 'question was successfully created.' }
         format.json { render :show, status: :created, location: @question }
       else
+        @question.build_question_picture
+
         format.html { render :new }
         format.json { render json: @question.errors, status: :unprocessable_entity }
       end
@@ -113,6 +116,6 @@ class QuestionsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def question_params
-    params.require(:question).permit(:question_category_id, :title, :content, :enable).merge(user_id: current_user.id)
+    params.require(:question).permit(:question_category_id, :title, :content, :enable, question_picture_attributes: [:picture]).merge(user_id: current_user.id)
   end
 end
