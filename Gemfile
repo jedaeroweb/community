@@ -39,7 +39,7 @@ gem 'gretel'
 gem 'nokogiri', '>= 1.12.5'
 gem 'impressionist'
 gem 'acts-as-taggable-on'
-gem 'trix'
+gem 'acts_as_commentable_with_threading'
 
 gem 'omniauth'
 gem 'oauth2', '1.4.11'

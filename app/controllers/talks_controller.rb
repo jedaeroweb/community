@@ -39,12 +39,11 @@ class TalksController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
-    @talk_comments=@talk.talk_comments.order('id desc').page(params[:page]).per(10)
-    @talk_comment=BlogComment.new
+    @comment  = Comment.build_from(@talk, current_user, "")
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render :json => @talk_comments }
+      format.json { render :json => @comment }
     end
   end
 
@@ -68,8 +67,6 @@ class TalksController < ApplicationController
         format.html { redirect_to @talk, notice: 'blog was successfully created.' }
         format.json { render :show, status: :created, location: @talk }
       else
-        @talk.talk_pictures.build
-
         format.html { render :new }
         format.json { render json: @talk.errors, status: :unprocessable_entity }
       end

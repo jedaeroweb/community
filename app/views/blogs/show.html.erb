@@ -10,6 +10,20 @@
       </div>
     </article>
   </div>
+  <script>
+      function showHide(id) {
+          var obj = document.getElementById(id);
+          if (obj.style.display == 'none')
+              obj.style.display = 'block';
+          else
+              obj.style.display = 'none';
+      }
+  </script>
+  <div class="row">
+    <div class="col-12">
+      <%= render partial: "comments/templete", locals: {commentable: @blog, new_comment: @comment} %>
+    </div>
+  </div>
   <div class="row">
     <div class="btn-group btn-group-lg col-12" role="group" style="margin-top:3rem">
       <%=link_to t(:link_list),blogs_path,{class: 'btn btn-secondary btn-large btn-block'} %>

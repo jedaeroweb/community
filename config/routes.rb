@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   resources :blogs
   resources :notices
   resources :talks
-  resources :questions
-  resources :answers
+  resources :comments, only: [:create, :destroy]
+  resources :questions do
+    resources :answers
+  end
   resources :galleries
   resources :markets
   resources :jobs

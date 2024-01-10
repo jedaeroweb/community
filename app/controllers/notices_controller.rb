@@ -16,6 +16,7 @@ class NoticesController < ApplicationController
   # GET /notices/1
   # GET /notices/1.json
   def show
+    @comment  = Comment.build_from(@notice, current_user, "")
   end
 
   private

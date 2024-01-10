@@ -50,8 +50,7 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
-   @blog_comments=@blog.blog_comment.order('id desc').page(params[:page]).per(10)
-   @blog_comment=BlogComment.new
+    @comment  = Comment.build_from(@blog, current_user, "")
 
     respond_to do |format|
       format.html # show.html.erb
@@ -76,7 +75,6 @@ class BlogsController < ApplicationController
 
     respond_to do |format|
       if @blog.save
-
         format.html { redirect_to @blog, notice: 'blog was successfully created.' }
         format.json { render :show, status: :created, location: @blog }
       else

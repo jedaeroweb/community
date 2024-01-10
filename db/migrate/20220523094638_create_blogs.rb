@@ -10,12 +10,5 @@ class CreateBlogs < ActiveRecord::Migration[6.0]
       t.boolean :enable, null: false, default: true
       t.timestamps  null: false
     end
-
-    create_table :blog_comments do |t|
-      t.references :blog, null: false
-      t.references :user
-      t.text :content, null: false
-      t.timestamps null: false
-    end
   end
 end
