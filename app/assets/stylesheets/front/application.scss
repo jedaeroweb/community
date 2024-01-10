@@ -196,6 +196,12 @@ mark, rp, rt, ruby, summary, time {display:inline;}
 .c_pointer {cursor:pointer}
 .card {margin-bottom:15px}
 
+.close {
+  position:absolute;
+  top:10px;
+  right:10px;
+}
+
 
 /* header */
 header {position:relative;display:flex;z-index:8;border-bottom:3px solid var(--bs-border-color);background-color:$secondary-bg}
@@ -293,7 +299,8 @@ footer address {margin-top:1em;line-height:150%;text-align:center}
 
 #no-sns-id-l {border-top:1px solid $border-color}
 
-article.talk {margin-bottom:1.5rem}
+article.talk,article.question {margin-bottom:1.5rem}
+article.talk .media,article.question .media {min-height:13em}
 
 .login-box {margin:3rem auto}
 #sl_login_form {margin-top:10px }
@@ -480,6 +487,7 @@ article.talk {margin-bottom:1.5rem}
   .box_header {background: #666;}
   .box_header h2 {text-shadow: none;color:#ccc}
   header nav .active > a.main-menu {color:#0cf}
+  footer {color:#666;border-top-color:#333}
 }
 
 @include color-mode(light) {

@@ -14,7 +14,7 @@ ko:
   site_full_url: 'https://community.jedaeroweb.co.kr'
   email_webmaster: 'admin@jedaeroweb.co.kr'
 
-  webpage_title: '개발 위한 최고의 선택 | Ruby 개발자들'
+  webpage_title: '웹개발에 관한 모든 것 | 제대로 개발자들'
   webpage_description :
 
   login_title: '로그인'
@@ -24,15 +24,8 @@ ko:
   browse: '찾기'
   setting: '설정'
 
-  menu_ad: '공고'
-  menu_construction: '건축'
-  menu_interior: '인테리어'
-  menu_part: '부분 시공'
-  menu_community: '커뮤니티'
-  menu_simulation: '<span class="d-none d-lg-inline">건축</span> 적산,의뢰'
 
-
-  main_company : '업체'
+  menu_community : '커뮤니티'
 
   search_order : "주문내역"
   search_user : "회원검색"
@@ -88,6 +81,8 @@ ko:
   edit: "수정"
   delete: "삭제"
   manage : '관리'
+
+  new_answer : '답변'
 
   email  :  "이메일"
   password : "비밀번호"

@@ -410,10 +410,45 @@ rake db:seed    => rake, 시작 데이터 입력 해줘
 ')
 Blog.create!(id: 5, user_id:1, blog_category_id:1, title: 'npm, yarn',content: 'npm, yarn은 bundler와 마찬가지로 패키지 설치를 도와주는 프로그램입니다.
 bundler와 거의 유사하며 bundler가 ruby에서 사용되는것이라면 npm,yarn은 nodejs에서 사용됩니다.',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
-Blog.create!(id: 6, user_id:1, blog_category_id:1, title: '개발서버 설치설정', content: 'asdgfsdg',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
-Blog.create!(id: 7, user_id:1, blog_category_id:1, title: '실서버 설치설정', content: 'asdgfsdg',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
-Blog.create!(id: 8, user_id:1, blog_category_id:4, title: 'git', content: 'asdgfsdg',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
-Blog.create!(id: 9, user_id:1, blog_category_id:4, title: '카피스트라노(capistrano)를 이용한 배포',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) }, content: 'ㄴㅇ론ㅇ로')
+Blog.create!(id: 6, user_id:1, blog_category_id:1, title: '개발서버 설치설정', content: '개발서버는 특별히 설치, 설정 할것이 없습니다.
+서버 시작은 프로젝트 폴더로 이동
+<code>$cd 프로젝트폴더명</code>
+
+후에 ./bin/rails server
+<code>$ ./bin/rails server</code>
+를 실행해주면 실행 됩니다.
+
+
+안되는 경우는 보통
+1. bundler install이 되지 않았거나
+2. npm, yarn  install이 되지 않았거나
+3. 마이그레이션이 있다면 마이그레션이 맞게 진행 되어야 하며
+4. 다른 곳에서 이미 포트를 사용하고 있는 경우입니다.
+
+그러므로 서버가 잘 돌아가게 설정해주려면 이미 배운 것처럼
+
+
+bundler install
+<code>$bundler install</code>
+
+
+npm 또는 yarn  install
+<code>$npm install</code>
+<code>$yarn install</code>
+
+
+마이그레이션
+<code>$rake db:create</code>
+<code>$rake db:migrate</code>
+<code>$rake db:seed</code>
+
+실행 한 후에 서버 시작을 실행해주면 됩니다.',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
+Blog.create!(id: 7, user_id:1, blog_category_id:1, title: '실서버 설치설정', content: '실서버에서 설치 설정은
+보통 passenger패키지를 통해서 이루어 지며
+해당 내용 여기서 설명하기 보다 이곳을 참고해주세요',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
+Blog.create!(id: 8, user_id:1, blog_category_id:4, title: 'git', content: 'git은 프로그램 버전관리 도구로 알려져 있으며 프로그램개발에서 빠질수 없는 너무나 중요한 것입니다.',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
+Blog.create!(id: 9, user_id:1, blog_category_id:4, title: '카피스트라노(capistrano)를 이용한 배포', content: 'capistrano는 원래 완성된 레일즈를 배치(deploy)하기 위한 도구이며 너무나 편리하게(1줄의 명령어)로 배치를 자동으로 진행할 수 있습니다.
+이제는 레일즈외에 어떤한 프로그램이라도 배치 할수 있습니다.',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
 
 QuestionCategory.create!(id: 1, title: '서버 설치,설정')
 QuestionCategory.create!(id: 2, title: '프레임워크, 패키지 설치, 설정')

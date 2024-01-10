@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :notices
   resources :talks
   resources :questions
+  resources :answers
   resources :galleries
   resources :markets
   resources :jobs

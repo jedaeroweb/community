@@ -5,8 +5,6 @@ class QuestionsController < ApplicationController
 
   # GET /questions
   # GET /questions.json
-  # GET /blogs
-  # GET /blogs.json
   def index
     if params[:search_detail].present?
       session[:search_detail]=1

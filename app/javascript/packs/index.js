@@ -65,6 +65,10 @@ $(document).ready(function() {
         return false;
     });
 
+    $("article.talk .media, article.question .media").css('cursor','pointer').click(function(){
+        location.href=$(this).find('a:first').attr('href');
+    });
+
 
     var csrf_token=$('meta[name="csrf-token"]').attr('content');
 

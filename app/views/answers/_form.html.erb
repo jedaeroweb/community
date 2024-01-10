@@ -1,0 +1,25 @@
+<%= form_with(model: answer, local: true) do |form| %>
+  <% if answer.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <a href="#" class="close" data-dismiss="alert">&times;</a>
+      <h2><%= pluralize(answer.errors.count, "error") %> prohibited this request from being saved:</h2>
+      <ul>
+        <% answer.errors.full_messages.each do |msg| %>
+          <li>
+            <%= msg %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="card">
+    <div class="card-body">
+      <div class="form-group">
+        <%= form.rich_text_area :content, style: 'min-height:20em' %>
+      </div>
+    </div>
+  </div>
+  <div class="d-grid gap-2">
+    <%= form.submit :class => "btn btn-primary btn-block btn-lg" %>
+  </div>
+<% end %>

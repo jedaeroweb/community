@@ -1,21 +1,19 @@
 <article class="question col-12 col-sm-6 col-md-3 col-xxl-2">
   <div class="row">
-    <div class="col-5 col-sm-12">
-      <% if question.question_picture.present? %>
-        <%= link_to question_path(question) do %>
-          <figure class="figure">
-          <% if question.question_pictures_count.zero? %>
-              <%= image_tag 'none.gif',class: 'figure-img img-fluid rounded'  %>
-            <% else %>
-              <%= image_tag question.question_picture.picture.medium_thumb.url,class: 'figure-img img-fluid rounded'  %>
-          <% end %>
-          </figure>
-        <% end %>
+    <div class="col-12">
+      <% unless question.question_pictures_count.zero? %>
+        <figure class="figure">
+          <%= image_tag question.question_picture.picture.medium_thumb.url, width:200, height:200,class: 'figure-img img-fluid rounded'  %>
+        </figure>
       <% end %>
     </div>
-    <div class="col-7 col-sm-12">
-      <h3><%= link_to question.title, question_path(question) %></h3>
-      <p><%=t(:view_count) %> : <%=question.impressionist_count(:filter=>:ip_address) %></p>
+    <div class="col-12">
+      <div class="media rounded-2 p-3">
+        <h3><%= link_to truncate(question.title,length: 25), question_path(question) %></h3>
+        <%= link_to question_path(question) do %>
+          <%=truncate(strip_tags(question.content.to_s), escape: false, length: 50)  %>
+        <% end %>
+      </div>
     </div>
   </div>
 </article>
