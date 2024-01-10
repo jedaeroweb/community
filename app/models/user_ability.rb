@@ -5,7 +5,7 @@ class UserAbility
     cannot :manage, :all
     can :read, [User]
     if user
-      can :manage, [User, Job, Question, Answer, Blog]
+      can :manage, [User,Market ,Job, Question, Answer, Blog]
       can :read, []
       can :create, [Company]
       unless user.companies_count.zero?

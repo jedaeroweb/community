@@ -506,6 +506,8 @@ ko:
         updated_at : '수정일시'
         created_at : '작성일시'
       blog :
+        program_language_id: '언어'
+        program_category_id: '프레임워크'
         blog_category_id: '분류'
         user_id : '작성자'
         title : '제목'
@@ -565,8 +567,8 @@ ko:
         created_at: '작성일'
       question :
         question_category_id : '질문분류'
-        program_language_id : '프로그램언어'
-        program_category_id : '프레임워크'
+        program_language_id: '언어'
+        program_category_id: '프레임워크'
         user_id : '작성자'
         title : '제목'
         enable : '보임'
@@ -585,8 +587,8 @@ ko:
         created_at: '작성일'
       market :
         title : '제목'
-      market_content :
-        content : '내용'
+      job :
+        title : '제목'
     errors:
       models :
         user :

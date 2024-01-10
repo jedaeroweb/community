@@ -7,12 +7,14 @@
           <col>
           <col>
           <col>
+          <col>
           <col style="width:100px">
           <col style="width:220px">
         </colgroup>
         <thead class="thead-default">
         <tr>
           <th><%= t(:user_id, scope: [:activerecord, :attributes, :blog]) %></th>
+          <th><%= t(:program_language_id, scope: [:activerecord, :attributes, :blog]) %></th>
           <th><%= t(:blog_category_id, scope: [:activerecord, :attributes, :blog]) %></th>
           <th><%= t(:title, scope: [:activerecord, :attributes, :blog]) %></th>
           <th class="text-end"><%= t(:picture, scope: [:activerecord, :attributes, :blog_picture]) %></th>
@@ -25,6 +27,7 @@
           <% @blogs.each do |blog| %>
             <tr>
               <td><%=display_user_photo(blog.user) %>&nbsp;&nbsp;<%= blog.user.name.truncate_bytes(16) %></td>
+              <td><%=blog.program_language.title %></td>
               <td><%=blog.blog_category.title %></td>
               <td><%= link_to blog.title, blog %></td>
               <td class="text-end">

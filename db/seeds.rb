@@ -39,15 +39,15 @@ ProgramLanguage.create!(id: 5,:title=>'python',:link=>'https://www.python.org/',
 ProgramLanguage.create!(id: 6,:title=>'java',:link=>'https://www.java.com/',:enable=>1)
 ProgramLanguage.create!(id: 7,:title=>'CSS',:link=>nil,:enable=>1)
 
-ProgramCategory.create!(id: 1,:program_language_id=>1,:title=>'Ruby on Rails',:link=>'http://rubyonrails.org/')
-ProgramCategory.create!(id: 2,:program_language_id=>1,:title=>'Sinatra',:link=>'http://rubyonrails.org/')
-ProgramCategory.create!(id: 3,:program_language_id=>2,:title=>'laravel',:link=>'https://laravel.com/')
-ProgramCategory.create!(id: 4,:program_language_id=>2,:title=>'Wordpress',:link=>'https://wordpress.org/')
-ProgramCategory.create!(id: 5,:program_language_id=>2,:title=>'Mediawiki',:link=>'https://www.mediawiki.org/wiki/MediaWiki')
-ProgramCategory.create!(id: 6,:program_language_id=>2,:title=>'Codeigniter',:link=>'https://codeigniter.com/')
-ProgramCategory.create!(id: 7,:program_language_id=>2,:title=>'Pure PHP')
-ProgramCategory.create!(id: 8,:program_language_id=>4,:title=>'Boostrap',:link=>'http://getbootstrap.com/',:main=>false)
-ProgramCategory.create!(id: 9,:program_language_id=>4,:title=>'Jquery',:link=>'https://jquery.com/',:main=>false)
+ProgramCategory.create!(id: 1, program_language_id: 2,:title=>'Ruby on Rails',:link=>'http://rubyonrails.org/')
+ProgramCategory.create!(id: 2, program_language_id: 2,:title=>'Sinatra',:link=>'http://rubyonrails.org/')
+ProgramCategory.create!(id: 3, program_language_id: 3,:title=>'laravel',:link=>'https://laravel.com/')
+ProgramCategory.create!(id: 4, program_language_id: 3,:title=>'Wordpress',:link=>'https://wordpress.org/')
+ProgramCategory.create!(id: 5, program_language_id: 3,:title=>'Mediawiki',:link=>'https://www.mediawiki.org/wiki/MediaWiki')
+ProgramCategory.create!(id: 6, program_language_id: 3,:title=>'Codeigniter',:link=>'https://codeigniter.com/')
+ProgramCategory.create!(id: 7, program_language_id: 3,:title=>'Pure PHP')
+ProgramCategory.create!(id: 8, program_language_id: 4,:title=>'Boostrap',:link=>'http://getbootstrap.com/',:main=>false)
+ProgramCategory.create!(id: 9, program_language_id: 4,:title=>'Jquery',:link=>'https://jquery.com/',:main=>false)
 
 
 AddressLevel.create!(id: 1, title: '광역시,도')
@@ -339,7 +339,7 @@ BlogCategory.create!(id: 2, title: '제작')
 BlogCategory.create!(id: 3, title: '테스트')
 BlogCategory.create!(id: 4, title: '배포')
 
-Blog.create!(id: 1, user_id:1, blog_category_id:1, title: '루비설치',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png"))}, content: '루비 온 레일즈 프로그램을 설치하려면 당연히 루비 부터 설치해야 됩니다.
+Blog.create!(id: 1, user_id:1, program_language_id: 2, blog_category_id:1, title: '루비설치',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png"))}, content: '루비 온 레일즈 프로그램을 설치하려면 당연히 루비 부터 설치해야 됩니다.
           이름부터가 루비 온 레일즈로 루비로 만들어진 프레임워크입니다.
           루비를 설치하기 위해서는 여러 선택지가 존재하며 각 OS마다 약간의 차이가 있습니다.
 
@@ -351,7 +351,7 @@ Blog.create!(id: 1, user_id:1, blog_category_id:1, title: '루비설치',blog_pi
   renv,rvm 을 이용한 설치방법을 설명해드리겠습니다.
 
 ')
-Blog.create!(id: 2, user_id:1, blog_category_id:1, title: 'gem,bundler', content: 'gem은 ruby의 패키지 관리자로
+Blog.create!(id: 2, user_id:1, program_language_id: 2, blog_category_id:1, title: 'gem,bundler', content: 'gem은 ruby의 패키지 관리자로
   <code>gem install 설치할프로그램 이름</code>
 이렇게 입력하고 실행하면 프로그램이 설치 됩니다.
 
@@ -361,8 +361,8 @@ bundler는 gem의 의존성관리를 위한 프로그램
 이렇게 설치하면 bundle이란 명령어가 생성되며
 
  <code>bundle install</code>을 통해 한번에 여러 gem 프로그램들을 설치할수 있습니다.',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
-Blog.create!(id: 3, user_id:1, blog_category_id:1, title: '레일즈 설치,시작', content: '레일즈도 gem으로 되어 있어 gem install rails하면 설치가 끝납니다.' ,blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
-Blog.create!(id: 4, user_id:1, blog_category_id:1, title: 'rake migrate',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) }, content: 'rake는 레일즈의 여러 필요작업들을 처리해주는 명령어로 어느 책에서 봤던것 처럼 든든한 조수를 데리고 작업하는 것과 같은 느낌입니다.
+Blog.create!(id: 3, user_id:1, program_language_id: 2, blog_category_id:1, title: '레일즈 설치,시작', content: '레일즈도 gem으로 되어 있어 gem install rails하면 설치가 끝납니다.' ,blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
+Blog.create!(id: 4, user_id:1, program_language_id: 2, blog_category_id:1, title: 'rake migrate',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) }, content: 'rake는 레일즈의 여러 필요작업들을 처리해주는 명령어로 어느 책에서 봤던것 처럼 든든한 조수를 데리고 작업하는 것과 같은 느낌입니다.
 rake(조수) 이것(옵션) 처리해줘  하는 식으로 명령어를 주면 레일즈를 제작, 배치 하면서 처리해야 하는 일들을 편리하게 처리해 줍니다.
 
 migrate 지금은 다른 프레임워크들도 사용하여 얼마간 익숙한 개념일것이라고 생각됩니다.
@@ -408,9 +408,9 @@ rake db:seed    => rake, 시작 데이터 입력 해줘
 이런 식으로 rake를 이용하여 DB생성, 마이그레이션, 시작데이터 입력을 처리할 수 있습니다.
 시작데이터 입력(rake db:seed)은 /db/seed.rb에서 관리되며 모델을 이용하여 초기 데이터 생성을 처리합니다.
 ')
-Blog.create!(id: 5, user_id:1, blog_category_id:1, title: 'npm, yarn',content: 'npm, yarn은 bundler와 마찬가지로 패키지 설치를 도와주는 프로그램입니다.
+Blog.create!(id: 5, user_id:1, program_language_id: 2, blog_category_id:1, title: 'npm, yarn',content: 'npm, yarn은 bundler와 마찬가지로 패키지 설치를 도와주는 프로그램입니다.
 bundler와 거의 유사하며 bundler가 ruby에서 사용되는것이라면 npm,yarn은 nodejs에서 사용됩니다.',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
-Blog.create!(id: 6, user_id:1, blog_category_id:1, title: '개발서버 설치설정', content: '개발서버는 특별히 설치, 설정 할것이 없습니다.
+Blog.create!(id: 6, user_id:1, program_language_id: 2, blog_category_id:1, title: '개발서버 설치설정', content: '개발서버는 특별히 설치, 설정 할것이 없습니다.
 서버 시작은 프로젝트 폴더로 이동
 <code>$cd 프로젝트폴더명</code>
 
@@ -443,11 +443,11 @@ npm 또는 yarn  install
 <code>$rake db:seed</code>
 
 실행 한 후에 서버 시작을 실행해주면 됩니다.',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
-Blog.create!(id: 7, user_id:1, blog_category_id:1, title: '실서버 설치설정', content: '실서버에서 설치 설정은
+Blog.create!(id: 7, user_id:1, program_language_id: 2, blog_category_id:1, title: '실서버 설치설정', content: '실서버에서 설치 설정은
 보통 passenger패키지를 통해서 이루어 지며
 해당 내용 여기서 설명하기 보다 이곳을 참고해주세요',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
-Blog.create!(id: 8, user_id:1, blog_category_id:4, title: 'git', content: 'git은 프로그램 버전관리 도구로 알려져 있으며 프로그램개발에서 빠질수 없는 너무나 중요한 것입니다.',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
-Blog.create!(id: 9, user_id:1, blog_category_id:4, title: '카피스트라노(capistrano)를 이용한 배포', content: 'capistrano는 원래 완성된 레일즈를 배치(deploy)하기 위한 도구이며 너무나 편리하게(1줄의 명령어)로 배치를 자동으로 진행할 수 있습니다.
+Blog.create!(id: 8, user_id:1, program_language_id: 2, blog_category_id:4, title: 'git', content: 'git은 프로그램 버전관리 도구로 알려져 있으며 프로그램개발에서 빠질수 없는 너무나 중요한 것입니다.',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
+Blog.create!(id: 9, user_id:1, program_language_id: 2, blog_category_id:4, title: '카피스트라노(capistrano)를 이용한 배포', content: 'capistrano는 원래 완성된 레일즈를 배치(deploy)하기 위한 도구이며 너무나 편리하게(1줄의 명령어)로 배치를 자동으로 진행할 수 있습니다.
 이제는 레일즈외에 어떤한 프로그램이라도 배치 할수 있습니다.',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
 
 QuestionCategory.create!(id: 1, title: '서버 설치,설정')

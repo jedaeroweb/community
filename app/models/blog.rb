@@ -5,6 +5,8 @@ class Blog < ApplicationRecord
   #acts_as_taggable
   #ActsAsTaggableOn.delimiter = ','
   #ActsAsTaggableOn.force_lowercase = true
+  belongs_to :program_language, counter_cache: true
+  belongs_to :program_category, counter_cache: true, optional: true
   validates_presence_of :title
   validates_length_of :title, :minimum => 2, :maximum => 60
   belongs_to :user, :counter_cache => true

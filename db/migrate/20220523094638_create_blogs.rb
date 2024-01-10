@@ -1,6 +1,8 @@
 class CreateBlogs < ActiveRecord::Migration[6.0]
   def change
     create_table :blogs do |t|
+      t.references :program_language, null: false
+      t.references :program_category
       t.references :blog_category, null: false
       t.references :user, null: false
       t.string :title, null: false, limit: 60

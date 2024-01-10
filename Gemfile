@@ -40,6 +40,8 @@ gem 'nokogiri', '>= 1.12.5'
 gem 'impressionist'
 gem 'acts-as-taggable-on'
 gem 'acts_as_commentable_with_threading'
+gem 'acts_as_votable'
+gem 'acts-as-taggable-on'
 
 gem 'omniauth'
 gem 'oauth2', '1.4.11'

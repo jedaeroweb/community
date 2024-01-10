@@ -94,6 +94,7 @@ GEM
       activerecord (>= 4.0)
       activesupport (>= 4.0)
       awesome_nested_set (>= 3.0)
+    acts_as_votable (0.14.0)
     addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
     aes_key_wrap (1.1.0)
@@ -542,6 +543,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on
   acts_as_commentable_with_threading
+  acts_as_votable
   asset_sync
   bootsnap (>= 1.4.4)
   bootstrap (~> 5.3.1)
