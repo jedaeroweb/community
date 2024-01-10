@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   impressionist :actions => [:show]
+  load_and_authorize_resource  except: [:index, :show]
   before_action :set_job, only: [:show, :edit, :update, :destroy]
 
   # GET /notices
@@ -21,7 +22,6 @@ class JobsController < ApplicationController
   # GET /talks/new
   def new
     @job = Job.new
-    #@@job.market_pictures.build
   end
 
   # GET /talks/1/edit

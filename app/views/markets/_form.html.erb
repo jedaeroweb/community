@@ -18,7 +18,7 @@
         <%= form.label :title %>
         <%= form.text_field :title, :class => 'form-control', :required => 'required' %>
       </div>
-      <%= form.fields_for :notice_content do |c| %>
+      <%= form.fields_for :market_content do |c| %>
         <div class="form-group">
           <%= c.label :content %>
           <%= c.text_area :content, :id => "sl_content", :class => 'form-control' %>

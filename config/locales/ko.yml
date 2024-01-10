@@ -583,6 +583,10 @@ ko:
       portfolio :
         updated_at: '수정일'
         created_at: '작성일'
+      market :
+        title : '제목'
+      market_content :
+        content : '내용'
     errors:
       models :
         user :
