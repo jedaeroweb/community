@@ -8,8 +8,8 @@
           <col>
           <col>
           <col>
-          <col style="width:100px">
-          <col style="width:220px">
+          <col>
+          <col>
         </colgroup>
         <thead class="thead-default">
         <tr>
@@ -35,7 +35,7 @@
                 <%= image_tag blog.blog_picture.picture.small_thumb.url, width:50, height:50,class: 'figure-img img-fluid rounded'  %>
               </figure></td>
               <td class="text-end"><%= blog.impressionist_count(:filter => :ip_address) %></td>
-              <td class="text-end text-secondary"><%= I18n.l blog.created_at.to_date, :format => :long %></td>
+              <td class="text-end text-secondary"><%= time_ago_in_words blog.created_at.to_date %></td>
             </tr>
           <% end %>
         <% else %>

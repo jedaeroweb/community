@@ -26,12 +26,10 @@
 <body>
   <%= render :partial => 'layouts/header' %>
       <div id="mom">
-        <div id="main">
-          <div class="sub-main">
+        <div id="main" class="container">
+          <div class="sub-main row">
             <%= render :partial => 'layouts/ad' %>
-            <div class="container">
-              <%= render :partial => 'layouts/notice', :locals=>{ :notice=>notice,:alert=>alert} %>
-            </div>
+            <%= render :partial => 'layouts/notice', :locals=>{ :notice=>notice,:alert=>alert} %>
             <%= yield %>
           </div>
         </div>
