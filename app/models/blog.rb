@@ -1,6 +1,7 @@
 class Blog < ApplicationRecord
   is_impressionable
   acts_as_commentable
+  acts_as_votable
   has_rich_text :content
   #acts_as_taggable
   #ActsAsTaggableOn.delimiter = ','

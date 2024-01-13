@@ -38,32 +38,6 @@
       <%=link_to '',id: 'mobile-menu-close',class: 'd-block d-lg-none' do %>
         <span class="material-icons">cancel</span>
         <% end %>
-  <ul>
-    <% if user_signed_in? %>
-      <li id="user-info">
-        <%= link_to mypage_path do %>
-          <%=display_user_photo(current_user) %>
-          <span style="color:#0CF"><%= current_user.name.truncate_bytes(16) %></span> 님
-        <% end %>
-      </li>
-      <li>
-        <%= link_to destroy_user_session_path, {id:"p_logout",method: :delete} do %>
-          <i class="material-icons">highlight_off</i><span><%= t(:logout) %></span>
-        <% end %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to new_user_session_path do %>
-          <i class="material-icons">login</i><span><%= t(:login) %></span>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to new_user_registration_path do %>
-          <i class="material-icons">person_add</i><span><%= t(:new_user)%></span>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
     </div>
   </div>
   <div class="container">

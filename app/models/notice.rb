@@ -1,6 +1,8 @@
 class Notice < ApplicationRecord
   is_impressionable
   acts_as_commentable
+  acts_as_votable
+
   validates_presence_of :title
   has_one :notice_content, :foreign_key => :id, :dependent => :destroy, inverse_of: :notice
   has_one :notice_picture, dependent: :destroy
