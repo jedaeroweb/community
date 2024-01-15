@@ -1,13 +1,32 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  resources :blogs
-  resources :notices
-  resources :talks
+  resources :blogs do
+    member do
+      put 'like', to: 'blogs#upvote'
+      put 'dislike', to: 'blogs#downvote'
+    end
+  end
+
+  resources :notices do
+    member do
+      put 'like', to: 'notices#upvote'
+      put 'dislike', to: 'notices#downvote'
+    end
+  end
+
+  resources :talks do
+    member do
+      put 'like', to: 'talks#upvote'
+      put 'dislike', to: 'talks#downvote'
+    end
+  end
+
   resources :comments, only: [:create, :destroy]
   resources :questions do
     resources :answers
   end
+
   resources :galleries
   resources :markets
   resources :jobs

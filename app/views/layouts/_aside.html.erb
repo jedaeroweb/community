@@ -1,5 +1,4 @@
-<aside class="col-12 col-xl-4 col-xxl-3">
-
+<aside class="col-12 col-xl-4 col-xxl-3 mb-3">
     <% if user_signed_in? %>
     <div class="card h-100">
       <div class="card-body">
@@ -8,7 +7,7 @@
           <span style="color:#0CF"><%= current_user.name.truncate_bytes(16) %></span> 님
         <% end %>
 
-        <%= link_to destroy_user_session_path, {id:"p_logout",method: :delete} do %>
+        <%= link_to destroy_user_session_path, {id:"p_logout",class: "float-end",method: :delete} do %>
           <i class="material-icons">highlight_off</i><span><%= t(:logout) %></span>
         <% end %>
 
