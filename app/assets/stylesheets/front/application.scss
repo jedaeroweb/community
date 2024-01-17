@@ -209,7 +209,7 @@ header {position:relative;display:flex;z-index:8;border-bottom:3px solid var(--b
 header h1 {margin-top:0;padding:0}
 header h1 a:hover {text-decoration: none}
 header h1 a:active {color:$header_light_default_color}
-
+#top-user-menu {display:none}
 
 header .nav > li {
   position: relative
@@ -396,7 +396,7 @@ article.talk .media,article.question .media {min-height:13em}
 
 @media (max-width: 991px) {
   #top-menu {height:1px}
-  #top-user-menu {display:none;position: fixed;top:0;right:-290px;height:100vh;width:290px;background:#fff;z-index:9}
+  #top-user-menu {position: fixed;top:0;right:-290px;height:100vh;width:290px;background:#fff;z-index:9}
   #top-menu li#user-info {margin-right:0;}
   #mobile-menu-close {display:block;margin: 10px;text-align: right;color:#333}
   #top-user-menu li {display:block;text-align:left;width:100%}
@@ -455,7 +455,6 @@ article.talk .media,article.question .media {min-height:13em}
 }
 
 @media (max-width: 2299px) {
-  #top-user-menu {padding-right:15px}
   #top-menu li  {margin-left:15px}
   .sub-main {padding-bottom:2rem}
 }
@@ -465,7 +464,6 @@ article.talk .media,article.question .media {min-height:13em}
   header nav li a {font-size:20px}
   .sub-main {padding-bottom:3rem}
   #top-menu {height:1px;background: $header_light_background }
-  #top-user-menu {position:absolute;top:10px;right:30px;margin:0;padding:0;width:400px;background:none;z-index: 9}
   #top-menu li {display:inline-block;margin:0 0 0 20px;padding:0;line-height:40px}
   #top-menu .material-icons {font-size:30px;vertical-align:middle}
   .section-header {margin-top:2rem;padding-top:1.5rem;margin-bottom:1rem}

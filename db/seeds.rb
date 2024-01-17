@@ -491,9 +491,9 @@ config/locales/ko.yml 에서 설정하면 됩니다.
 ')
 
 
-Question.create!(id: 3, program_language_id: 1, question_category_id: 3, user_id: 2, title: 'HTML화면을 PDF로 전환, 다운받게하기', content: 'HTML화면을 PDF로 출력하여 다운로드 받게 하고 싶은데 어떻게 해야 될까요??')
+Question.create!(id: 5, program_language_id: 1, question_category_id: 3, user_id: 2, title: 'HTML화면을 PDF로 전환, 다운받게하기', content: 'HTML화면을 PDF로 출력하여 다운로드 받게 하고 싶은데 어떻게 해야 될까요??')
 
-Answer.create!(id: 1, user_id:1, question_id: 3, content: 'HTML PDF로 만들기 wkhtmltopdf가 제일 좋습니다.
+Answer.create!(id: 3, user_id:1, question_id: 5, content: 'HTML PDF로 만들기 wkhtmltopdf가 제일 좋습니다.
 해당 프로그램 프로그램별로 확장프로그램도 있어서 골라 쓰면 됩니다~
 ')
 
