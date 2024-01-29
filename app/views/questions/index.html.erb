@@ -25,8 +25,8 @@
       </ul>
     </div>
     <div class="col-12">
-      <h2 class="float-left hidden-title"><%= t(:question,scope: [:activerecord,:models]) %></h2>
-      <div class="float-right">
+      <h2 class="float-start hidden-title"><%= t(:question,scope: [:activerecord,:models]) %></h2>
+      <div class="float-end">
         <p class="summary text-end">
           <span id="list_count" style="display:none"><%= @question_count %></span>
           <%= raw t(:there_are_n_questions, count: @question_count) %>

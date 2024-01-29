@@ -497,10 +497,18 @@ Answer.create!(id: 3, user_id:1, question_id: 5, content: 'HTML PDF로 만들기
 해당 프로그램 프로그램별로 확장프로그램도 있어서 골라 쓰면 됩니다~
 ')
 
+
+Question.create!(id: 6, program_language_id: 1, question_category_id: 3, user_id: 2, title: 'PHP 서버설정 없이 서버실행', content: 'PHP서버 설정없이 서버 실행하는 법은 간단해요')
+Answer.create!(id: 3, user_id:1, question_id: 6, content: 'PHP -S 아이피')
+
 Gallery.create!(user_id: 1, title: '멋진나1', content: '멋진나1',:photo=>File.open(Rails.root.join("app", "assets", "images", "1.jpg")))
 Gallery.create!(user_id: 1, title: '멋진나2', content: '멋진나2',:photo=>File.open(Rails.root.join("app", "assets", "images", "2.jpg")))
 Gallery.create!(user_id: 1, title: '멋진나3', content: '멋진나3',:photo=>File.open(Rails.root.join("app", "assets", "images", "3.jpg")))
 Gallery.create!(user_id: 1, title: '멋진나4', content: '멋진나4',:photo=>File.open(Rails.root.join("app", "assets", "images", "4.jpg")))
+Gallery.create!(user_id: 1, title: '멋진나5', content: '멋진나1',:photo=>File.open(Rails.root.join("app", "assets", "images", "1.jpg")))
+Gallery.create!(user_id: 1, title: '멋진나6', content: '멋진나2',:photo=>File.open(Rails.root.join("app", "assets", "images", "2.jpg")))
+Gallery.create!(user_id: 1, title: '멋진나7', content: '멋진나3',:photo=>File.open(Rails.root.join("app", "assets", "images", "3.jpg")))
+Gallery.create!(user_id: 1, title: '멋진나8', content: '멋진나4',:photo=>File.open(Rails.root.join("app", "assets", "images", "4.jpg")))
 
 
 Talk.create!(id: 1, user_id: 1, title: '주식이 코인보다 좋은이유', content: '주식은 9시부터 3시반까지 잃는데

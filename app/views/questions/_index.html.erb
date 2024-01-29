@@ -1,12 +1,10 @@
-<section>
+<section id="main-question">
 		<div class="row">
 			<div class="col-12 section-header">
-				<h2 class="float-left"><%= t(:question,scope: [:activerecord,:models]) %></h2>
-				<div class="float-right">
+				<h2><%= t(:question,scope: [:activerecord,:models]) %></h2>
 					<%=link_to questions_path,class: 'more-link' do %>
 						<span><%=t(:more) %></span>
 					<% end %>
-				</div>
 			</div>
 <% @question_categories.each do |question_category| %>
 <article class="col-12 col-lg-6">

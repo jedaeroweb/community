@@ -560,6 +560,7 @@ DEPENDENCIES
   carrierwave-base64
   devise
   dotenv-rails
+  faraday
   fog-azure-rm!
   gretel
   impressionist

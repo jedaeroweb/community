@@ -4,7 +4,7 @@
       <% if blog.blog_picture.present? %>
         <%= link_to blog_path(blog) do %>
           <figure class="figure">
-            <%= image_tag blog.blog_picture.picture.medium_thumb.url,class: 'figure-img img-fluid rounded'  %>
+            <%= image_tag blog.blog_picture.picture.medium_thumb.url,width:300,height:300,class:  'figure-img img-fluid rounded'  %>
           </figure>
         <% end %>
       <% end %>
