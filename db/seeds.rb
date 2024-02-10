@@ -499,7 +499,7 @@ Answer.create!(id: 3, user_id:1, question_id: 5, content: 'HTML PDF로 만들기
 
 
 Question.create!(id: 6, program_language_id: 1, question_category_id: 3, user_id: 2, title: 'PHP 서버설정 없이 서버실행', content: 'PHP서버 설정없이 서버 실행하는 법은 간단해요')
-Answer.create!(id: 3, user_id:1, question_id: 6, content: 'PHP -S 아이피')
+Answer.create!(id: 4, user_id:1, question_id: 6, content: 'PHP -S 아이피')
 
 Gallery.create!(user_id: 1, title: '멋진나1', content: '멋진나1',:photo=>File.open(Rails.root.join("app", "assets", "images", "1.jpg")))
 Gallery.create!(user_id: 1, title: '멋진나2', content: '멋진나2',:photo=>File.open(Rails.root.join("app", "assets", "images", "2.jpg")))
@@ -605,5 +605,5 @@ VScode도 그렇고 이번 Azure까지 MS팬 될 듯, 아 IIS,MSSQL도 좋아합
 
 
 Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: '워드프레스를 위한 PHP 설치, 설정', content: '워드프레스 설치는 이렇게',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "PHP-logo.webp")) })
-Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: '워드프레스 설치,설정', content: '워드프레스 설치,설정' ,blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "PHP-logo.webp")) })
+Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: '워드프레스 설치,설정', content: '워드프레스' ,blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "PHP-logo.webp")) })
 Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: '워드프레스 시작하기', content: '워드프레스 시작하기',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "PHP-logo.webp")) })

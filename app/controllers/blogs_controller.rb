@@ -25,7 +25,7 @@ class BlogsController < ApplicationController
     @blog_category_count=BlogCategory.where(enable: true).count
     @blog_categories=BlogCategory.where(enable: true)
 
-    params[:per_page] = 20 unless params[:per_page].present?
+    params[:per_page] = 10 unless params[:per_page].present?
 
     if params[:category]
       @blog_category = BlogCategory.find(params[:category])
