@@ -601,3 +601,9 @@ Talk.create!(id: 10, user_id: 1, title: 'MS 클라우드(Azure) 좋네요??', co
 VScode도 그렇고 이번 Azure까지 MS팬 될 듯, 아 IIS,MSSQL도 좋아합니다
 
 단지 OS는 집이던 회사던 리눅스지만..  ㅎㅎ')
+
+
+
+Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: '워드프레스를 위한 PHP 설치, 설정', content: '워드프레스 설치는 이렇게',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "PHP-logo.webp")) })
+Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: '워드프레스 설치,설정', content: '워드프레스 설치,설정' ,blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "PHP-logo.webp")) })
+Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: '워드프레스 시작하기', content: '워드프레스 시작하기',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "PHP-logo.webp")) })
