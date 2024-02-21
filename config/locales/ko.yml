@@ -24,6 +24,10 @@ ko:
   browse: '찾기'
   setting: '설정'
 
+  success_title : '축하합니다!!'
+  message_success_create : '이(가) 성공적으로  등록되었습니다.'
+  message_success_update : '이(가) 성공적으로  수정되었습니다.'
+  message_success_recommend : '추천되었습니다.'
 
   menu_community : '커뮤니티'
 

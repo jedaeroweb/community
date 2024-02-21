@@ -17,6 +17,12 @@ class MarketsController < ApplicationController
   # GET /notices/1
   # GET /notices/1.json
   def show
+    @comment  = Comment.build_from(@market, current_user, "")
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render :json => @market_comments }
+    end
   end
 
   # GET /talks/new
