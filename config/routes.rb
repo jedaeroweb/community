@@ -24,12 +24,17 @@ Rails.application.routes.draw do
 
   resources :comments, only: [:create, :destroy]
   resources :questions do
+    member do
+      put 'like', to: 'talks#upvote'
+      put 'dislike', to: 'talks#downvote'
+    end
     resources :answers
   end
 
   resources :galleries
   resources :markets
   resources :jobs
+  resources :user_point_logs
 
   #intro
   get 'intro', :to=>'intro#index', as: 'intro'
@@ -58,5 +63,6 @@ Rails.application.routes.draw do
     resources :admin_pictures
     resources :address_levels
     resources :addresses
+    resources :user_point_logs
   end
 end

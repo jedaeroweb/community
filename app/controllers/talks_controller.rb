@@ -1,7 +1,7 @@
 class TalksController < ApplicationController
   impressionist :actions => [:show]
   before_action :authenticate_user!, :except => [:index,:show]
-  before_action :set_talk, only: [:show, :edit, :update, :destroy]
+  before_action :set_talk, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   # GET /talks
   # GET /talks.json
@@ -94,6 +94,30 @@ class TalksController < ApplicationController
     respond_to do |format|
       format.html { redirect_to talks_url, notice: 'blog was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def upvote
+    respond_to do |format|
+      if @talk.liked_by current_user
+        format.html { redirect_to talk_path(@talk), :notice => t(:message_success_recommend)}
+        format.json { render :json => {vote_up: @talk.cached_votes_up}}
+      else
+        format.html { render :action => "index" }
+        format.json { render :json => @talk.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
+  def downvote
+    respond_to do |format|
+      if @talk.downvote_from current_user
+        format.html { redirect_to talk_path(@talk), :notice => t(:message_success_recommend)}
+        format.json { render :json => {vote_up: @talk.cached_votes_down}}
+      else
+        format.html { render :action => "index" }
+        format.json { render :json => @talk.errors, :status => :unprocessable_entity }
+      end
     end
   end
 

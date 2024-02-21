@@ -58,7 +58,10 @@ $header_light_point_color : #333;
 
 
 [data-bs-theme="light"] {
-  --bs-border-color : #ccc
+  --bs-border-color : #ccc;
+  a {color:#333}
+  a:hover {color:#000}
+  a:visited {color:#666}
 }
 
 html,body {margin:0;padding:0; height:100%}
@@ -492,6 +495,8 @@ article.talk .media,article.question .media {min-height:13em}
 }
 
 @include color-mode(light) {
+  footer {color:#666;border-top-color:#ddd}
+  .nav-link.disabled {color:#eee}
   .sl_content_header,.sl_content_main,.media {background-color:#f1f1f1}
   .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link,.nav-tabs {border-color:#ccc}
   .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {border-bottom-color:#f1f1f1}

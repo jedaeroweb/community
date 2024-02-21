@@ -8,12 +8,12 @@ AuthenticationProvider.create!(name: 'github')
 
 Admin.create!(:id => 1, :email => 'theloss@jedaeroweb.co.kr', :name => '잠자는사자', :password => 'a12345', :password_confirmation => 'a12345')
 
-User.create!(:id => 1, :email => 'user1@jedaeroweb.co.kr', :name => '사용자1', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "1.jpg")) }])
-User.create!(:id => 2, :email => 'user2@jedaeroweb.co.kr', :name => '사용자2', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "2.jpg")) }])
-User.create!(:id => 3, :email => 'company1@jedaeroweb.co.kr', :name => '회사1', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "3.jpg")) }])
-User.create!(:id => 4, :email => 'company2@jedaeroweb.co.kr', :name => '회사2', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "4.jpg")) }])
-User.create!(:id => 5, :email => 'company3@jedaeroweb.co.kr', :name => '회사3', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "5.jpg")) }])
-User.create!(:id => 6, :email => 'company4@jedaeroweb.co.kr', :name => '회사4', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "6.jpg")) }])
+User.create!(:id => 1, :email => 'user1@jedaeroweb.co.kr', :name => '잠자는사자', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "1.jpg")) }])
+User.create!(:id => 2, :email => 'user2@jedaeroweb.co.kr', :name => '김의인', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "2.jpg")) }])
+User.create!(:id => 3, :email => 'company1@jedaeroweb.co.kr', :name => '임민형', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "3.jpg")) }])
+User.create!(:id => 4, :email => 'company2@jedaeroweb.co.kr', :name => '김종근', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "4.jpg")) }])
+User.create!(:id => 5, :email => 'company3@jedaeroweb.co.kr', :name => '알콜중독자', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "5.jpg")) }])
+User.create!(:id => 6, :email => 'company4@jedaeroweb.co.kr', :name => '호갱갱갱', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "6.jpg")) }])
 User.create!(:id => 7, :email => 'company5@jedaeroweb.co.kr', :name => '회사5', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "7.jpg")) }])
 User.create!(:id => 8, :email => 'company6@jedaeroweb.co.kr', :name => '회사6', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "8.jpg")) }])
 User.create!(:id => 9, :email => 'company7@jedaeroweb.co.kr', :name => '회사7', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "9.jpg")) }])
@@ -511,27 +511,27 @@ Gallery.create!(user_id: 1, title: '멋진나7', content: '멋진나3',:photo=>F
 Gallery.create!(user_id: 1, title: '멋진나8', content: '멋진나4',:photo=>File.open(Rails.root.join("app", "assets", "images", "4.jpg")))
 
 
-Talk.create!(id: 1, user_id: 1, title: '주식이 코인보다 좋은이유', content: '주식은 9시부터 3시반까지 잃는데
+Talk.create!(id: 1, user_id: 1, title: '주식이 코인보다 좋은이유', created_at: 25.day.ago, content: '주식은 9시부터 3시반까지 잃는데
 코인은 24시간 잃음
 ')
-Talk.create!(id: 2, user_id: 1, title: '어제 지나가다 울던 아이', content: '길에서 어떤 아이가 다른 애들이랑 놀다가 우는것 같더라고요
+Talk.create!(id: 2, user_id: 1, title: '어제 지나가다 울던 아이', created_at: 22.day.ago, content: '길에서 어떤 아이가 다른 애들이랑 놀다가 우는것 같더라고요
 엄마, 아빠가 달래고 있는데
 
 
 아이의 말 : "나 다음에 쟤네들이랑 앞으로 안 놀꺼야"
 "다음에 보면 다 우주로 보내버릴꺼야~!!!"  <= ㅋㅋㅋㅋㅋ')
 
-Talk.create!(id: 3, user_id: 1, title: '박 공주님 당선되었을때', content: '한국은 희망없다.
+Talk.create!(id: 3, user_id: 1, title: '박 공주님 당선되었을때', created_at: 19.day.ago, content: '한국은 희망없다.
   중국으로 이민가볼까 해서 살펴봤는데 중국은 이민 안 받더라고요, 세계적 명성 높은 경우만 가능할때 있음
 그 때 그냥 동남아 쪽도 알아봤어야 되나....')
 
-Talk.create!(id: 4, user_id: 1, title: '30대 중반인데 프로그래머 시작할수 있을까요?', content: '
+Talk.create!(id: 4, user_id: 1, title: '30대 중반인데 프로그래머 시작할수 있을까요?', created_at: 16.day.ago, content: '
 예전에 약간의 프로그래밍,HTML 수업은 들어서 기초는 있고요
 그 후에는 다른일 하다가 이제 다시 시작해 보려고 합니다.
 이제 시작해도 괜찮은것지 걱정입니다.
 ')
 
-Talk.create!(id: 5, user_id: 1, title: 'PHP is King', content: '
+Talk.create!(id: 5, user_id: 1, title: 'PHP is King', created_at: 14.day.ago, content: '
 ㅋㅋㅋㅋ
 
 역시 웹 언어는 PHP가 짱이지요?? ㅋㅎ
@@ -546,13 +546,13 @@ PHP관련 개발자들중에도 뛰어난 사람이 많은거겠지요??, 오픈
 PHP8은 이제 까일 거리 없어진거 아닌가요??
 ')
 
-Talk.create!(id: 6, user_id: 1, title: '한국표준금거래소 작업 주의하세요', content: '
+Talk.create!(id: 6, user_id: 1, title: '한국표준금거래소 작업 주의하세요', created_at: 12.day.ago, content: '
 일 시키고 돈 안주는 인간 쓰레기 사장(배*수)입니다.
 갑자기 도와달라고 전화와서 해줬더니 결과물 받고서는 바로 배째기 시전하는 우리가 아는 패턴의 전형적인 쓰레기 인간입니다.
 
 다른 피해자들이 없기를 바랍니다.')
 
-Talk.create!(id: 7, user_id: 1, title: '손목터널증후군 조심하세요', content: '
+Talk.create!(id: 7, user_id: 1, title: '손목터널증후군 조심하세요', created_at: 10.day.ago, content: '
 오랜시간 마우스 쓰시는 분들은 일반 마우스는 쓰면 안되고
 손목에 안 좋은 느낌 오시는 분들은 당장 버티컬 마우스로 바꾸세요
 저도 방심하고 오랜시간 일반 마우스 쓰다가 터널증후군 증상 와서 바로 버티컬 마우스로 바꿔 쓴 이후로는 괜찮아졌습니다.')
@@ -568,7 +568,7 @@ Talk.create!(id: 8, user_id: 1, title: '불법복제 절대로 안되요', conte
 그런데 당당히 불법 프로그램 써서 돈 버는거 보면 참 어이가 없음, 사장들 마인드가 글러 먹었음,  왜 요즘은 단속 안하지요??
 
 윈도우나 오피스, 포토샵등 프로그램도 돈 주고 정품 써야지요
-저는 불법 안 저지르고 리눅스에 오픈 오피스 씁니다.')
+저는 불법 안 저지르고 리눅스에 오픈 오피스 씁니다.', created_at: 8.day.ago)
 
 
 Talk.create!(id: 9, user_id: 1, title: '대단한 여성프로그래머들', content: '
@@ -586,7 +586,7 @@ Talk.create!(id: 9, user_id: 1, title: '대단한 여성프로그래머들', con
 
   ///////////////////////////////////
 에이다 아버지가 바이런인거 알고 진짜 신기하다고 생각했는데, 피는 못 속이는게 이런건가요?
-서로 교류라도 많이 했었으면 역사가 더 재미있었을듯한데 아쉽네요')
+서로 교류라도 많이 했었으면 역사가 더 재미있었을듯한데 아쉽네요', created_at: 5.day.ago)
 
 Talk.create!(id: 10, user_id: 1, title: 'MS 클라우드(Azure) 좋네요??', content: '
 예전에 해볼라고 깔작대다가 안하고 AWS만 쓰고 있었는데
@@ -600,8 +600,33 @@ Talk.create!(id: 10, user_id: 1, title: 'MS 클라우드(Azure) 좋네요??', co
 
 VScode도 그렇고 이번 Azure까지 MS팬 될 듯, 아 IIS,MSSQL도 좋아합니다
 
-단지 OS는 집이던 회사던 리눅스지만..  ㅎㅎ')
+단지 OS는 집이던 회사던 리눅스지만..  ㅎㅎ', created_at: 4.day.ago)
 
+
+Talk.create!(id: 11, user_id: 1, title: '개발자용 맥북 안내', content: '
+요즘 보면 웹개발한다고 맥북 프로도 사고 맥스도 사고 하는데... 참........
+웹개발 하는데 그런거 필요 없다고!!
+M1에어면 안되는게 없는데 왜 돈 낭비들 하고 있는지, 그러고 보면 애플이 가격 정책을 잘하는것 같어
+인간의 저런 호갱 본색을 제대로 저격하는듯
+프로 필요한 사람은 동영상 제작 하는 사람이나 필요하고, 맥스는 정말 0.1%의 사람에게나 필요할까?
+M1에어로 아이폰 빌드 하는대도 기존의 인텔맥의 1/5 시간 정도 밖에 안 걸리는 막강한 성능입니다.
+', created_at: 2.day.ago)
+
+
+
+Market.create!(id: 1, user_id: 4, title: '워드프레스사이트 제작', content: '
+워드프레스를 이용한 사이트 제작을 하려고 합니다.
+', created_at: 7.day.ago)
+
+Market.create!(id: 2, user_id: 4, title: 'PHP로 만들어진 사이트 1년 유지보수 작업', content: '
+PHP로 만들어진 사이트 1년동안 유지보수 맡아주실분 구합니다.
+시간은 한달 기준 1주(40시간) 작업량 생각하고 있습니다.
+', created_at: 5.day.ago)
+
+Market.create!(id: 3, user_id: 4, title: 'Rails로 사이트 1년 유지보수 작업', content: '
+Rails로 만들어진 사이트 1년동안 유지보수 맡아주실분 구합니다.
+시간은 한달 기준 1주(40시간) 작업량 생각하고 있습니다.
+', created_at: 2.day.ago)
 
 
 Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: '워드프레스를 위한 PHP 설치, 설정', content: '워드프레스 설치는 이렇게',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "PHP-logo.webp")) })

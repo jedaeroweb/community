@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
   impressionist :actions => [:show]
   before_action :authenticate_user!, :except => [:index,:show]
-  before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :set_blog, only: [:show, :edit, :update, :destroy,:upvote, :downvote]
 
   # GET /blogs
   # GET /blogs.json
@@ -109,6 +109,32 @@ class BlogsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  def upvote
+    respond_to do |format|
+      if @blog.liked_by current_user
+        format.html { redirect_to blog_path(@blog), :notice => t(:message_success_recommend)}
+        format.json { render :json => {vote_up: @blog.cached_votes_up}}
+      else
+        format.html { render :action => "index" }
+        format.json { render :json => @blog.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
+  def downvote
+    respond_to do |format|
+      if @blog.downvote_from current_user
+        format.html { redirect_to blog_path(@blog), :notice => t(:message_success_recommend)}
+        format.json { render :json => {vote_up: @blog.cached_votes_down}}
+      else
+        format.html { render :action => "index" }
+        format.json { render :json => @blog.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
 
   private
   # Use callbacks to share common setup or constraints between actions.

@@ -52,11 +52,6 @@
             <% end %>
           </li>
           <li>
-            <%= link_to new_ad_path(category: params[:category]) do %>
-              <i class="material-icons">add</i><span><%= t(:new_ad) %></span>
-            <% end %>
-          </li>
-          <li>
             <%= link_to destroy_user_session_path, :id => "p_logout" do %>
               <i class="material-icons">highlight_off</i><span><%= t(:logout) %></span>
             <% end %>
