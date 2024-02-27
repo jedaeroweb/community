@@ -1,6 +1,6 @@
 <div id="show-question">
   <div class="row">
-    <article class="col-12 mb-3" itemscope itemprop="article" itemtype="http://schema.org/Article">
+    <article class="col-12 mb-3"  itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
       <div class="sl_content_header">
         <h3 itemprop="name"><%= @question.title %></h3>
         <p class="text-end">
@@ -24,14 +24,17 @@
           <% end %>
         </div>
       </div>
-      <div class="answers">
-        <% @answers.each do |answer| %>
-        <div class="answer media">
-          <%=simple_format answer.content.to_s %>
-        </div>
-        <% end %>
-      </div>
     </article>
+    <div class="answers">
+      <% @answers.each do |answer| %>
+        <article class="answer media" <% if answer.accepted %>itemprop="acceptedAnswer"<% else %>itemprop="suggestedAnswer"<% end %> itemscope itemtype="https://schema.org/Answer">
+          <div itemprop="text">
+          <%=simple_format answer.content.to_s %>
+          </div>
+        </article>
+      <% end %>
+    </div>
+
   </div>
   <div class="row">
     <div class="col-12">
