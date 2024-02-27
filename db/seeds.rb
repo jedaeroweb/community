@@ -327,9 +327,9 @@ Address.create!(parent_address_id: 16, title: '울주군', address_level_id: 2)
 
 Address.create!(parent_address_id: 17, title: '세종특별자치시', address_level_id: 2)
 
-Notice.create!(:id=>1,:title=>'Rails 커뮤니티 홈페이지가 생겼어요',notice_content_attributes: {content: 'Rails 커뮤니티 홈페이지가 개장했습니다.  많은 관심 부탁드려요'})
-Notice.create!(:id=>2,:title=>'레일즈 강좌 시작',notice_content_attributes: {content: '레일즈 강좌를 시작합니다. 초보자도 쉽게 레일즈를 배워보아요'})
-Notice.create!(:id=>3,:title=>'홈페이지 업데이트',notice_content_attributes: {content: '계속적인 업데이트를 시행해고 있습니다.
+Notice.create!(id: 1, title: 'Rails 커뮤니티 홈페이지가 생겼어요',notice_content_attributes: {content: 'Rails 커뮤니티 홈페이지가 개장했습니다.  많은 관심 부탁드려요'})
+Notice.create!(id: 2, title: '레일즈 강좌 시작',notice_content_attributes: {content: '레일즈 강좌를 시작합니다. 초보자도 쉽게 레일즈를 배워보아요'})
+Notice.create!(id: 3, title: '홈페이지 업데이트',notice_content_attributes: {content: '계속적인 업데이트를 시행해고 있습니다.
 다들 더욱더많은 참여 부탁드려요~
 '})
 
@@ -460,15 +460,49 @@ QuestionCategory.create!(id: 6, title: '기타')
 Question.create!(id: 1, program_language_id: 2, question_category_id: 1, user_id: 1, title: 'capistrano deploy sshkit 애러', content: 'capistrano deploy하는데
 sshkit rescue in block (2 levels) : Exception while executing as deploy@deploy_server: fingerprint does not match xxx in execute SSHKit::Runner::ExecuteError
 애러 나오는면서 중지 되는데 어떻게 해결해야될까요?')
-Question.create!(id: 2, program_language_id: 2, question_category_id: 1, user_id: 2, title: '뭐지요', content: '적산의뢰2 내용')
-Question.create!(id: 3, program_language_id: 2, question_category_id: 2, user_id: 3, title: '뭐지요', content: '설계의뢰1 내용')
+Question.create!(id: 2, program_language_id: 2, question_category_id: 3, user_id: 2, title: 'GET으로 되어있는 삭제링크 처리', content: '
+게시판 페이지 작성 중, 글을 삭제할떄에
+location.href="delete_ok.php?no="+<?=$list_row[\'no\']?>;
+이런식으로 delete문이 있는 페이지에 get형식으로 값을 전달해서 삭제처리를 하게끔 해놓았는데요,,
+아무리 봐도 저렇게 두면은 너무 위험할거같은데, 어떻게 수정 또는 변경을 해야할까요?
+')
+Answer.create!(user_id:1, question_id: 2, content: '
+아주 않좋고 위험한것 맞습니다.
+원칙적으로 삭제,입력은 POST로만 되게 해야됩니다.
+그래야 좋은 품질이고요
+
+jquery $.post만을 써도 되지만 이런 경우 javascript작동 안할 시 작동 안하므로
+
+그것보다는 form을 만들고(method="post")  form.submit 이벤트에서 가로채서 이 때 $.post로 보내고 return false해주면
+javascript가 되던 안되던 완벽히 작동하는 좋은 품질을 만들 수 있습니다.  <= 이것을 한번에 다 해주는 jquery plugin도 있습니다
+
+http://jquery.malsup.com/form/
+')
+
+Question.create!(id: 3, program_language_id: 2, question_category_id: 3, user_id: 3, title: 'php DOM, innerHTML같은 기능 없나요? ', content: '
+PHP DOM으로 HTML문서의 특정 엘러먼트 안에 다른 문서의 내용을 넣고 싶습니다.
+즉 자바스크립트의 innerHTML같은 기능이 필요합니다.
+
+그런데 innerHTML은 고사하고 2개의 문서를 불러와서 넣는것도 안되는군요
+아예 경고 메세지로 다른 파일의 엘러먼트 삽입은 안된다고 하네요
+
+PHP로는 두개의 문서를 DOM으로 합칠 방법이 없는건가요??
+이런 문제 해결했던분 가르쳐 주세요
+
+
+
+PS. getElementById도 안되서 죽을 고생했었는데 알고보니 PHP에서는 DTD가 포함된 문서만 getElementById 기능이 된다는군요, 경고 메세지도 안뜨고... 망할. 근데 이번 거는 해결방법이 있을지 막막하네요,  원래 안되는건지.........
+')
+Answer.create!(user_id:1, question_id: 3, content: '$dom->createDocumentFragment() 이렇게 처리하면 됩니다.')
+
+
 Question.create!(id: 4, program_language_id: 2, question_category_id: 3, user_id: 4, title: '날짜표시 예쁘게 하려면 어떻게 하나요?', content: '날짜 나오게 하면 2024-01-01 이런식으로 나오는데
 이거 다른 방법으로 예쁘게 나오게 만들수 있나요?')
 
 
-Answer.create!(id: 1, user_id:1, question_id: 1, content: 'deploy.rb에 "set :ssh_options, verify_host_key: :never" 추가해주시면 넘어갑니다.')
+Answer.create!(user_id:1, question_id: 1, content: 'deploy.rb에 "set :ssh_options, verify_host_key: :never" 추가해주시면 넘어갑니다.')
 
-Answer.create!(id: 2, user_id:1, question_id: 4, content: '날짜 나오게 하려면 <%= I18n.l article.created_at.to_date, :format => :long %>
+Answer.create!(user_id:1, question_id: 4, content: '날짜 나오게 하려면 <%= I18n.l article.created_at.to_date, :format => :long %>
 이런식으로 하면 2023년 12월 30일 (토)이런 날짜로 나오고
 <%= time_ago_in_words article.created_at.to_date %> 로 하면 몇일전, 몇주전, 몇년전  이런식으로 표시 되며 해당 표시 방법은
 config/locales/ko.yml 에서 설정하면 됩니다.
@@ -493,13 +527,33 @@ config/locales/ko.yml 에서 설정하면 됩니다.
 
 Question.create!(id: 5, program_language_id: 1, question_category_id: 3, user_id: 2, title: 'HTML화면을 PDF로 전환, 다운받게하기', content: 'HTML화면을 PDF로 출력하여 다운로드 받게 하고 싶은데 어떻게 해야 될까요??')
 
-Answer.create!(id: 3, user_id:1, question_id: 5, content: 'HTML PDF로 만들기 wkhtmltopdf가 제일 좋습니다.
+Answer.create!(user_id:1, question_id: 5, content: 'HTML PDF로 만들기 wkhtmltopdf가 제일 좋습니다.
 해당 프로그램 프로그램별로 확장프로그램도 있어서 골라 쓰면 됩니다~
 ')
 
+Question.create!(id: 6, program_language_id: 1, question_category_id: 3, user_id: 2, title: 'PHP 서버 실행하려면 어떻게 해야되나요?', content: 'PHP개발을 하려고 서버를 돌려야 되는데 어떻게 해야될까요?')
+Answer.create!( user_id:1, question_id: 6, content: '
+개발시 PHP서버 설정없이 서버 실행하는 법은 간단해요
+개발시에는 굳이 웹서버 돌릴 필요없고요
 
-Question.create!(id: 6, program_language_id: 1, question_category_id: 3, user_id: 2, title: 'PHP 서버설정 없이 서버실행', content: 'PHP서버 설정없이 서버 실행하는 법은 간단해요')
-Answer.create!(id: 4, user_id:1, question_id: 6, content: 'PHP -S 아이피')
+터미널에서
+"php -S 아이피:포트번호" 입력하면 됩니다.
+')
+
+
+Question.create!(id: 7, program_language_id: 1, question_category_id: 5, user_id: 2, title: 'unique FK관련 처리시 방법 문의드립니다.', content: '
+  unique한 FK가 있을때 처리하는 방법 문의드립니다.
+  SELECT하고 해당 키가 있으면  INSERT하고  없으면 UPDATE하는 코드를 짜려고 하는데 저렇게 처리하면될까요??
+')
+Answer.create!( user_id:1, question_id: 7, content: '
+   SELECT으로 존재 검사하고 INSERT, UPDATE하는 코드 다 버리세요 <= 저런 코드를 쓰는 프로그래머는 "나는 하수다" 인증하는것입니다.
+   아예 그렇게 쓰라고 만든게 ON DUPLICATE KEY UPDATE 입니다.
+   보통은 필요없지만
+   ON DUPLICAKET KEY UPDATE 처리의 리턴값으로도 INSERT되었는지 UPDATE되었는지 판단 할 수 있습니다.
+   혹시 필요하면 리턴값을 이용하면 됩니다.
+')
+
+
 
 Gallery.create!(user_id: 1, title: '멋진나1', content: '멋진나1',:photo=>File.open(Rails.root.join("app", "assets", "images", "1.jpg")))
 Gallery.create!(user_id: 1, title: '멋진나2', content: '멋진나2',:photo=>File.open(Rails.root.join("app", "assets", "images", "2.jpg")))
