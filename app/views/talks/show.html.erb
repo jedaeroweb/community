@@ -9,7 +9,7 @@
         </p>
       </div>
       <div class="sl_content_main">
-        <div class="sl_content_text" itemprop="text"><%=simple_format @talk.content.to_s %></div>
+        <div class="sl_content_text" itemprop="text"><%=simple_format sanitize(@talk.content.to_s.gsub(/\n/, '<br />'), :tags => %w(br img a)) %></div>
         <div class="vote">
           <% if user_signed_in? %>
             <%= link_to like_talk_path(@talk), method: :put do %>
