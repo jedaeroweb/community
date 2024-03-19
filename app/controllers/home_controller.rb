@@ -7,7 +7,7 @@ class HomeController < ApplicationController
 
     @question_categories= QuestionCategory.where(enable: true)
 
-    @galleries = Gallery.order('id desc').page(0).per(24)
+    @galleries = Gallery.page(0).per(6).order('id desc')
 
 
     @blog_count = Blog.where(condition).count

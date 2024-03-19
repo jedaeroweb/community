@@ -43,11 +43,11 @@ class GalleryUploader < CarrierWave::Uploader::Base
   end
 
   version :medium_thumb do
-    process :resize_to_fill => [200, 200]
+    process :resize_to_fill => [220, 220]
   end
 
   version :large_thumb do
-    process :resize_to_fill => [400, 300]
+    process :resize_to_fill => [400, 400]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

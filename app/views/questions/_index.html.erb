@@ -12,7 +12,7 @@
 	<% unless question_category.questions_count.zero? %>
 	<ul>
 		<% question_category.questions.each do |question| %>
-		<li><%=link_to(question.title,question,question_category:question_category) %> <span class="float-right text-secondary d-none d-sm-block"><%=time_ago_in_words question.created_at.to_date %></span></li>
+		<li><%=link_to(question.title,question,question_category:question_category) %> <span class="float-end text-secondary d-none d-sm-block"><%=time_ago_in_words question.created_at.to_date %></span></li>
 		<% end %>
 	</ul>
 	<% else %>
