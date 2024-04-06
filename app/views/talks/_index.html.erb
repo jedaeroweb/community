@@ -8,9 +8,7 @@
       </div>
       <% unless @talk_count.zero? %>
         <% @talks.each do |talk| %>
-          <% cache talk do %>
             <%=render 'talks/index_media',talk: talk %>
-          <% end %>
         <% end %>
       <% else %>
         <div class="talk col-12">

@@ -8,9 +8,7 @@
       </div>
       <% unless @blog_count.zero? %>
         <% @blogs.each do |blog| %>
-          <% cache blog do %>
             <%=render 'blogs/index_media',blog: blog %>
-          <% end %>
         <% end %>
       <% else %>
         <div class="blog col-12">
