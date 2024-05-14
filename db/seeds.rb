@@ -868,7 +868,7 @@ Talk.create!(id: 14, user_id: 1, title: '가성비 가상서버 마련하세요'
 
 
 
-Talk.create!(id: 15, user_id: 1, title: '자동테스트를 써야 프로그래머입니다.',
+Talk.create!(id: 15, user_id: 1, title: '오타로 삽질하는것은 프로그래머 운명인가요?',
 content: 'IS+PHP를 위해서 웹플랫폼 관리자를 설치하고
 IIS인터넷 정보 서비스 관리자에서 경로설정후에 웹에서 localhost에 접속했지만 나타나는것은 애러~
 
@@ -886,7 +886,7 @@ IIS_USERS,IUSER로 입력했던것이다.
 여러분도 오타, 오인식 조심하세요~~
 ', created_at: 7.day.ago)
 
-Talk.create!(id: 16, user_id: 1, title: '자동테스트를 써야 프로그래머입니다.',
+Talk.create!(id: 16, user_id: 1, title: '웹서버 mineType 미설정으로 삽질함',
 content: '사용자가 비디오 파일을 업로드하고 그내용 볼수 있게 하는 게시판을 만들고 있었습니다.
 
   이미 이전에도 했던 내용이라 별 어러움 없이 처리 될줄 알았는데 안되는겁니다!!
