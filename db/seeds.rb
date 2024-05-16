@@ -696,6 +696,33 @@ Answer.create!( user_id:1, question_id: 7, content: '
 ')
 
 
+Question.create!(id: 8, program_language_id: 1, question_category_id: 6, user_id: 2, title: '기간별 예약 프로그램을 처리하려고 하는데요', content: '
+몇일 부터 몇일 까지 이렇게 선택하는데
+만약 2024 - 5 - 8 부터 2024 - 5 - 12 일 이라고 할때
+9일 10일 11일 은 예약을 못하잖아요 그럼 데이터베이스도 이 중간날자를 따로 구해서 데이터베이스에 예약정보를 넣고
+예약을 막으려고하는데 보통 이렇게 처리하는게 좋을까요??
+다른분들은 어떤식으로 처리하는지 궁금해서요
+')
+Answer.create!( user_id:1, question_id: 8, content: '
+그렇게 처리하면 안됩니다!!
+시작하고 끝날짜만 넣어도 가능하기 때문입니다.
+
+http://www.gurubee.net/article/50256
+')
+
+Question.create!(id: 9, program_language_id: 2, question_category_id: 2, user_id: 2, title: 'rake 실행시 애러', content: '
+rake 실행하는데 이런게 애러메시지 나면서 안되는데 어떻게 해야하나요?
+rake aborted!
+Gem::LoadError: You have already activated rake 13.2.1, but your Gemfile requires rake 13.1.0. Prepending `bundle exec` to your command may solve this. (Gem::LoadError)
+')
+Answer.create!( user_id:1, question_id: 9, content: '
+Gemfile.lock의 rake버전과 현제 버전이 달라서 그런겁니다.
+메세지 설명대로 bundle exec rake로 실행하거나
+다른 방법으로는 Gemfile.lock을 삭제하고 다시 bundle install해주면 그냥 rake를 쓸 수 있습니다.
+')
+
+
+
 
 Gallery.create!(user_id: 1, title: '멋진나1', content: '멋진나1',:photo=>File.open(Rails.root.join("app", "assets", "images", "1.jpg")))
 Gallery.create!(user_id: 1, title: '멋진나2', content: '멋진나2',:photo=>File.open(Rails.root.join("app", "assets", "images", "2.jpg")))
