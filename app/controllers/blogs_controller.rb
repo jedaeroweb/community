@@ -25,7 +25,7 @@ class BlogsController < ApplicationController
     @blog_category_count=BlogCategory.where(enable: true).count
     @blog_categories=BlogCategory.where(enable: true)
 
-    params[:per_page] = 10 unless params[:per_page].present?
+    params[:per_page] = 12 unless params[:per_page].present?
 
     if params[:category]
       @blog_category = BlogCategory.find(params[:category])
@@ -51,6 +51,9 @@ class BlogsController < ApplicationController
   # GET /blogs/1.json
   def show
     @comment  = Comment.build_from(@blog, current_user, "")
+
+    @meta_keywords=@blog.tag_list+','+t(:meta_keywords)
+    @title=@blog.title
 
     respond_to do |format|
       format.html # show.html.erb

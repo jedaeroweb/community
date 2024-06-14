@@ -1,9 +1,9 @@
 <%
-  render_templete='index_default'
+  render_templete='talks/index_default'
 
   if session[:talk_list_type].present?
     if session[:talk_list_type]=='list'
-      render_templete='index_list'
+      render_templete='talks/index_list'
     end
   end
 
@@ -14,9 +14,9 @@
   </div>
   <div class="row">
     <% if session[:search_detail].present? %>
-      <%=render 'search_form_detail' %>
+      <%=render 'talks/search_form_detail' %>
     <%  else %>
-      <%=render 'search_form' %>
+      <%=render 'talks/search_form' %>
     <% end %>
     <div class="col-12">
       <ul class="type-selector">

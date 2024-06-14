@@ -24,6 +24,9 @@
           <% end %>
         </div>
       </div>
+      <p>
+        Tags: <%= raw @talk.tags.map { |t| link_to t, tag_path(:tag=>t.name) }.join(', ') %>
+      </p>
     </article>
   </div>
   <script>

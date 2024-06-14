@@ -5,6 +5,8 @@ ko:
   meta_keywords : '개발자 커뮤니티, 개발자, 개발공부, ruby, nodejs, ror, sinatra'
   meta_image : 'https://assets.sleepinglion.pe.kr/sl.jpg'
   meta_url : 'https://community.jedaeroweb.co.kr'
+  title_separator : '-'
+  default_title : '제대로 개발자모임'
 
   korean: '한국어'
   chineses: '汉语'

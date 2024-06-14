@@ -22,7 +22,7 @@ class TalksController < ApplicationController
       end
     end
 
-    params[:per_page] = 20 unless params[:per_page].present?
+    params[:per_page] = 12 unless params[:per_page].present?
 
     condition = { enable: true }
 
@@ -40,6 +40,9 @@ class TalksController < ApplicationController
   # GET /blogs/1.json
   def show
     @comment  = Comment.build_from(@talk, current_user, "")
+
+    @meta_keywords=@talk.tag_list+t(:meta_keywords)
+    @title=@talk.title
 
     respond_to do |format|
       format.html # show.html.erb
@@ -129,6 +132,6 @@ class TalksController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def talk_params
-    params.require(:talk).permit(:title, :description, :content, talk_pictures_attributes: [:picture]).merge(user_id: current_user.id)
+    params.require(:talk).permit(:title, :description, :content, :tag_list, talk_pictures_attributes: [:picture]).merge(user_id: current_user.id)
   end
 end

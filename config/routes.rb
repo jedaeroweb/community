@@ -41,6 +41,7 @@ Rails.application.routes.draw do
   get 'privacy', :to=>'intro#privacy', as: 'privacy'
   get 'agreement', :to=>'intro#agreement', as: 'agreement'
   get 'mypage',:to=>'users#index', as: 'mypage'
+  get 'tags/:tag', to: 'tags#index', as: :tag
 
   devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks', :sessions => "users/sessions", :registrations => "users/registrations", :passwords => "users/passwords" }, :path_names => { :sign_up => 'new', :sign_in => 'login', :sign_out => 'logout' } do
     get 'edit', :to => 'users::Registrations#edit'

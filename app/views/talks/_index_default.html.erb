@@ -1,7 +1,7 @@
 <section class="row">
   <% unless @talk_count.zero? %>
     <% @talks.each do |talk| %>
-      <%=render 'index_media',talk: talk %>
+      <%=render 'talks/index_media',talk: talk %>
     <% end %>
     <div class="col-12">
       <%= paginate @talks %>
