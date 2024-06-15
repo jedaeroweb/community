@@ -52,7 +52,8 @@ class BlogsController < ApplicationController
   def show
     @comment  = Comment.build_from(@blog, current_user, "")
 
-    @meta_keywords=@blog.tag_list+','+t(:meta_keywords)
+    @meta_keywords=@blog.tag_list+t(:meta_keywords)
+
     @title=@blog.title
 
     respond_to do |format|
