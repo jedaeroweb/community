@@ -58,7 +58,7 @@ class BlogsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render :json => @blog_comments }
+      format.json { render :json => @blog }
     end
   end
 

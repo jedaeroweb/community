@@ -4,7 +4,6 @@ class Blog < ApplicationRecord
   acts_as_commentable
   acts_as_votable
   has_rich_text :content
-  #acts_as_taggable
   #ActsAsTaggableOn.delimiter = ','
   #ActsAsTaggableOn.force_lowercase = true
   belongs_to :program_language, counter_cache: true

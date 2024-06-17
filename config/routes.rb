@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'home#index'
+  resources :comments, only: [:create, :destroy]
 
   resources :blogs do
     member do
@@ -22,7 +23,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :comments, only: [:create, :destroy]
+
   resources :questions do
     member do
       put 'like', to: 'talks#upvote'
