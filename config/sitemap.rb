@@ -56,4 +56,10 @@ SitemapGenerator::Sitemap.create do
   Talk.find_each do |talk|
     add talk_path(talk), :lastmod => talk.updated_at
   end
+
+  Tag.find_each do |tag|
+    next if tag.taggings_count.zero?
+
+    add tag_path(:tag => tag.name), :lastmod => tag.taggings.first.created_at
+  end
 end
