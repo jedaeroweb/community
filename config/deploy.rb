@@ -1,7 +1,7 @@
 set :application, "community"
 set :repo_url, 'git@github.com:jedaeroweb/community.git'
 set :branch, 'master'
-set :deploy_to, '/home/deploy/community'
+set :deploy_to, '/var/www/html/community'
 
 # set :format, :pretty
 # set :log_level, :debug

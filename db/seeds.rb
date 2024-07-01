@@ -1186,6 +1186,20 @@ genkernel --menuconfig all로 실행후 설정하고 나오면 컴파일이 진�
 컴파일 완료후엔 /boot 디렉토리 가서 잘 완료되었는지 확인하고 Grub에 현재 버전으로 부팅되게 하면 됩니다.
 ")
 
+
+이번에 오라클 클라우드를 사용해보면서 rbenv install 3.2.2 로 루비를 설치하는데
+덕분에 우분투 apt만 쓰다가 yum을 오랬만에 쓰게 되었네요
+
+ruby에 필요한 yaml패키지를 설치하는데 yaml-devel가 없는겁니다?
+엥? 뭐지 그냥 yaml패키지만 설치하면 되나 하면서 진행하는데 역시나 "yaml.h not found" 나오면서 문제가 생기네요.
+  뭐야 이건??  없는 yaml-devel패키지를 어떻게 섳치하라는거야?? -.-;;
+여기 저기 검색해보다 알아보니
+
+dnf config-manager --set-enabled ol8_codeready_builder
+이런거를 해줘야 되었었네요
+
+이렇게 하고나니 yaml-devel패키지가 있고 설처되었으며 그후에 진행하니 rbenv install을 통해서 ruby를 설치할수 있게 되었습니다.
+
 =begin
 
 자기 컴퓨터(보통 local이라고 칭한다. 이하 로칼)를 이용해서 레일즈로 웹사이트를 만든후에 어떻게 해야할까?
