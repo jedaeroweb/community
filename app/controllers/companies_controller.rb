@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  impressionist :actions => [:show]
+  #impressionist :actions => [:show]
   load_and_authorize_resource  except: [:index, :show]
   before_action :set_company, only: [:show, :edit, :update, :destroy]
 

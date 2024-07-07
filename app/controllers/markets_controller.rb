@@ -1,5 +1,5 @@
 class MarketsController < ApplicationController
-  impressionist :actions => [:show]
+  #impressionist :actions => [:show]
   load_and_authorize_resource  except: [:index, :show]
   before_action :set_market, only: [:show, :edit, :update, :destroy]
 

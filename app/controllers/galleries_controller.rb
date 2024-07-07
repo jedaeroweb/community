@@ -1,5 +1,5 @@
 class GalleriesController < ApplicationController
-  impressionist :actions => [:show]
+  #impressionist :actions => [:show]
   before_action :authenticate_user!, :except => [:index, :show]
   before_action :set_gallery, only: [:show, :edit, :update, :destroy]
   # GET /galleries

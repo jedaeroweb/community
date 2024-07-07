@@ -31,18 +31,6 @@ class ApplicationController < ActionController::Base
     @current_ability ||= UserAbility.new(current_user)
   end
 
-
-  def set_locale
-    I18n.locale = params[:locale] || session[:locale] || I18n.default_locale
-    session[:locale] = I18n.locale
-  end
-
-  #  def default_url_options(options={})
-  #    18n={ locale: I18n.locale }
-  #
-  #    return i18n
-  #  end
-
   def layout
     if params[:no_layout]
       return false

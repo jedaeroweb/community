@@ -1,6 +1,6 @@
 class UserPointLogsController < ApplicationController
   load_and_authorize_resource except: [:complete]
-  before_action :set_user_point_log, only: [:show, :edit, :update, :destroy]
+  before_action :set_user_point_log, only: [:show]
 
   # GET /user_point_logs/1
   # GET /user_point_logs/1.json
