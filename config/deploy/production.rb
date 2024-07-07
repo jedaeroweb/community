@@ -3,7 +3,7 @@
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-server "web_server", user: "deploy", roles: %w{app db web}
+server 'deploy_server', user: 'deploy', roles: %w{app db web}
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
@@ -29,7 +29,7 @@ server "web_server", user: "deploy", roles: %w{app db web}
 # These variables are then only loaded and set in this stage.
 # For available Capistrano configuration variables see the documentation page.
 # http://capistranorb.com/documentation/getting-started/configuration/
-# Feel free to add complete variables to customise your setup.
+# Feel free to add new variables to customise your setup.
 
 
 
@@ -42,7 +42,7 @@ server "web_server", user: "deploy", roles: %w{app db web}
 # Global options
 # --------------
 #  set :ssh_options, {
-#    keys: %w(/home/user_name/.ssh/id_rsa),
+#    keys: %w(/home/rlisowski/.ssh/id_rsa),
 #    forward_agent: false,
 #    auth_methods: %w(password)
 #  }

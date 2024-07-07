@@ -1,6 +1,6 @@
 class NoticesController < ApplicationController
   impressionist :actions => [:show]
-  before_action :set_notice, only: [:show, :edit, :update, :destroy]
+  before_action :set_notice, only: [:show]
 
   # GET /notices
   # GET /notices.json

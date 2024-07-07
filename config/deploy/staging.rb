@@ -29,7 +29,7 @@
 # These variables are then only loaded and set in this stage.
 # For available Capistrano configuration variables see the documentation page.
 # http://capistranorb.com/documentation/getting-started/configuration/
-# Feel free to add complete variables to customise your setup.
+# Feel free to add new variables to customise your setup.
 
 
 
@@ -42,7 +42,7 @@
 # Global options
 # --------------
 #  set :ssh_options, {
-#    keys: %w(/home/user_name/.ssh/id_rsa),
+#    keys: %w(/home/rlisowski/.ssh/id_rsa),
 #    forward_agent: false,
 #    auth_methods: %w(password)
 #  }

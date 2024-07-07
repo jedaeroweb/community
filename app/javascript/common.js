@@ -63,8 +63,8 @@
         }
     })
 
-    window.addEventListener('DOMContentLoaded', () => {
-        showActiveTheme(getPreferredTheme())
+    const themeChange = () => {
+        showActiveTheme(getPreferredTheme());
 
         document.querySelectorAll('[data-bs-theme-value]')
             .forEach(toggle => {
@@ -75,5 +75,8 @@
                     showActiveTheme(theme, true)
                 })
             })
-    })
+    }
+
+    window.addEventListener('DOMContentLoaded', themeChange );
+    window.addEventListener("turbo:load", themeChange);
 })()

@@ -1,11 +1,11 @@
 set :application, "community"
-set :repo_url, 'git@github.com:jedaeroweb/community.git'
-set :branch, 'master'
-set :deploy_to, '/var/www/html/community'
+set :repo_url, "git@github.com:jedaeroweb/community.git"
+set :branch, 'main'
+set :deploy_to, '/home/deploy/community'
 
 # set :format, :pretty
 # set :log_level, :debug
-set :pty, true
+#set :pty, true
 set :linked_files, %w{config/database.yml config/master.key .env}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/assets public/uploads}
 

@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   layout :layout
-  before_action :set_locale
+  #before_action :set_locale
   before_action :set_og_title
 
   def initialize(*params)
