@@ -327,11 +327,11 @@ Address.create!(parent_address_id: 16, title: '울주군', address_level_id: 2)
 
 Address.create!(parent_address_id: 17, title: '세종특별자치시', address_level_id: 2)
 
-Notice.create!(id: 1, title: 'Rails 커뮤니티 홈페이지가 생겼어요',notice_content_attributes: {content: 'Rails 커뮤니티 홈페이지가 개장했습니다.  많은 관심 부탁드려요'})
-Notice.create!(id: 2, title: '레일즈 강좌 시작',notice_content_attributes: {content: '레일즈 강좌를 시작합니다. 초보자도 쉽게 레일즈를 배워보아요'})
-Notice.create!(id: 3, title: '홈페이지 업데이트',notice_content_attributes: {content: '계속적인 업데이트를 시행해고 있습니다.
+Notice.create!(id: 1, title: 'Rails 커뮤니티 홈페이지가 생겼어요',content: 'Rails 커뮤니티 홈페이지가 개장했습니다.  많은 관심 부탁드려요')
+Notice.create!(id: 2, title: '레일즈 강좌 시작',content: '레일즈 강좌를 시작합니다. 초보자도 쉽게 레일즈를 배워보아요')
+Notice.create!(id: 3, title: '홈페이지 업데이트',content: '계속적인 업데이트를 시행해고 있습니다.
 다들 더욱더많은 참여 부탁드려요~
-'})
+')
 
 
 BlogCategory.create!(id: 1, title: '설치,설정')
