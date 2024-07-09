@@ -14,7 +14,7 @@
 
 @charset "utf-8";
 
-@import 'jquery.fancybox';
+@import '../jquery.fancybox';
 @import 'bootstrap/scss/bootstrap';
 
 @font-face {
@@ -403,9 +403,6 @@ article.talk .media,article.question .media {min-height:13em}
   }
   #main {
     padding-top: 5em
-  }
-  .container {
-    width: 1450px
   }
   .sub-main {
     margin-top: 1.5em;
