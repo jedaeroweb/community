@@ -971,6 +971,29 @@ https://www.openttd.org/
 ', created_at: 5.day.ago)
 
 
+Talk.create!( user_id: 1, title: '저 왜 pornhub 잘 나오는거지요?', tag_list: 'pornhub, 개한민국, 헬조선',
+              content: '어느날 부터인가 pornhub잘 나오네요
+
+VPN그런거 한적 없고요
+
+개발환경 만들면서 수없이 설치,설정등은 한적 있어요
+
+그래서 보니 집네트워크 때문인가 해서 보니 다른컴퓨터는 안되고 지금 메인컴(노트북)만 되고요
+
+컴퓨터 때문인가 해서보니 다른데서는 차단 되네요
+
+
+
+여기 집네트워크+메인컴의 조합이여야지만 나오는 듯 한데요
+
+어찌 된 일일까요?
+
+
+
+이렇게 좋은 pornhub 차단하는 우리나라 X같은 나라
+', created_at: 5.day.ago)
+
+
 
 
 
