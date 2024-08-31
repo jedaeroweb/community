@@ -109,13 +109,13 @@ GEM
     aes_key_wrap (1.1.0)
     airbrussh (1.5.2)
       sshkit (>= 1.6.1, != 1.7.0)
-    asset_sync (2.19.1)
+    asset_sync (2.19.2)
       activemodel (>= 4.1.0)
       fog-core
       mime-types (>= 2.99)
       unf
-    awesome_nested_set (3.6.0)
-      activerecord (>= 4.0.0, < 7.2)
+    awesome_nested_set (3.7.0)
+      activerecord (>= 4.0.0, < 8.0)
     azure-core (0.1.15)
       faraday (~> 0.9)
       faraday_middleware (~> 0.10)
@@ -316,7 +316,7 @@ GEM
     multipart-post (2.4.1)
     mutex_m (0.2.0)
     mysql2 (0.5.6)
-    net-imap (0.4.14)
+    net-imap (0.4.15)
       date
       net-protocol
     net-pop (0.1.2)
@@ -376,9 +376,10 @@ GEM
       omniauth-oauth2 (>= 1.6)
     omniauth-naver (0.2.0)
       omniauth-oauth2 (~> 1.2)
-    omniauth-oauth (1.2.0)
+    omniauth-oauth (1.2.1)
       oauth
       omniauth (>= 1.0, < 3)
+      rack (>= 1.6.2, < 4)
     omniauth-oauth2 (1.8.0)
       oauth2 (>= 1.4, < 3)
       omniauth (~> 2.0)
@@ -469,7 +470,7 @@ GEM
       ffi (~> 1.12)
       logger
     rubyzip (2.3.2)
-    selenium-webdriver (4.23.0)
+    selenium-webdriver (4.24.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
@@ -602,4 +603,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   2.5.17
+   2.5.18
