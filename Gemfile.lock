@@ -590,7 +590,6 @@ DEPENDENCIES
   omniauth-rails_csrf_protection
   omniauth-twitter
   puma (>= 5.0)
-  rack (< 3)
   rails (~> 7.1.5)
   rails-letsencrypt
   recaptcha
