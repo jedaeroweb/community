@@ -1,24 +1,19 @@
-# README
+# What is Jedaeroweb Community
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[community.jedaeroweb.co.kr](https://www.sleepinglion.pe.kr) Source
 
-Things you may want to cover:
+[community.jedaeroweb.co.kr](https://www.sleepinglion.pe.kr) is jedaeroweb community homepage
 
-* Ruby version
+This Application is composed of [Rails](http://rubyonrails.org/) + UI [Boostrap](http://getbootstrap.com)
 
-* System dependencies
+## Server Requirements
 
-* Configuration
+[Rails](http://rubyonrails.org/) version 7 or newer is recommended.
 
-* Database creation
+## License
 
-* Database initialization
+MIT, All Free
 
-* How to run the test suite
+## Author
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[Jeedaeroweb](https://www.jedaeroweb.co.kr)
