@@ -554,7 +554,7 @@ ko:
         enable : '보임'
         updated_at : '수정일시'
         created_at : '가입일시'
-      user_picture :
+      user_pictures :
         picture : '이미지'
       notice :
         title : '제목'
