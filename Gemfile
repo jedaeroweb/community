@@ -49,7 +49,7 @@ gem 'rmagick'
 gem 'sitemap_generator'
 gem 'meta-tags'
 gem 'gretel'
-gem 'nokogiri', '>= 1.14.2'
+gem 'nokogiri', '>= 1.14.3'
 gem 'impressionist'
 gem 'acts-as-taggable-on'
 gem 'acts_as_commentable_with_threading'
@@ -67,7 +67,7 @@ gem 'omniauth-apple'
 gem 'omniauth-twitter'
 gem 'omniauth-github'
 #gem 'omniauth-kakao', path: "lib/omniauth-kakao"
-
+#gem 'activerecord-sqlserver-adapter'
 gem 'sassc-rails'
 gem 'bootstrap', '~> 5.3'
 
