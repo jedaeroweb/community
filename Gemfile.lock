@@ -302,7 +302,7 @@ GEM
     mime-types (3.7.0)
       logger
       mime-types-data (~> 3.2025, >= 3.2025.0507)
-    mime-types-data (3.2025.0701)
+    mime-types-data (3.2025.0708)
     mini_magick (5.2.0)
       benchmark
       logger
@@ -318,7 +318,7 @@ GEM
       faraday-cookie_jar (~> 0.0.6)
       ms_rest (~> 0.6.3)
     msgpack (1.8.0)
-    multi_json (1.15.0)
+    multi_json (1.16.0)
     multi_xml (0.7.2)
       bigdecimal (~> 3.1)
     multipart-post (2.4.1)
