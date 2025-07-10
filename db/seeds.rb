@@ -1050,6 +1050,35 @@ Talk.create!( user_id: 1, title: '세계 TOP 5 최강국이였던 우리나라(�
 ', created_at: 1.day.ago)
 
 
+Talk.create!( user_id: 1, title: '우분투 쓰레기 되었네', content: '
+쌍욕 나오는 ubuntu snap 패키지 관리
+
+원래 젠투(gentoo) 리눅스 쓰다가 우분투로 최근 몇 년간 썼었음
+
+이제 그냥 우분투 쓰면 되겠구나 하고 쓰는데
+
+snap이 처음 나왔을때 부터 점점 빡치게 하더니
+
+이번 버전 깔아보니 이상하게 너무 느린것임, 알고보니 snap 이라 그랬음
+
+snap으로 깔려있는거 지우고 deb으로 설치하니 원래대로 바로 됨
+
+다른 프로그램과의 연동도 안되는 것임, 알고보니 snap 때문이였음
+
+snap 싹 지우고 deb으로 바꾸려고 해보니 그러느니 그냥 gentoo로 돌아가는게 나은것 같음
+
+
+
+우분투 싹 지우고 gentoo로 돌아옴
+
+오랜만에 하니 커널컴파일하고, nvidia-drivers설치, X설정 부분에서 헤멧지만 AI 도움으로 이제 다 쉽게 해결
+
+역시 gentoo 가 짱이네
+
+앞으로는 영원히 우분투 버리고 gentoo로만 써야겠다.
+');
+
+
 Market.create!(id: 1, user_id: 4, title: '워드프레스사이트 제작', content: '
 워드프레스를 이용한 사이트 제작을 하려고 합니다.
 ', created_at: 7.day.ago)
@@ -1276,3 +1305,5 @@ dnf config-manager --set-enabled ol8_codeready_builder
 이런거를 해줘야 되었었네요
 
 이렇게 하고나니 yaml-devel패키지가 있고 설처되었으며 그후에 진행하니 rbenv install을 통해서 ruby를 설치할수 있게 되었습니다.')
+
+

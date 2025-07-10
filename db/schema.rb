@@ -15,7 +15,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
     t.string "name", null: false
     t.text "body"
     t.string "record_type", null: false
-    t.bigint "record_id", null: false
+    t.integer "record_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
@@ -24,8 +24,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
-    t.bigint "record_id", null: false
-    t.bigint "blob_id", null: false
+    t.integer "record_id", null: false
+    t.integer "blob_id", null: false
     t.datetime "created_at", precision: nil, null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
@@ -44,7 +44,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
   end
 
   create_table "active_storage_variant_records", force: :cascade do |t|
-    t.bigint "blob_id", null: false
+    t.integer "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
@@ -58,8 +58,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
   end
 
   create_table "addresses", force: :cascade do |t|
-    t.bigint "parent_address_id", default: 0, null: false
-    t.bigint "address_level_id", default: 1, null: false
+    t.integer "parent_address_id", default: 0, null: false
+    t.integer "address_level_id", default: 1, null: false
     t.string "title", limit: 60, null: false
     t.integer "ads_count", default: 0, null: false
     t.integer "company_addresses_count", default: 0, null: false
@@ -72,8 +72,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
   end
 
   create_table "admin_login_logs", force: :cascade do |t|
-    t.bigint "admin_id", null: false
-    t.bigint "client_ip", null: false
+    t.integer "admin_id", null: false
+    t.integer "client_ip", limit: 8, null: false
     t.boolean "enable", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -81,7 +81,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
   end
 
   create_table "admin_pictures", force: :cascade do |t|
-    t.bigint "admin_id", null: false
+    t.integer "admin_id", null: false
     t.string "picture", null: false
     t.boolean "enable", default: true, null: false
     t.datetime "created_at", null: false
@@ -106,8 +106,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
   end
 
   create_table "answers", force: :cascade do |t|
-    t.bigint "question_id", null: false
-    t.bigint "user_id", null: false
+    t.integer "question_id", null: false
+    t.integer "user_id", null: false
     t.boolean "accepted", default: false, null: false
     t.boolean "enable", default: true, null: false
     t.datetime "created_at", null: false
@@ -116,7 +116,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
-  create_table "authentication_providers", id: :integer, force: :cascade do |t|
+  create_table "authentication_providers", force: :cascade do |t|
     t.string "name", limit: 60, null: false
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
@@ -132,7 +132,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
   end
 
   create_table "blog_pictures", force: :cascade do |t|
-    t.bigint "blog_id", null: false
+    t.integer "blog_id", null: false
     t.string "picture", null: false
     t.boolean "enable", default: true, null: false
     t.datetime "created_at", null: false
@@ -141,10 +141,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
   end
 
   create_table "blogs", force: :cascade do |t|
-    t.bigint "program_language_id", null: false
-    t.bigint "program_category_id"
-    t.bigint "blog_category_id", null: false
-    t.bigint "user_id", null: false
+    t.integer "program_language_id", null: false
+    t.integer "program_category_id"
+    t.integer "blog_category_id", null: false
+    t.integer "user_id", null: false
     t.string "title", limit: 60, null: false
     t.integer "blog_comments_count", default: 0, null: false
     t.integer "blog_pictures_count", default: 0, null: false
@@ -188,14 +188,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
   end
 
   create_table "companies", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
     t.string "title", null: false
     t.string "phone", null: false
     t.string "code", limit: 20
     t.string "lat", limit: 60
     t.string "lng", limit: 60
-    t.time "start_time", precision: 7, default: '09:00:00.0', null: false
-    t.time "end_time", precision: 7, default: '06:00:00.0', null: false
+    t.time "start_time", default: "2000-01-01 09:00:00", null: false
+    t.time "end_time", default: "2000-01-01 06:00:00", null: false
     t.boolean "basic", default: false, null: false
     t.integer "company_addresses_count", default: 0, null: false
     t.integer "company_pictures_count", default: 0, null: false
@@ -206,8 +206,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
   end
 
   create_table "company_addresses", force: :cascade do |t|
-    t.bigint "company_id", null: false
-    t.bigint "address_id", null: false
+    t.integer "company_id", null: false
+    t.integer "address_id", null: false
     t.boolean "enable", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -216,7 +216,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
   end
 
   create_table "company_pictures", force: :cascade do |t|
-    t.bigint "company_id", null: false
+    t.integer "company_id", null: false
     t.string "picture", null: false
     t.string "caption", limit: 60
     t.boolean "enable", default: true, null: false
@@ -234,7 +234,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
   end
 
   create_table "galleries", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
     t.string "title", limit: 60, null: false
     t.string "location", limit: 255
     t.string "photo", null: false
@@ -264,13 +264,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
     t.index ["controller_name", "action_name", "request_hash"], name: "controlleraction_request_index"
     t.index ["controller_name", "action_name", "session_hash"], name: "controlleraction_session_index"
     t.index ["impressionable_type", "impressionable_id", "ip_address"], name: "poly_ip_index"
+    t.index ["impressionable_type", "impressionable_id", "params"], name: "poly_params_request_index"
     t.index ["impressionable_type", "impressionable_id", "request_hash"], name: "poly_request_index"
     t.index ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index"
+    t.index ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index"
     t.index ["user_id"], name: "index_impressions_on_user_id"
   end
 
   create_table "jobs", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
     t.string "title", limit: 60, null: false
     t.boolean "enable", default: true, null: false
     t.datetime "created_at", null: false
@@ -279,7 +281,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
   end
 
   create_table "markets", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
     t.string "title", limit: 60, null: false
     t.boolean "enable", default: true, null: false
     t.datetime "created_at", null: false
@@ -288,7 +290,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
   end
 
   create_table "notice_pictures", force: :cascade do |t|
-    t.bigint "notice_id", null: false
+    t.integer "notice_id", null: false
     t.string "picture", null: false
     t.string "caption", limit: 60
     t.boolean "enable", default: true, null: false
@@ -306,7 +308,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "program_categories", id: :integer, force: :cascade do |t|
+  create_table "program_categories", force: :cascade do |t|
     t.integer "program_language_id", null: false
     t.string "title", limit: 60, null: false
     t.string "link", limit: 200
@@ -317,7 +319,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
     t.datetime "updated_at", precision: nil, null: false
   end
 
-  create_table "program_languages", id: :integer, force: :cascade do |t|
+  create_table "program_languages", force: :cascade do |t|
     t.string "title", limit: 60, null: false
     t.string "link", limit: 200
     t.integer "blogs_count", default: 0, null: false
@@ -337,8 +339,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
   end
 
   create_table "question_comments", force: :cascade do |t|
-    t.bigint "question_id", null: false
-    t.bigint "user_id"
+    t.integer "question_id", null: false
+    t.integer "user_id"
     t.text "content", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -347,7 +349,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
   end
 
   create_table "question_pictures", force: :cascade do |t|
-    t.bigint "question_id", null: false
+    t.integer "question_id", null: false
     t.string "picture", null: false
     t.boolean "enable", default: true, null: false
     t.datetime "created_at", null: false
@@ -356,10 +358,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
   end
 
   create_table "questions", force: :cascade do |t|
-    t.bigint "question_category_id", null: false
-    t.bigint "user_id", null: false
-    t.bigint "program_language_id", null: false
-    t.bigint "program_category_id"
+    t.integer "question_category_id", null: false
+    t.integer "user_id", null: false
+    t.integer "program_language_id", null: false
+    t.integer "program_category_id"
     t.string "title", limit: 60, null: false
     t.integer "question_comments_count", default: 0, null: false
     t.integer "question_pictures_count", default: 0, null: false
@@ -389,8 +391,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
   end
 
   create_table "role_admins", force: :cascade do |t|
-    t.bigint "role_id", null: false
-    t.bigint "admin_id", null: false
+    t.integer "role_id", null: false
+    t.integer "admin_id", null: false
     t.index ["admin_id"], name: "index_role_admins_on_admin_id"
     t.index ["role_id"], name: "index_role_admins_on_role_id"
   end
@@ -403,7 +405,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "taggings", id: :integer, force: :cascade do |t|
+  create_table "taggings", force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"
     t.integer "taggable_id"
@@ -422,15 +424,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
     t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
   end
 
-  create_table "tags", id: :integer, force: :cascade do |t|
+  create_table "tags", force: :cascade do |t|
     t.string "name"
     t.integer "taggings_count", default: 0
     t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
   create_table "talk_comments", force: :cascade do |t|
-    t.bigint "talk_id", null: false
-    t.bigint "user_id"
+    t.integer "talk_id", null: false
+    t.integer "user_id"
     t.text "content", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -439,7 +441,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
   end
 
   create_table "talk_pictures", force: :cascade do |t|
-    t.bigint "talk_id", null: false
+    t.integer "talk_id", null: false
     t.string "picture", null: false
     t.string "caption", limit: 60
     t.boolean "enable", default: true, null: false
@@ -449,7 +451,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
   end
 
   create_table "talks", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
     t.string "title", limit: 60, null: false
     t.integer "talk_pictures_count", default: 0, null: false
     t.boolean "enable", default: true, null: false
@@ -472,7 +474,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
     t.index ["user_id"], name: "index_talks_on_user_id"
   end
 
-  create_table "user_authentications", id: :integer, force: :cascade do |t|
+  create_table "user_authentications", force: :cascade do |t|
     t.integer "user_id"
     t.integer "authentication_provider_id"
     t.string "uid"
@@ -486,7 +488,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
   end
 
   create_table "user_pictures", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
     t.string "picture", null: false
     t.boolean "enable", default: true, null: false
     t.datetime "created_at", null: false
@@ -495,7 +497,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
   end
 
   create_table "user_point_logs", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
     t.integer "point", default: 0, null: false
     t.boolean "enable", default: true, null: false
     t.datetime "created_at", null: false
@@ -534,9 +536,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
 
   create_table "votes", force: :cascade do |t|
     t.string "votable_type"
-    t.bigint "votable_id"
+    t.integer "votable_id"
     t.string "voter_type"
-    t.bigint "voter_id"
+    t.integer "voter_id"
     t.boolean "vote_flag"
     t.string "vote_scope"
     t.integer "vote_weight"
