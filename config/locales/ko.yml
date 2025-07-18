@@ -12,6 +12,11 @@ ko:
   chineses: '汉语'
   english: 'english'
 
+  theme: '모양'
+  light: '밝은'
+  dark: '어두운'
+  auto: '자동'
+
   site_url: 'community.jedaeroweb.co.kr'
   site_full_url: 'https://community.jedaeroweb.co.kr'
   email_webmaster: 'admin@jedaeroweb.co.kr'
