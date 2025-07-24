@@ -1,8 +1,8 @@
 # What is Jedaeroweb Community
 
-[community.jedaeroweb.co.kr](https://www.sleepinglion.pe.kr) source
+[community.jedaeroweb.co.kr](community.jedaeroweb.co.kr) source
 
-[community.jedaeroweb.co.kr](https://www.sleepinglion.pe.kr) is jedaeroweb community homepage
+[community.jedaeroweb.co.kr](community.jedaeroweb.co.kr) is jedaeroweb community homepage
 
 this application is composed of [Rails](http://rubyonrails.org/) + UI [Boostrap](http://getbootstrap.com)
 
