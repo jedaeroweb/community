@@ -47,7 +47,7 @@
 }
 
 
-$default-bg : #ccc;
+$default-bg : #eee;
 $default-color: $body-color;
 $secondary-bg :#f1f1f1;
 $color-mode-type: data;
@@ -167,7 +167,7 @@ mark, rp, rt, ruby, summary, time {display:inline;}
 
 
 /* header */
-header {position:relative;display:flex;z-index:8;border-bottom:3px solid var(--bs-border-color);background-color:$secondary-bg}
+header {position:relative;display:flex;z-index:8;border-bottom:2px solid var(--bs-border-color);background-color:$secondary-bg}
 header h1 {margin-top:0;padding:0;text-align:left}
 header h1 a:hover {text-decoration: none}
 header h1 a:active {color:$header_light_default_color}
@@ -448,9 +448,10 @@ article.talk .media,article.question .media {min-height:13em}
 }
 
 @include color-mode(light) {
+  header {background: #fff}
   footer {color:#666;border-top-color:#ddd}
   .nav-link.disabled {color:#eee}
-  .sl_content_header,.sl_content_main,.media {background-color:#f1f1f1}
+  .sl_content_header,.sl_content_main,.media {background-color:#fff}
   .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link,.nav-tabs {border-color:#ccc}
   .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {border-bottom-color:#f1f1f1}
   a.btn-primary,a.btn-primary:visited {color:#ccc}
