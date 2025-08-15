@@ -87,3 +87,32 @@ trix-editor blockquote {
   border-left-color: #495057;
   color: #adb5bd;
 }
+
+/* 다크 모드: Action Text (Trix) + Bootstrap */
+[data-bs-theme="dark"] trix-toolbar .trix-button {
+  background: #fff !important;
+}
+[data-bs-theme="dark"] trix-toolbar .trix-button.trix-active {
+  background: #d1d9e9 !important;
+}
+
+/* 나머지 기존 스타일 유지 */
+[data-bs-theme="dark"] trix-editor {
+  background-color: #212529;
+  color: #f8f9fa;
+  border: 1px solid #495057;
+}
+[data-bs-theme="dark"] trix-editor:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.5);
+}
+[data-bs-theme="dark"] trix-toolbar {
+  background-color: #343a40;
+  border: 1px solid #495057;
+}
+[data-bs-theme="dark"] trix-toolbar button {
+  color: #f8f9fa;
+}
+[data-bs-theme="dark"] trix-toolbar button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
