@@ -80,7 +80,9 @@
         <nav>
           <ul class="nav">
             <li class="<% if ['questions'].include? params[:controller] %> active<% end %>">
-              <%= link_to t(:question,scope:[:activerecord,:models]), questions_path %>
+              <%= link_to questions_path,class:'main-menu' do %>
+                <%= t(:question,scope:[:activerecord,:models]) %>
+              <% end %>
             </li>
             <li class="<% if ['markets'].include? params[:controller] %> active<% end %>">
               <%= link_to markets_path,class:'main-menu' do %>
@@ -100,7 +102,7 @@
             <li class="dropdown
             <% if params[:controller] == 'notices' || params[:controller] == 'talks' || params[:controller] == 'galleries' %> active
             <% end %>">
-              <%= link_to notices_path, { class: 'dropdown-toggle',role:"button",'data-bs-toggle': "dropdown",'aria-expanded':"false"} do %>
+              <%= link_to notices_path, { class: 'main-menu dropdown-toggle',role:"button",'data-bs-toggle': "dropdown",'aria-expanded':"false"} do %>
                 <%= t(:menu_community) %>
               <% end %>
               <ul class="dropdown-menu">
