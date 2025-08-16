@@ -79,38 +79,40 @@
       <div class="col-12 col-xxl-9">
         <nav>
           <ul class="nav">
-            <li class="sl-dropdown<% if ['questions'].include? params[:controller] %> active<% end %>">
-              <%= link_to questions_path,class:'main-menu' do %>
-                <%= t(:question,scope:[:activerecord,:models]) %>
-              <% end %>
-              <ul class="sl-dropdown-menu">
-                <li<% if ['questions'].include? params[:controller] %> class="active"<% end %>><%= link_to t(:question,scope:[:activerecord,:models]), questions_path %></li>
-              </ul>
+            <li class="<% if ['questions'].include? params[:controller] %> active<% end %>">
+              <%= link_to t(:question,scope:[:activerecord,:models]), questions_path %>
             </li>
-            <li class="sl-dropdown<% if ['markets'].include? params[:controller] %> active<% end %>">
+            <li class="<% if ['markets'].include? params[:controller] %> active<% end %>">
               <%= link_to markets_path,class:'main-menu' do %>
                 <%= t(:market,scope:[:activerecord,:models]) %>
               <% end %>
             </li>
-            <li class="sl-dropdown<% if ['jobs'].include? params[:controller] %> active<% end %>">
+            <li class="<% if ['jobs'].include? params[:controller] %> active<% end %>">
               <%= link_to jobs_path,class:'main-menu' do %>
                 <%= t(:job,scope:[:activerecord,:models]) %>
               <% end %>
             </li>
-            <li class="sl-dropdown<% if ['blogs'].include? params[:controller] %> active<% end %>">
+            <li class="<% if ['blogs'].include? params[:controller] %> active<% end %>">
               <%= link_to blogs_path,class:'main-menu' do %>
                 <%= t(:blog,scope:[:activerecord,:models]) %>
               <% end %>
-              <ul class="sl-dropdown-menu">
-                <li<% if ['blogs'].include? params[:controller] %> class="active"<% end %>><%= link_to t(:blog,scope:[:activerecord,:models]), blogs_path %></li>
-              </ul>
             </li>
-            <li class="sl-dropdown<% if ['notices'].include? params[:controller] %> active<% end %>">
-              <%= link_to notices_path,class:'main-menu' do %>
+            <li class="dropdown
+            <% if params[:controller] == 'notices' || params[:controller] == 'talks' || params[:controller] == 'galleries' %> active
+            <% end %>">
+              <%= link_to notices_path, { class: 'dropdown-toggle',role:"button",'data-bs-toggle': "dropdown",'aria-expanded':"false"} do %>
                 <%= t(:menu_community) %>
               <% end %>
-              <ul class="sl-dropdown-menu">
-                <li<% if ['notices'].include? params[:controller] %> class="active"<% end %>><%= link_to t(:notice,scope:[:activerecord,:models]), notices_path %></li>
+              <ul class="dropdown-menu">
+                <li
+                  <% if current_page?(talks_path) %> class="active"
+                  <% end %>><%= link_to t(:talk,scope:[:activerecord,:models]), talks_path %></li>
+                <li
+                  <% if current_page?(galleries_path) %> class="active"
+                  <% end %>><%= link_to t(:gallery,scope:[:activerecord,:models]), galleries_path %></li>
+                <li
+                  <% if current_page?(notices_path) %> class="active"
+                  <% end %>><%= link_to t(:notice,scope:[:activerecord,:models]), notices_path %></li>
               </ul>
             </li>
           </ul>
