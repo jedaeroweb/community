@@ -9,7 +9,7 @@ AuthenticationProvider.create!(name: 'github')
 Admin.create!(:id => 1, :email => 'theloss@jedaeroweb.co.kr', :name => '잠자는사자', :password => 'a12345', :password_confirmation => 'a12345')
 
 User.create!(:id => 1, :email => 'user1@jedaeroweb.co.kr', :name => '잠자는사자', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "1.jpg")) }])
-User.create!(:id => 2, :email => 'user2@jedaeroweb.co.kr', :name => '김의인', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "2.jpg")) }])
+User.create!(:id => 2, :email => 'user2@jedaeroweb.co.kr', :name => '국뽕', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "2.jpg")) }])
 User.create!(:id => 3, :email => 'company1@jedaeroweb.co.kr', :name => '임민형', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "3.jpg")) }])
 User.create!(:id => 4, :email => 'company2@jedaeroweb.co.kr', :name => '김종근', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "4.jpg")) }])
 User.create!(:id => 5, :email => 'company3@jedaeroweb.co.kr', :name => '알콜중독자', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "5.jpg")) }])
