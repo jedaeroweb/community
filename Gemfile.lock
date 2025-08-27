@@ -608,7 +608,6 @@ DEPENDENCIES
   debug
   devise
   dotenv-rails
-  faraday
   fog-azure-rm!
   gretel
   image_processing (~> 1.2)

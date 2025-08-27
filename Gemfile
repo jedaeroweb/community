@@ -52,7 +52,6 @@ gem 'impressionist'
 gem 'acts-as-taggable-on'
 gem 'acts_as_commentable_with_threading'
 gem 'acts_as_votable'
-gem 'faraday'
 
 gem 'omniauth'
 gem 'oauth2'
