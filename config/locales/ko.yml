@@ -101,7 +101,6 @@ ko:
   login_p_password : "비밀번호를 써주세요"
   login : "로그인"
   logout : "로그아웃"
-  remember_me : "기억하기"
   delete_user: '회원탈퇴'
 
   all : '전체'
@@ -553,6 +552,7 @@ ko:
         email : 'E-mail'
         password : '비밀번호'
         password_confirmation : '비밀번호확인'
+        remember_me: '로그인 정보 기억하기'
         point : '포인트'
         birthday : '생일'
         address : '주소'

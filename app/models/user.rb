@@ -26,6 +26,10 @@ class User < ApplicationRecord
     self.__send__(params.provider, params)
   end
 
+  def remember_me
+    super || false
+  end
+
   private
 
   def default_values

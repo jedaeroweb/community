@@ -721,6 +721,43 @@ Gemfile.lock의 rake버전과 현제 버전이 달라서 그런겁니다.
 다른 방법으로는 Gemfile.lock을 삭제하고 다시 bundle install해주면 그냥 rake를 쓸 수 있습니다.
 ')
 
+Question.create!(id: 10, program_language_id: 3, question_category_id: 4, user_id: 2, title: 'PHP에서 HTML로 나온 화면 출력을 PDF로 다운로드 받게 하려면?', content: '
+안녕하십니까.
+
+현재 PHP로 개발중입니다. 출력된 하면을 PDF로 생성하고 싶습니다.
+출력된 화면의 html태그 그대로 PDF로 만들고 싶습니다.
+
+그래서 검색해보면 나오는 "jspdf" 나  "html2canvas" 를 이용한 소스로 테스트를 진행해봤는데,
+변환이 되지 않아서 혹시 잘못한 부분이 있을까 해서 질문 드려 봅니다
+')
+Answer.create!( user_id:1, question_id: 10, content: '
+PDF로 출력 하려면  wkhtmltopdf가 제일 좋습니다.
+')
+
+Question.create!(id: 11, program_language_id: 3, question_category_id: 4, user_id: 2, title: ' 폼 검사 문의 드립니다. ', content: '
+현재 HTML 폼 입력란이 많아서 테스트 할 때마다 계속 입력하고 테스트 할 수가 없는데
+어떻게 하시는지 궁금합니다.
+')
+Answer.create!( user_id:1, question_id: 11, content: '
+웹개발에서 진짜 중요한 문제지요.
+할 때 마다 테스트 할 수도 없고요. 그래서 귀찮아서 안하게 되고 문제 생겨도 찾아내지 못하지요
+그래서 자동 테스트 도구가 있습니다.
+
+셀레늄이라고 하고요
+https://www.seleniumhq.org/
+
+이것을 이용한 파생프로그램들도 각 언어별로 다 있고요, 엄청 많습니다.
+브라우저 플러그 인으로도 있고요
+
+저는 그중에 하나인 이거를 https://webdriver.io/ 씁니다.
+이 부분만으로도 많이 공부해야되고요, 대신 한번 해놓으면 다음부터는 자동으로 테스트 할 수 있습니다.
+')
+
+Question.create!(id: 12, program_language_id: 3, question_category_id: 4, user_id: 2, title: 'jquery나 자바스크립트 소스코드 노출 방지방법?', content: '
+자바스크립트로 만든 소스 이렇게 쓰여 있으면 소스 확인할 수 있잖아요?
+js파일 소스코드를 노출시키지 않는 방법이 있나요?
+')
+Answer.create!( user_id:1, question_id: 12, content: '그런거 없습니다. 컴파일된 언어도 다 푸는 마당에 뭔 자바스크립트소스를 그리 감추려 합니까?')
 
 
 
