@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'home#index'
+  get 'feed',:to=>'home#feed'
   resources :comments, only: [:create, :destroy]
 
   resources :blogs do
