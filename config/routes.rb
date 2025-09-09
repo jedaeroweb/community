@@ -56,12 +56,21 @@ Rails.application.routes.draw do
 
   # 관리자
   scope 'admin', module: 'admin', as: 'admin' do
-    get '/' => 'home#index'
+    root to: 'home#index'
 
     resources :admins
-    resources :admin_pictures
-    resources :address_levels
-    resources :addresses
-    resources :user_point_logs
+    resources :users
+    resources :galleries
+    resources :markets
+    resources :jobs
+    resources :talks
+    resources :galleries
+    resources :blogs
+    resources :comments
+    resources :notices
+    resources :questions
+    resources :answers
+    resources :blogs
+    resources :blog_categories
   end
 end

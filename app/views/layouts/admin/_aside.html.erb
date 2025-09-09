@@ -1,54 +1,44 @@
-<aside id="main-menu" class="col-12 col-md-2 col-xxl-1">
-  <h1 class="col-12"><%= link_to t(:service_name), admin_path %></h1>
+<aside id="main-menu" class="col-12 col-md-3 col-lg-2 col-xl-1">
+  <h1 class="col-12"><%= link_to t(:service_name), admin_root_path %></h1>
   <nav>
     <ul class="nav">
       <li class="nav-item
-            <% if params[:controller] == 'admin/ads' %> active
+            <% if ['admin/users'].include?(params[:controller]) %> active
             <% end %>">
-        <%= link_to admin_ads_path, :class => "nav-link" do %>
-          <i class="material-icons">payment</i><span><%= t(:ad, scope: [:activerecord, :models]) %></span>
+        <%= link_to admin_users_path, :class => "nav-link" do %>
+          <i class="material-icons">payment</i><span><%= t(:user,scope:[:activerecord,:models]) %></span>
         <% end %>
       </li>
+
       <li class="nav-item
             <% if ['admin/blogs','admin/blog_categories'].include?(params[:controller]) %> active
             <% end %>">
         <%= link_to admin_blogs_path, :class => "nav-link" do %>
-          <i class="material-icons">person</i><span><%= t(:blog, scope: [:activerecord, :models]) %></span>
+          <i class="material-icons">settings</i><span><%= t(:blog,scope:[:activerecord,:models]) %></span>
         <% end %>
       </li>
+
       <li class="nav-item
-            <% if ['admin/products','admin/product_categories'].include?(params[:controller]) %> active
+            <% if ['admin/question'].include?(params[:controller]) %> active
             <% end %>">
-        <%= link_to admin_products_path, :class => "nav-link" do %>
-          <i class="material-icons">shopping_cart</i><span><%= t(:product, scope: [:activerecord, :models]) %></span>
+        <%= link_to admin_questions_path, :class => "nav-link" do %>
+          <i class="material-icons">settings</i><span><%= t(:question,scope:[:activerecord,:models]) %></span>
         <% end %>
       </li>
+
       <li class="nav-item
-            <% if ['admin/users','admin/companies','admin/user_point_logs'].include?(params[:controller]) %> active
+            <% if ['admin/jobs','admin/markets'].include?(params[:controller]) %> active
             <% end %>">
-        <%= link_to admin_users_path, :class => "nav-link" do %>
-          <i class="material-icons">person</i><span><%= t(:user, scope: [:activerecord, :models]) %></span>
+        <%= link_to admin_jobs_path, :class => "nav-link" do %>
+          <i class="material-icons">settings</i><span><%= t(:job,scope:[:activerecord,:models]) %></span>
         <% end %>
       </li>
+
       <li class="nav-item
-            <% if ['admin/notices','admin/faq_categories','admin/faqs','admin/reviews','admin/reservations'].include?(params[:controller]) %> active
+            <% if ['admin/talks','admin/notices'].include?(params[:controller]) %> active
             <% end %>">
-        <%= link_to admin_reviews_path, :class => "nav-link" do %>
-          <i class="material-icons">people</i><span><%= t(:menu_community) %></span>
-        <% end %>
-      </li>
-      <li class="nav-item
-            <% if ['admin/simulations','admin/simulation_pictures','admin/simulation_materials','admin/user_simulation_materials','admin/simulation_categories'].include?(params[:controller]) %> active
-            <% end %>">
-        <%= link_to admin_user_simulation_materials_path, :class => "nav-link" do %>
-          <i class="material-icons">view_in_ar</i><span><%= t(:simulation, scope: [:activerecord, :models]) %></span>
-        <% end %>
-      </li>
-      <li class="nav-item
-            <% if ['admin/admins','admin/addresses','admin/address_levels','admin/speciality_categories','admin/specialities','admin/materials','admin/sizes'].include?(params[:controller]) %> active
-            <% end %>">
-        <%= link_to admin_admins_path, :class => "nav-link" do %>
-          <i class="material-icons">settings</i><span><%= t(:setting) %></span>
+        <%= link_to admin_talks_path, :class => "nav-link" do %>
+          <i class="material-icons">settings</i><span><%= t(:talk,scope:[:activerecord,:models]) %></span>
         <% end %>
       </li>
     </ul>
