@@ -14,11 +14,12 @@
         </div>
         </div>
       <% else %>
+    <div data-controller="login">
       <%=render 'users/sns' %>
-    <div id="no-sns-id-l" style="border-top:none">
-      <%=link_to 'SNS계정 없음','#',{id: "no-sns-id",class:'text-end d-block'} %>
+    <div style="border-top:none"  data-login-target="noSnsIdParent">
+      <%=link_to 'SNS계정 없음','#',{class:'text-end d-block', data: {'login-target'=>"noSnsId", action: "click->login#toggle"}} %>
     </div>
-    <div id="no-sns-login" style="display:none">
+    <div class="d-none" data-login-target="noSnsLogin">
 
       <% resource = User.new %>
       <% resource_name = :user %>
@@ -56,5 +57,6 @@
           <i class="material-icons">person_add</i><span><%= t(:new_user)%></span>
         <% end %>
       </div>
+    </div>
     <% end %>
 </aside>

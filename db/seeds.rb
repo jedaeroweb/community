@@ -6,7 +6,7 @@ AuthenticationProvider.create!(name: 'facebook')
 AuthenticationProvider.create!(name: 'naver')
 AuthenticationProvider.create!(name: 'github')
 
-Admin.create!(:id => 1, :email => 'theloss@jedaeroweb.co.kr', :name => '잠자는사자', :password => 'a12345', :password_confirmation => 'a12345')
+Admin.create!(:id => 1, :email => 'admin1@jedaeroweb.co.kr', :name => '잠자는사자', :password => 'a12345', :password_confirmation => 'a12345')
 
 User.create!(:id => 1, :email => 'user1@jedaeroweb.co.kr', :name => '잠자는사자', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "1.jpg")) }])
 User.create!(:id => 2, :email => 'user2@jedaeroweb.co.kr', :name => '국뽕', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "2.jpg")) }])

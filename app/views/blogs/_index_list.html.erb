@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-12">
     <div id="blog-main" class="table-responsive">
-      <table class="table table-striped sl-table">
+      <table class="table table-striped" data-controller="click-redirect">
         <colgroup>
           <col>
           <col>
@@ -25,11 +25,11 @@
         <tbody>
         <% unless @blog_count.zero? %>
           <% @blogs.each do |blog| %>
-            <tr>
+            <tr data-action="click->click-redirect#rowClick">
               <td><%=display_user_photo(blog.user) %>&nbsp;&nbsp;<%= blog.user.name.truncate_bytes(16) %></td>
               <td><%=blog.program_language.title %></td>
               <td><%=blog.blog_category.title %></td>
-              <td><%= link_to blog.title, blog %></td>
+              <td><%= link_to blog.title, blog, data: { action: "click->click-redirect#rowLink"} %></td>
               <td class="text-end">
                 <figure class="figure">
                 <%= image_tag blog.blog_picture.picture.small_thumb.url, width:50, height:50,class: 'figure-img img-fluid rounded'  %>

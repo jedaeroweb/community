@@ -7,6 +7,17 @@ class GalleriesController < ApplicationController
   def index
     @galleries = Gallery.where(enable: true).order(:id => 'desc').page(params[:page]).per(30)
 
+    if (params[:id])
+      @gallery = Gallery.find(params[:id])
+    else
+      @gallery = @galleries[0]
+    end
+
+    if @gallery
+      @title = @gallery.title
+      @meta_description = @gallery.content.to_s
+    end
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @galleries }

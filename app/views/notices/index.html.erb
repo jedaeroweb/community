@@ -13,7 +13,7 @@
   <div class="row">
     <div class="col-12">
       <div class="table-responsive">
-        <table class="table table-striped sl-table">
+        <table class="table table-striped" data-controller="click-redirect">
           <colgroup>
             <col>
             <col>
@@ -29,8 +29,8 @@
           <tbody>
           <% unless @notice_count.zero? %>
             <% @notices.each do |notice| %>
-              <tr>
-                <td><%= link_to notice.title, notice %></td>
+              <tr data-action="click->click-redirect#rowClick">
+                <td><%= link_to notice.title, notice, data: { action: "click->click-redirect#rowLink"} %></td>
                 <td class="text-end"><%= notice.impressionist_count(:filter => :ip_address) %></td>
                 <td class="text-end text-secondary d-none d-lg-table-cell"><%= time_ago_in_words notice.created_at.to_date %></td>
               </tr>

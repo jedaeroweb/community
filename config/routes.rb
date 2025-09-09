@@ -45,18 +45,16 @@ Rails.application.routes.draw do
   get 'mypage',:to=>'users#index', as: 'mypage'
   get 'tags/:tag', to: 'tags#index', as: :tag
 
-  devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks', :sessions => "users/sessions", :registrations => "users/registrations", :passwords => "users/passwords" }, :path_names => { :sign_up => 'new', :sign_in => 'login', :sign_out => 'logout' } do
-    get 'edit', :to => 'users::Registrations#edit'
-    get 'login', :to => 'users::Sessions#new'
-    get 'logout', :to=> 'users::Sessions#destroy'
+  devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks', :sessions => "users/sessions", :registrations => "users/registrations", :passwords => "users/passwords" }, :path_names => { :sign_up => 'new', :sign_in => 'login', :sign_out => 'logout' }
+
+
+  devise_scope :user do
+    get '/login', to: 'users/sessions#new', as: :login_redirect
+    delete '/logout', to: 'users/sessions#destroy', as: :logout_redirect
   end
 
   # 관리사용자
-  devise_for :admins, :controllers => {  :sessions => "admins/sessions",:registrations => "admins/registrations" }, :path_names =>  {:sign_up=>'complete',:sign_in => 'login', :sign_out => 'logout'} do
-    get 'edit', :to => 'admins::Registrations#edit'
-    get 'login', :to => 'admins::Sessions#new'
-    get 'logout', :to=> 'admins::Sessions#destroy'
-  end
+  devise_for :admins, :controllers => {  :sessions => "admins/sessions",:registrations => "admins/registrations" }, :path_names =>  {:sign_up=>'complete',:sign_in => 'login', :sign_out => 'logout'}
 
   # 관리자
   scope 'admin', module: 'admin', as: 'admin' do

@@ -18,7 +18,7 @@
     end
   end
 %>
-<header>
+<header data-controller="mobile-menu">
     <div id="top-menu">
     <% unless current_page?(root_path) %>
     <div id="mobile-back">
@@ -29,13 +29,13 @@
     <% end %>
     <div id="mobile-menu-back">&nbsp;</div>
     <div id="mobile-menu" class="d-block d-lg-none">
-      <%=link_to '' do %>
+      <%=link_to '#',data: {action: "click->mobile-menu#openMenu"} do %>
       <span class="material-icons">menu</span>
       <% end %>
     </div>
 
-    <div id="top-user-menu">
-      <%=link_to '',id: 'mobile-menu-close',class: 'd-block d-lg-none' do %>
+    <div id="top-user-menu" data-mobile-menu-target="topUserMenu" >
+      <%=link_to '#',{id: 'mobile-menu-close',class: 'd-block d-lg-none', data: {action: "click->mobile-menu#closeMenu"}} do %>
         <span class="material-icons">cancel</span>
         <% end %>
       <ul>

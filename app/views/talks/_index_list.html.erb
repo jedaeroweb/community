@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-12">
     <div id="ad-main" class="table-responsive">
-      <table class="table table-striped sl-table">
+      <table class="table table-striped" data-controller="click-redirect">
         <colgroup>
           <col>
           <col>
@@ -23,14 +23,14 @@
         <tbody>
         <% unless @talk_count.zero? %>
           <% @talks.each do |talk| %>
-            <tr>
+            <tr data-action="click->click-redirect#rowClick">
               <td><%=display_user_photo(talk.user) %>&nbsp;&nbsp;<%= talk.user.name.truncate_bytes(16) %></td>
               <td></td>
               <td>
                 <% if talk.comment_threads.count.zero? %>
-                  <%= link_to talk.title, talk %>
+                  <%= link_to talk.title, talk, data: { action: "click->click-redirect#rowLink"} %>
                   <% else %>
-                <%= link_to talk.title+'['+talk.comment_threads.count.to_s+']', talk %>
+                <%= link_to talk.title+'['+talk.comment_threads.count.to_s+']', talk, data: { action: "click->click-redirect#rowLink"} %>
                   <% end  %>
               </td>
               <td class="text-end">

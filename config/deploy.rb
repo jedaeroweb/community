@@ -18,12 +18,14 @@ set :bundle_path, '/usr/local/bundle'
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 set :keep_releases, 5
 
+after 'bundler:install', 'rbenv:rehash'
+
 namespace :deploy do
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
       within release_path do
-        execute :rake, 'tmp:clear'
+        execute "#{release_path}/bin/rake", 'tmp:clear'
       end
     end
   end
@@ -33,7 +35,7 @@ namespace :deploy do
     on roles(:app), in: :sequence, wait: 1 do
       within release_path do
         with rails_env: (fetch(:rails_env) || fetch(:stage)) do
-          execute :rake, 'sitemap:refresh'
+          execute "#{release_path}/bin/rake", 'sitemap:refresh'
         end
       end
     end

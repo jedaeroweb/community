@@ -10,16 +10,16 @@
   <%= favicon_link_tag 'favicon.ico' %>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-  <!--[if IE]>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <![endif]-->
 </head>
 <body>
 <%= render :partial => 'layouts/user/header' %>
 <div id="mom">
   <div id="main" class="container">
     <div class="sub-main">
-      <%= yield %>
+      <div class="row">
+        <%= render :partial => 'layouts/notice', :locals => { :notice => notice, :alert => alert } %>
+        <%= yield %>
+      </div>
     </div>
   </div>
 </div>
