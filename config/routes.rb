@@ -24,7 +24,6 @@ Rails.application.routes.draw do
     end
   end
 
-
   resources :questions do
     member do
       put 'like', to: 'talks#upvote'
@@ -46,7 +45,6 @@ Rails.application.routes.draw do
   get 'tags/:tag', to: 'tags#index', as: :tag
 
   devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks', :sessions => "users/sessions", :registrations => "users/registrations", :passwords => "users/passwords" }, :path_names => { :sign_up => 'new', :sign_in => 'login', :sign_out => 'logout' }
-
 
   devise_scope :user do
     get '/login', to: 'users/sessions#new', as: :login_redirect
