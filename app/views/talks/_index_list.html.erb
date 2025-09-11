@@ -35,7 +35,7 @@
               </td>
               <td class="text-end">
                 <% if talk.talk_pictures_count.zero? %>
-                  <%= image_tag 'none.gif',class: 'figure-img img-fluid rounded',width: 150,height:150  %>
+                  -
                 <% else %>
                   <%= image_tag talk.talk_pictures[0].picture.small_thumb.url,class: 'figure-img img-fluid rounded'  %>
                 <% end %>

@@ -1,8 +1,8 @@
-<section id="mypage" class="container sub-main">
-  <div class="row">
+<main id="mypage" class="container sub-main">
+  <section class="row mb-5">
     <h3 class="col-12"><%=t(:mypage) %></h3>
     <article class="col-12">
-      <div class="jumbotron">
+      <div class="media rounded-3 p-3">
     <h4> <%=@user.name %> 회원님은
     <% if session[:company_id].present? %>
         <strong class="text-primary">전문가,업체 회원</strong>입니다.
@@ -13,9 +13,9 @@
         <p><%=@user.name %> 회원님의 포인트는 <%=@user.point %>P 입니다.</p>
       </div>
     </article>
-  </div>
+  </section>
   <section class="row">
-    <h3 class="col-12" style="margin-bottom:15px;">나의 활동내역</h3>
+    <h3 class="col-12">나의 활동내역</h3>
     <article class="col-12">
       <h4>공고작성</h4>
       <div class="card">
@@ -29,4 +29,4 @@
     </article>
     <% end %>
   </section>
-</section>
+</main>

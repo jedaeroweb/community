@@ -62,10 +62,10 @@ module ApplicationHelper
   end
 
   def manage_width(model)
-    if can?(:delete, model) and can?(:update, model)
-      return ' style=width:170px;'
+    if can?(:delete, model) && can?(:update, model)
+      return 'style=width:170px;'
     else
-      return ' style=width:90px'
+      return 'style=width:90px'
     end
   end
 

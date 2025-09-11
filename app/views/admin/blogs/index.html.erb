@@ -43,7 +43,7 @@
           <col style="width:100px">
           <col style="width:200px">
           <% if can?(:update, Blog) || can?(:delete, Blog) %>
-            <col<%=manage_width(Blog) %>>
+            <col <%=manage_width(Blog) %>>
           <% end %>
         </colgroup>
         <thead class="thead-default">

@@ -5,16 +5,18 @@
 			<%=link_to gallery.photo.to_s,{:title=>gallery.title,:data=>{fancybox: 'gallery'}} do %>
 				<figure>
 					<%= image_tag sl_get_thumb(gallery.photo.to_s,'large'),:class=>'img-responsive w-100'  %>
-					<figcaption id="gallery<%= gallery.id %>_img<%= gallery.id %>_span" class="image_caption" itemprop="name">
+					<figcaption id="gallery<%= gallery.id %>_img<%= gallery.id %>_span" class="image_caption">
 						<%= gallery.title %>
 					</figcaption>
 				</figure>
 			<% end %>
 		</div>
 		<div id="sl_gallery_right" class="col-12 col-lg-5">
+			<div>
 				<%= simple_format gallery.content %>
+			</div>
 			<div class="add_info">
-				<span><%= get_dt_format(gallery.created_at.to_date) %></span><span class="none" itemprop="dateModified" datetime="<%= gallery.updated_at %>"><%= gallery.updated_at.to_date %></span>
+				<span><%= get_dt_format(gallery.created_at.to_date) %></span>
 			</div>
 		</div>
 	<% end %>
