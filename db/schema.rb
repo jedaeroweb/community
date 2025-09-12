@@ -146,6 +146,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
     t.integer "blog_category_id", null: false
     t.integer "user_id", null: false
     t.string "title", limit: 60, null: false
+    t.string "description", limit: 200
     t.integer "blog_comments_count", default: 0, null: false
     t.integer "blog_pictures_count", default: 0, null: false
     t.integer "count", default: 0, null: false

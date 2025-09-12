@@ -33,3 +33,8 @@
   </div>
   <%=render render_templete %>
 </div>
+<% content_for :json_ld do %>
+  <script type="application/ld+json">
+    <%= raw(JSON.pretty_generate(qa_page_jsonld(@questions))) %>
+  </script>
+<% end %>
