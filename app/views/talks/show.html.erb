@@ -51,3 +51,8 @@
     </div>
   </div>
 </div>
+<% content_for :json_ld do %>
+  <script type="application/ld+json">
+    <%= raw(JSON.pretty_generate(article_json_ld(@talk))) %>
+  </script>
+<% end %>
