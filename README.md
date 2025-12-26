@@ -17,14 +17,14 @@ community.jedaeroweb.co.kr
 
 this application is composed of [Rails](http://rubyonrails.org/) + UI [Boostrap](http://getbootstrap.com)
 
-## Server Requirements
+## 📌 Server Requirements
 
 [Rails](http://rubyonrails.org/) version 7 or newer is recommended.
 
-## License
+## 📄 License
 
-MIT, All Free
+MIT License – completely free to use and modify
 
-## Author
+## 🤝 Author
 
 [Jeedaeroweb](https://www.jedaeroweb.co.kr)
