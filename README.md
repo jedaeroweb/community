@@ -17,6 +17,23 @@ community.jedaeroweb.co.kr
 
 this application is composed of [Rails](http://rubyonrails.org/) + UI [Boostrap](http://getbootstrap.com)
 
+
+## 🚀 Getting Started
+
+```bash
+git clone https://github.com/jedaeroweb/pamphlet.git
+cd pamphlet
+bundle install
+rails db:create db:migrate db:seed
+rails server
+```
+
+then visit
+
+http://localhost:3000
+
+---
+
 ## 📌 Server Requirements
 
 [Rails](http://rubyonrails.org/) version 7 or newer is recommended.
@@ -25,6 +42,6 @@ this application is composed of [Rails](http://rubyonrails.org/) + UI [Boostrap]
 
 MIT License – completely free to use and modify
 
-## 🤝 Author
+## ✍️ Author
 
 [Jeedaeroweb](https://www.jedaeroweb.co.kr)
