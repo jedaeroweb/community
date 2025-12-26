@@ -21,8 +21,8 @@ this application is composed of [Rails](http://rubyonrails.org/) + UI [Boostrap]
 ## 🚀 Getting Started
 
 ```bash
-git clone https://github.com/jedaeroweb/pamphlet.git
-cd pamphlet
+git clone https://github.com/jedaeroweb/community.git
+cd community
 bundle install
 rails db:create db:migrate db:seed
 rails server
