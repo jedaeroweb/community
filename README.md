@@ -4,9 +4,9 @@
 
 # What is Jedaeroweb Community
 
-[https://community.jedaeroweb.co.kr](https://community.jedaeroweb.co.kr) source
-
-[https://community.jedaeroweb.co.kr](https://community.jedaeroweb.co.kr) is jedaeroweb community homepage
+<a href="https://community.jedaeroweb.co.kr" target="_blank" rel="noopener noreferrer">
+Jedaeroweb Community Website
+</a>
 
 this application is composed of [Rails](http://rubyonrails.org/) + UI [Boostrap](http://getbootstrap.com)
 
