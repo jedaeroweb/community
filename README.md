@@ -2,7 +2,7 @@
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Template](https://img.shields.io/badge/Template-Repository-blue)
 
-## Overview
+## 🔭 Overview
 
 Jedaeroweb Community is a **community web application built with Ruby on Rails and Bootstrap UI**.
 
