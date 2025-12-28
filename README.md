@@ -2,7 +2,7 @@
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Template](https://img.shields.io/badge/Template-Repository-blue)
 
-# What is Jedaeroweb Community
+## Overview
 
 Jedaeroweb Community is a **community web application built with Ruby on Rails and Bootstrap UI**.
 
@@ -15,8 +15,18 @@ It is designed as a **starter Rails community project** that can be easily custo
 community.jedaeroweb.co.kr
 </a>
 
-this application is composed of [Rails](http://rubyonrails.org/) + UI [Boostrap](http://getbootstrap.com)
+[community.jedaeroweb.co.kr](community.jedaeroweb.co.kr) source
 
+---
+
+## 🛠 Tech Stack
+
+- Ruby on Rails
+- MySQL / PostgreSQL / SQLite (any database supported by Rails)
+- HTML / CSS
+- JavaScript
+
+---
 
 ## 🚀 Getting Started
 
@@ -32,16 +42,22 @@ then visit
 
 http://localhost:3000
 
+
+> 로컬 환경에서 바로 실행해볼 수 있습니다.
+
 ---
 
 ## 📌 Server Requirements
 
 [Rails](http://rubyonrails.org/) version 7 or newer is recommended.
+> Rails 7 이상 환경을 권장합니다.
 
 ## 📄 License
 
 MIT License – completely free to use and modify
+> 개인·상업적 사용 모두 완전히 자유롭습니다.
 
 ## ✍️ Author
 
-[Jeedaeroweb](https://www.jedaeroweb.co.kr)
+[Jedaeroweb](https://www.jedaeroweb.co.kr)
+> 작성자 = 제대로웹
