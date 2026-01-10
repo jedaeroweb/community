@@ -32,7 +32,7 @@
   <div class="d-grid gap-2 mt-3">
     <% disabled = Rails.env.production? %>
 
-    <%= f.submit "저장",
+    <%= form.submit "저장",
                  id: "submit-btn",
                  class: "btn btn-lg btn-primary",
                  disabled: disabled %>
