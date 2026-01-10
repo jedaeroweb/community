@@ -1,1 +1,1 @@
-json.array! @addresses, partial: "address", as: :address
+json.array! @talks, partial: "address", as: :address

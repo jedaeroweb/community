@@ -37,6 +37,13 @@ class MarketsController < ApplicationController
   # POST /talks
   # POST /talks.json
   def create
+    if Rails.env.production?
+      unless verify_turnstile
+        flash.now[:alert] = "로봇 차단됨"
+        render :new and return
+      end
+    end
+
     @market = Market.new(market_params)
 
     respond_to do |format|

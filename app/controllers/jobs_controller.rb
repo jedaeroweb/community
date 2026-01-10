@@ -31,6 +31,13 @@ class JobsController < ApplicationController
   # POST /talks
   # POST /talks.json
   def create
+    if Rails.env.production?
+      unless verify_turnstile
+        flash.now[:alert] = "로봇 차단됨"
+        render :new and return
+      end
+    end
+
     @job = Job.new(job_params)
 
     respond_to do |format|
