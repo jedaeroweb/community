@@ -55,14 +55,6 @@ $header_light_background: #C33;
 $header_light_default_color : #eee;
 $header_light_point_color : #333;
 
-
-[data-bs-theme="light"] {
-  --bs-border-color : #ccc;
-  a {color:#333}
-  a:hover {color:#000}
-  a:visited {color:#666}
-}
-
 html,body {margin:0;padding:0; height:100%}
 body {background-color:$default-bg;color: $default-color; font-family: "Nanum Gothic", "나눔고딕", "Malgun Gothic", "맑은 고딕", "gulim","굴림","Dotum", "돋움", Arial, Helvetica, sans-serif}
 

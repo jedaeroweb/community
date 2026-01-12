@@ -29,7 +29,7 @@
               <td><%=display_user_photo(question.user) %>&nbsp;&nbsp;<%= question.user.name.truncate_bytes(16) %></td>
               <td><%=question.program_language.title %></td>
               <td><%=question.question_category.title %></td>
-              <td><%= link_to question.title, question, data: { action: "click->click-redirect#rowLink"} %></td>
+              <td><%= link_to question.title, question %></td>
               <td class="text-end">
                 <% if question.question_pictures_count.zero? %>
                   -
