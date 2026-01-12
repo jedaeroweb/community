@@ -254,7 +254,7 @@ article.talk .media,article.question .media {min-height:13em}
 .kakao-b-icon,.naver-b-icon,.google-b-icon,.apple-b-icon,.facebook-b-icon,.twitter-b-icon,.github-b-icon {display:inline-block;width:60px;height:60px;border-radius:35px;line-height:60px;text-align:center}
 .kakao-b-icon {
   text-indent:-9999px;
-  background-image:url('btn_kakao.png');
+  background-image:url('../btn_kakao.png');
   background-position:center center;
   background-repeat: no-repeat;
   background-color:#fee500;
@@ -262,13 +262,13 @@ article.talk .media,article.question .media {min-height:13em}
 .naver-b-icon {
   margin-left:15px;
   text-indent:-9999px;
-  background-image:url('btn_naver.png');
+  background-image:url('../btn_naver.png');
   background-position:center center;
 }
 .apple-b-icon {
   text-indent:-9999px;
   margin-left:15px;
-  background-image:image-url('btn_apple.svg');
+  background-image:url('../btn_apple.svg');
   background-position:center center;
   background-color:#000;
   background-repeat: no-repeat;
@@ -278,7 +278,7 @@ article.talk .media,article.question .media {min-height:13em}
   text-indent:-9999px;
   margin-left:15px;
   background-color:#fff;
-  background-image:url('btn_google.png');
+  background-image:url('../btn_google.png');
   background-position:center center;
   background-repeat:no-repeat;
 }
@@ -287,7 +287,7 @@ article.talk .media,article.question .media {min-height:13em}
   text-indent:-9999px;
   margin-left:15px;
   background-color:#fff;
-  background-image:url('btn_facebook.png');
+  background-image:url('../btn_facebook.png');
   background-position:center center;
   background-repeat:no-repeat;
 }
@@ -296,14 +296,14 @@ article.talk .media,article.question .media {min-height:13em}
   text-indent:-9999px;
   margin-left:15px;
   background-color:#fff;
-  background-image:url('btn_twitter.png');
+  background-image:url('../btn_twitter.png');
   background-position:center center;
   background-repeat:no-repeat;
 }
 .github-b-icon {
   margin-left:15px;
   text-indent:-9999px;
-  background-image:url('btn_github.png');
+  background-image:url('../btn_github.png');
   background-position:center center;
   background-color:#fff;
 }
