@@ -22,7 +22,6 @@ module JsonLdHelper
                "@context": "https://schema.org",
                "@type": options[:business_type] || "LocalBusiness",
                "name": options[:name] || "My Business",
-               "image": options[:image] || image_url("store.jpg"),
                "address": {
                  "@type": "PostalAddress",
                  "streetAddress": options[:street] || "서울시 종로구 123",
@@ -46,7 +45,6 @@ module JsonLdHelper
                  "name":  options[:org_name] || 'Jedaeroweb',
                  "logo": {
                    "@type": "ImageObject",
-                   "url": options[:logo_url] || image_url("favicon.ico")
                  }
                }
              }
@@ -75,7 +73,6 @@ module JsonLdHelper
         "name": "My Blog",
         "logo": {
           "@type": "ImageObject",
-          "url": asset_url("favicon.ico")
         }
       },
       "genre": post.blog_category.title || "블로그",
