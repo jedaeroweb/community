@@ -5,4 +5,4 @@
 //= link front/application.css
 //= link admin/application.css
 //= link actiontext.css
-//= link rails-ujs.js
+//= link rails-ujs.js//= link_tree ../builds
