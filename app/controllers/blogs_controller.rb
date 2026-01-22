@@ -79,7 +79,7 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blog_params)
 
     respond_to do |format|
-      if @blog.save
+      if @blog.save!
         format.html { redirect_to @blog, notice: 'blog was successfully created.' }
         format.json { render :show, status: :created, location: @blog }
       else
@@ -149,6 +149,6 @@ class BlogsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def blog_params
-    params.require(:blog).permit(:blog_category_id, :title, :description, :content, blog_picture_attributes: [:picture]).merge(user_id: current_user.id)
+    params.require(:blog).permit(:program_language_id, :blog_category_id, :title, :description, :content, blog_picture_attributes: [:picture]).merge(user_id: current_user.id)
   end
 end

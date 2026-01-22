@@ -31,12 +31,17 @@
               <td><%=blog.blog_category.title %></td>
               <td><%= link_to blog.title, blog, data: { action: "click->click-redirect#rowLink"} %></td>
               <td class="text-end">
-                <figure class="figure">
-                <%= image_tag blog.blog_picture.picture.small_thumb.url, width:50, height:50,class: 'figure-img img-fluid rounded'  %>
-              </figure></td>
-              <td class="text-end"><%= blog.impressionist_count(:filter => :ip_address) %></td>
-              <td class="text-end text-secondary"><%= time_ago_in_words blog.created_at.to_date %></td>
-            </tr>
+                <% if blog.blog_picture.present? %>
+                  <figure class="figure">
+                    <%= image_tag blog.blog_picture.picture.small_thumb.url, width:50, height:50,class: 'figure-img img-fluid rounded'  %>
+                  </figure>
+                  <% else %>
+                -
+                <% end %>
+              </td>
+                <td class="text-end"><%= blog.impressionist_count(:filter => :ip_address) %></td>
+                <td class="text-end text-secondary"><%= time_ago_in_words blog.created_at.to_date %></td>
+                </tr>
           <% end %>
         <% else %>
           <tr>

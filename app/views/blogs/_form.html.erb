@@ -19,6 +19,12 @@
           <div class="card-body">
             <div class="form-row">
               <div class="col-12 form-group">
+                <%= form.label :program_language_id, :class => 'control-label' %>
+                <%= form.select :program_language_id, options_from_collection_for_select(ProgramLanguage.where(:enable => true), 'id', 'title', @blog.program_language_id), {}, { :class => "form-control input-lg" } %>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-12 form-group">
                 <%= form.label :blog_category_id, :class => 'control-label' %>
                 <%= form.select :blog_category_id, options_from_collection_for_select(BlogCategory.where(:enable => true), 'id', 'title', @blog.blog_category_id), {}, { :class => "form-control input-lg" } %>
               </div>

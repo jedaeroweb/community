@@ -8,17 +8,17 @@ AuthenticationProvider.create!(name: 'github')
 
 Admin.create!(:id => 1, :email => 'admin1@jedaeroweb.co.kr', :name => '잠자는사자', :password => 'a12345', :password_confirmation => 'a12345')
 
-User.create!(:id => 1, :email => 'user1@jedaeroweb.co.kr', :name => '잠자는사자', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "1.jpg")) }])
-User.create!(:id => 2, :email => 'user2@jedaeroweb.co.kr', :name => '국뽕', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "2.jpg")) }])
-User.create!(:id => 3, :email => 'company1@jedaeroweb.co.kr', :name => '임민형', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "3.jpg")) }])
-User.create!(:id => 4, :email => 'company2@jedaeroweb.co.kr', :name => '김종근', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "4.jpg")) }])
-User.create!(:id => 5, :email => 'company3@jedaeroweb.co.kr', :name => '알콜중독자', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "5.jpg")) }])
-User.create!(:id => 6, :email => 'company4@jedaeroweb.co.kr', :name => '호갱갱갱', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "6.jpg")) }])
-User.create!(:id => 7, :email => 'company5@jedaeroweb.co.kr', :name => '회사5', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "7.jpg")) }])
-User.create!(:id => 8, :email => 'company6@jedaeroweb.co.kr', :name => '회사6', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "8.jpg")) }])
-User.create!(:id => 9, :email => 'company7@jedaeroweb.co.kr', :name => '회사7', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "9.jpg")) }])
-User.create!(:id => 10, :email => 'company8@jedaeroweb.co.kr', :name => '회사8', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "10.jpg")) }])
-User.create!(:id => 11, :email => 'company9@jedaeroweb.co.kr', :name => '회사9', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("app", "assets", "images", "11.jpg")) }])
+User.create!(:id => 1, :email => 'user1@jedaeroweb.co.kr', :name => '잠자는사자', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("public", "images", "1.jpg")) }])
+User.create!(:id => 2, :email => 'user2@jedaeroweb.co.kr', :name => '국뽕', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("public", "images", "2.jpg")) }])
+User.create!(:id => 3, :email => 'company1@jedaeroweb.co.kr', :name => '임민형', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("public", "images", "3.jpg")) }])
+User.create!(:id => 4, :email => 'company2@jedaeroweb.co.kr', :name => '김종근', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("public", "images", "4.jpg")) }])
+User.create!(:id => 5, :email => 'company3@jedaeroweb.co.kr', :name => '알콜중독자', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("public", "images", "5.jpg")) }])
+User.create!(:id => 6, :email => 'company4@jedaeroweb.co.kr', :name => '호갱갱갱', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("public", "images", "6.jpg")) }])
+User.create!(:id => 7, :email => 'company5@jedaeroweb.co.kr', :name => '회사5', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("public", "images", "7.jpg")) }])
+User.create!(:id => 8, :email => 'company6@jedaeroweb.co.kr', :name => '회사6', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("public", "images", "8.jpg")) }])
+User.create!(:id => 9, :email => 'company7@jedaeroweb.co.kr', :name => '회사7', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("public", "images", "9.jpg")) }])
+User.create!(:id => 10, :email => 'company8@jedaeroweb.co.kr', :name => '회사8', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("public", "images", "10.jpg")) }])
+User.create!(:id => 11, :email => 'company9@jedaeroweb.co.kr', :name => '회사9', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("public", "images", "11.jpg")) }])
 
 
 Role.create!(id: 1, title: '전체관리자', role: 'super_administrator')
@@ -339,7 +339,7 @@ BlogCategory.create!(id: 2, title: '제작')
 BlogCategory.create!(id: 3, title: '테스트')
 BlogCategory.create!(id: 4, title: '배포')
 
-Blog.create!(id: 1, user_id:1, program_language_id: 2, blog_category_id:1, title: '루비 설치 방법',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png"))}, content: '
+Blog.create!(id: 1, user_id:1, program_language_id: 2, blog_category_id:1, title: '루비 설치 방법',blog_picture_attributes: { picture: File.open(Rails.root.join("public", "images", "rails_welcome.png"))}, content: '
 루비 온 레일즈 프로그램을 설치하려면 당연히 루비 부터 설치해야 됩니다.
           이름부터가 루비 온 레일즈로 루비로 만들어진 프레임워크입니다.
           루비를 설치하기 위해서는 여러 선택지가 존재하며 각 OS마다 약간의 차이가 있습니다.
@@ -377,7 +377,7 @@ bundler는 gem의 의존성관리를 위한 프로그램으로
 최상위 폴더를 보면 Gemfile파일이 있는데 여기에 필요프로그램을 기술하면 알아서 설치를 해주는 것입니다.
 
 bundle install, bundle update 명령어를  통해 일괄적으로 처리가 가능합니다.
-이를 통해 Rails App에 필요한 프로그램들을  설치하여 배치시 의존성 문제를 쉽게 처리할수 있습니다.',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
+이를 통해 Rails App에 필요한 프로그램들을  설치하여 배치시 의존성 문제를 쉽게 처리할수 있습니다.',blog_picture_attributes: { picture: File.open(Rails.root.join("public", "images", "rails_welcome.png")) })
 Blog.create!(id: 3, user_id:1, program_language_id: 2, blog_category_id:1, title: '루비온레일즈 소개,설치 방법', content: '
 웹개발을 하다보면 손이 가는게 한두가지가 아닙니다.
 처음에는 재미로 배우면서 한다지만  계속적인 많고 반복적인 작업이 개발자를 더욱 괴롭게했습니다.
@@ -435,8 +435,8 @@ https://code.visualstudio.com/
 
  기본적으로 서버는 3000번 포트를 이용하게 되어있으므로(물론 바꾸면 바꾼대로)  서버 실행후 웹 브라우져로
  http://localhost:3000  로 접속되면 레일즈 설치가 완료  된것입니다.
-' ,blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
-Blog.create!(id: 4, user_id:1, program_language_id: 2, blog_category_id:1, title: 'rake migrate',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) }, content: 'rake는 레일즈의 여러 필요작업들을 처리해주는 명령어로 어느 책에서 봤던것 처럼 든든한 조수를 데리고 작업하는 것과 같은 느낌입니다.
+' ,blog_picture_attributes: { picture: File.open(Rails.root.join("public", "images", "rails_welcome.png")) })
+Blog.create!(id: 4, user_id:1, program_language_id: 2, blog_category_id:1, title: 'rake migrate',blog_picture_attributes: { picture: File.open(Rails.root.join("public", "images", "rails_welcome.png")) }, content: 'rake는 레일즈의 여러 필요작업들을 처리해주는 명령어로 어느 책에서 봤던것 처럼 든든한 조수를 데리고 작업하는 것과 같은 느낌입니다.
 rake(조수) 이것(옵션) 처리해줘  하는 식으로 명령어를 주면 레일즈를 제작, 배치 하면서 처리해야 하는 일들을 편리하게 처리해 줍니다.
 
 migrate 지금은 다른 프레임워크들도 사용하여 얼마간 익숙한 개념일것이라고 생각됩니다.
@@ -483,7 +483,7 @@ rake db:seed    => rake, 시작 데이터 입력 해줘
 시작데이터 입력(rake db:seed)은 /db/seed.rb에서 관리되며 모델을 이용하여 초기 데이터 생성을 처리합니다.
 ')
 Blog.create!(id: 5, user_id:1, program_language_id: 2, blog_category_id:1, title: 'npm, yarn',content: 'npm, yarn은 bundler와 마찬가지로 패키지 설치를 도와주는 프로그램입니다.
-bundler와 거의 유사하며 bundler가 ruby에서 사용되는것이라면 npm,yarn은 nodejs에서 사용됩니다.',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
+bundler와 거의 유사하며 bundler가 ruby에서 사용되는것이라면 npm,yarn은 nodejs에서 사용됩니다.',blog_picture_attributes: { picture: File.open(Rails.root.join("public", "images", "rails_welcome.png")) })
 Blog.create!(id: 6, user_id:1, program_language_id: 2, blog_category_id:1, title: '개발서버 설치설정', content: '개발서버는 특별히 설치, 설정 할것이 없습니다.
 서버 시작은 프로젝트 폴더로 이동
 <code>$cd 프로젝트폴더명</code>
@@ -516,11 +516,11 @@ npm 또는 yarn  install
 <code>$rake db:migrate</code>
 <code>$rake db:seed</code>
 
-실행 한 후에 서버 시작을 실행해주면 됩니다.',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
+실행 한 후에 서버 시작을 실행해주면 됩니다.',blog_picture_attributes: { picture: File.open(Rails.root.join("public", "images", "rails_welcome.png")) })
 Blog.create!(id: 7, user_id:1, program_language_id: 2, blog_category_id:1, title: '실서버 설치설정', content: '실서버에서 설치 설정은
 보통 passenger패키지를 통해서 이루어 지며
-해당 내용 여기서 설명하기 보다 이곳을 참고해주세요',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
-Blog.create!(id: 8, user_id:1, program_language_id: 2, blog_category_id:4, title: 'git', content: 'git은 프로그램 버전관리 도구로 알려져 있으며 프로그램개발에서 빠질수 없는 너무나 중요한 것입니다.',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
+해당 내용 여기서 설명하기 보다 이곳을 참고해주세요',blog_picture_attributes: { picture: File.open(Rails.root.join("public", "images", "rails_welcome.png")) })
+Blog.create!(id: 8, user_id:1, program_language_id: 2, blog_category_id:4, title: 'git', content: 'git은 프로그램 버전관리 도구로 알려져 있으며 프로그램개발에서 빠질수 없는 너무나 중요한 것입니다.',blog_picture_attributes: { picture: File.open(Rails.root.join("public", "images", "rails_welcome.png")) })
 Blog.create!(id: 9, user_id:1, program_language_id: 2, blog_category_id:4, title: '카피스트라노(capistrano)를 이용한 자동 배포',
              content: "
 웹프로그래머를 괴롭히는 또 하나의 과정은 배포(deploy) 입니다.
@@ -590,7 +590,7 @@ cap production deploy
 카피스트라노 홈페이지(https://www.capistranorb.com)를 방문해보세요
 
 이제 배포시 반복작업을 없애주는 카피스트라노로 한번에 자동배포 하세요
- ",blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png")) })
+ ",blog_picture_attributes: { picture: File.open(Rails.root.join("public", "images", "rails_welcome.png")) })
 
 QuestionCategory.create!(id: 1, title: '서버 설치,설정')
 QuestionCategory.create!(id: 2, title: '프레임워크, 패키지 설치, 설정')
@@ -761,14 +761,14 @@ Answer.create!( user_id:1, question_id: 12, content: '그런거 없습니다. �
 
 
 
-Gallery.create!(user_id: 1, title: '멋진나1', content: '멋진나1',:photo=>File.open(Rails.root.join("app", "assets", "images", "1.jpg")))
-Gallery.create!(user_id: 1, title: '멋진나2', content: '멋진나2',:photo=>File.open(Rails.root.join("app", "assets", "images", "2.jpg")))
-Gallery.create!(user_id: 1, title: '멋진나3', content: '멋진나3',:photo=>File.open(Rails.root.join("app", "assets", "images", "3.jpg")))
-Gallery.create!(user_id: 1, title: '멋진나4', content: '멋진나4',:photo=>File.open(Rails.root.join("app", "assets", "images", "4.jpg")))
-Gallery.create!(user_id: 1, title: '멋진나5', content: '멋진나1',:photo=>File.open(Rails.root.join("app", "assets", "images", "1.jpg")))
-Gallery.create!(user_id: 1, title: '멋진나6', content: '멋진나2',:photo=>File.open(Rails.root.join("app", "assets", "images", "2.jpg")))
-Gallery.create!(user_id: 1, title: '멋진나7', content: '멋진나3',:photo=>File.open(Rails.root.join("app", "assets", "images", "3.jpg")))
-Gallery.create!(user_id: 1, title: '멋진나8', content: '멋진나4',:photo=>File.open(Rails.root.join("app", "assets", "images", "4.jpg")))
+Gallery.create!(user_id: 1, title: '멋진나1', content: '멋진나1',:photo=>File.open(Rails.root.join("public", "images", "1.jpg")))
+Gallery.create!(user_id: 1, title: '멋진나2', content: '멋진나2',:photo=>File.open(Rails.root.join("public", "images", "2.jpg")))
+Gallery.create!(user_id: 1, title: '멋진나3', content: '멋진나3',:photo=>File.open(Rails.root.join("public", "images", "3.jpg")))
+Gallery.create!(user_id: 1, title: '멋진나4', content: '멋진나4',:photo=>File.open(Rails.root.join("public", "images", "4.jpg")))
+Gallery.create!(user_id: 1, title: '멋진나5', content: '멋진나1',:photo=>File.open(Rails.root.join("public", "images", "1.jpg")))
+Gallery.create!(user_id: 1, title: '멋진나6', content: '멋진나2',:photo=>File.open(Rails.root.join("public", "images", "2.jpg")))
+Gallery.create!(user_id: 1, title: '멋진나7', content: '멋진나3',:photo=>File.open(Rails.root.join("public", "images", "3.jpg")))
+Gallery.create!(user_id: 1, title: '멋진나8', content: '멋진나4',:photo=>File.open(Rails.root.join("public", "images", "4.jpg")))
 
 
 Talk.create!(id: 1, user_id: 1, title: '주식이 코인보다 좋은이유', created_at: 25.day.ago, tag_list: '주식,코인', content: '주식은 9시부터 3시반까지 잃는데
@@ -1134,10 +1134,10 @@ Rails로 만들어진 사이트 1년동안 유지보수 맡아주실분 구합�
 
 
 
-Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: '워드프레스를 위한 PHP 설치, 설정', content: '워드프레스 설치는 이렇게',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "PHP-logo.webp")) })
-Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: '워드프레스 설치,설정', content: '워드프레스' ,blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "PHP-logo.webp")) })
-Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: '워드프레스 시작하기', content: '워드프레스 시작하기',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "PHP-logo.webp")) })
-Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: '워드프레스 리플리케이션 플러그인',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "PHP-logo.webp"))},
+Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: '워드프레스를 위한 PHP 설치, 설정', content: '워드프레스 설치는 이렇게',blog_picture_attributes: { picture: File.open(Rails.root.join("public", "images", "PHP-logo.webp")) })
+Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: '워드프레스 설치,설정', content: '워드프레스' ,blog_picture_attributes: { picture: File.open(Rails.root.join("public", "images", "PHP-logo.webp")) })
+Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: '워드프레스 시작하기', content: '워드프레스 시작하기',blog_picture_attributes: { picture: File.open(Rails.root.join("public", "images", "PHP-logo.webp")) })
+Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: '워드프레스 리플리케이션 플러그인',blog_picture_attributes: { picture: File.open(Rails.root.join("public", "images", "PHP-logo.webp"))},
 content: "
 홈페이지가 Wordpress로 운영되고 있고
 2대 이상의 DB서버가 있어서 부하분산을 하고싶다면 바로 이 플러그인을 사용하면 됩니다.
@@ -1204,7 +1204,7 @@ Wordpress홈페이지의 DB부하 분산은 걱정은 끝!!~~")
 
 
 
-Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: '다국어 기능을 위한 gettext, 하지만 평소에도 쓰면 좋아요',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "PHP-logo.webp"))},
+Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: '다국어 기능을 위한 gettext, 하지만 평소에도 쓰면 좋아요',blog_picture_attributes: { picture: File.open(Rails.root.join("public", "images", "PHP-logo.webp"))},
              content: "
 PHP에서 gettext는 다국어를 위한 확장기능이며
 
@@ -1236,7 +1236,7 @@ http://php.net/manual/kr/book.gettext.php
 www.poedit.net 로 받아서 사용하세요")
 
 
-Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: 'PHP Filter를 사용해서 깨끗한값만 받으세요',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "PHP-logo.webp"))},
+Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: 'PHP Filter를 사용해서 깨끗한값만 받으세요',blog_picture_attributes: { picture: File.open(Rails.root.join("public", "images", "PHP-logo.webp"))},
              content: "
 
 프로그램에서 사용자의 잘못된 입력값을 중간에서 잡어서 잘못된 입력값이 입력되지 않게하고
@@ -1264,7 +1264,7 @@ Filter와 PDO bind를 쓰면 이상한 데이터가 들어가는걸 다 막을�
 
 
 
-Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: 'PHP에서 SQL-Server 데이터베이스 접속하기',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "PHP-logo.webp"))},
+Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: 'PHP에서 SQL-Server 데이터베이스 접속하기',blog_picture_attributes: { picture: File.open(Rails.root.join("public", "images", "PHP-logo.webp"))},
              content: "
 PHP는 어느 데이터베이스라도 접속확장이 있으며 이를 이용해서 해당 데이터베이스에 접속하여 프로그램을 제작하면 됩니다.
 PHP에서 SQL-Server 에 접속하여 사용하려면 역시 해당 드라이버가 필요한데 드라이버 이름은 sqlsrv 입니다.
@@ -1290,7 +1290,7 @@ PDO로 어떤 데이터베이스던지 상관 없이 만드는 재미를 느껴�
 
 
 
-Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: '젠투리눅스에서 커널컴파일 해보기',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "PHP-logo.webp"))},
+Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: '젠투리눅스에서 커널컴파일 해보기',blog_picture_attributes: { picture: File.open(Rails.root.join("public", "images", "PHP-logo.webp"))},
              content: "
 리눅스를 사용하는 또 하나의 재미인 커널 컴파일입니다.
 
@@ -1328,7 +1328,7 @@ genkernel --menuconfig all로 실행후 설정하고 나오면 컴파일이 진�
 ")
 
 
-Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: '오라클 클라우드에서 루비설치',blog_picture_attributes: { picture: File.open(Rails.root.join("app", "assets", "images", "rails_welcome.png"))},
+Blog.create!(user_id:1, program_language_id: 3, blog_category_id:1, title: '오라클 클라우드에서 루비설치',blog_picture_attributes: { picture: File.open(Rails.root.join("public", "images", "rails_welcome.png"))},
 content: '
 이번에 오라클 클라우드를 사용해보면서 rbenv install 3.2.2 로 루비를 설치하는데
 덕분에 우분투 apt만 쓰다가 yum을 오랬만에 쓰게 되었네요
