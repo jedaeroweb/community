@@ -599,7 +599,6 @@ DEPENDENCIES
   dotenv-rails
   fog-azure-rm!
   gretel
-  image_processing (~> 1.2)
   importmap-rails
   impressionist
   jbuilder

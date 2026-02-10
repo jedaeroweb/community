@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @script='home/index'
+    set_meta_tags canonical: root_url
 
     condition = { enable: true }
 
