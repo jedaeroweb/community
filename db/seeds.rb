@@ -1115,7 +1115,7 @@ snap 싹 지우고 deb으로 바꾸려고 해보니 그러느니 그냥 gentoo�
 앞으로는 영원히 우분투 버리고 gentoo로만 써야겠다.
 ')
 
-Talk.create!( user_id: 1, title: '우분투 쓰레기 되었네', content: '
+Talk.create!( user_id: 1, title: '리엑트네이티브 Mac 없이 github action으로 빌드 성공~!', content: '
 AI 랑 같이 해서 뚝딱뚝딱 겨우 만들고는 있는데…..
 
                         그냥 혼자 했으면 시간을 얼마나 더 썼을지

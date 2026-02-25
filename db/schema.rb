@@ -516,6 +516,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
     t.datetime "last_sign_in_at", precision: nil
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.integer "failed_attempts", default: 0
+    t.string "unlock_token"
+    t.datetime "locked_at", precision: nil
     t.integer "user_pictures_count", default: 0, null: false
     t.integer "blogs_count", default: 0, null: false
     t.integer "companies_count", default: 0, null: false
@@ -533,6 +536,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
   create_table "votes", force: :cascade do |t|
