@@ -19,7 +19,7 @@
     <tr>
       <th class="text-center"><%= t(:enable, scope: [:activerecord, :attributes, :user]) %></th>
       <th><%= t(:name, scope: [:activerecord, :attributes, :user]) %></th>
-      <th class="text-right"><%= t(:updated_at, scope: [:activerecord, :attributes, :user]) %></th>
+      <th class="text-end"><%= t(:updated_at, scope: [:activerecord, :attributes, :user]) %></th>
       <% if can?(:update, User) || can?(:delete, User) %>
         <th class="text-center"><%= t(:manage) %></th>
       <% end %>
@@ -41,9 +41,9 @@
             </div>
           </td>
           <td><%= link_to admin.name, admin_admin_path(admin) %></td>
-          <td class="text-right"><%= I18n.l admin.created_at.to_date, :format => :long %></td>
+          <td class="text-end"><%= I18n.l admin.created_at.to_date, :format => :long %></td>
           <% if can?(:update, admin) or can?(:delete, user) %>
-            <td class="text-right">
+            <td class="text-end">
               <% if can? :update, admin %>
                 <%= link_to edit_admin_admin_path(admin), :class => "btn btn-secondary" do %>
                   <%= t(:edit) %>

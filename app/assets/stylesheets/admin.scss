@@ -104,24 +104,12 @@ mark, rp, rt, ruby, summary, time {display:inline;}
   right:10px;
 }
 
+.form-group {
+  margin-bottom:1.5rem
+}
 
 .media ul li {list-style:none}
-
-
 .no-display-title {font-size:18px;text-indent:-9999px;line-height: 0;height:1px;margin:0;padding:0}
-
-.jumbotron {margin:2rem 0}
-
-.jumbotron, .media {
-  background:$secondary-bg
-}
-
-.carousel-indicators li {
-  border:none;height: 20px
-}
-
-.carousel-indicators .active {background:#999}
-
 
 /* Common Class */
 $red_default : #f95090;

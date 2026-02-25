@@ -1,6 +1,6 @@
 <div class="col-12">
   <h2 class="float-left hidden-title"><%= t(:question_list) %></h2>
-      <div class="float-right">
+      <div class="float-end">
         <p class="summary">
           <span id="list_count" style="display:none"><%=@question_count %></span>
           <%=raw t(:there_are_n_questions,count: @question_count) %>
@@ -27,10 +27,10 @@
           <th class="text-center"><%= t(:enable,scope:[:activerecord,:attributes,:question]) %></th>
           <th><%= t(:user_id,scope:[:activerecord,:attributes,:question]) %></th>
           <th><%= t(:title,scope:[:activerecord,:attributes,:question]) %></th>
-          <th class="text-right"><%= t(:secret,scope:[:activerecord,:attributes,:question]) %></th>
-          <th class="text-right"><%= t(:answers_count,scope:[:activerecord,:attributes,:question]) %></th>
-          <th class="text-right"><%= t(:label_count) %></th>
-          <th class="text-right"><%= t(:created_at,scope:[:activerecord,:attributes,:question]) %></th>
+          <th class="text-end"><%= t(:secret,scope:[:activerecord,:attributes,:question]) %></th>
+          <th class="text-end"><%= t(:answers_count,scope:[:activerecord,:attributes,:question]) %></th>
+          <th class="text-end"><%= t(:label_count) %></th>
+          <th class="text-end"><%= t(:created_at,scope:[:activerecord,:attributes,:question]) %></th>
           <% if can?(:update, Question) || can?(:delete, Question) %>
             <th class="text-center"><%= t(:manage) %></th>
           <% end %>
@@ -48,20 +48,20 @@
               </td>
               <td><%= question.user.name %></td>
               <td><%= link_to question.title,admin_question_path(question) %></td>
-              <td class="text-right">
+              <td class="text-end">
 
               </td>
-              <td class="text-right">
+              <td class="text-end">
                 <% if question.answers_count.zero? %>
                 <%= link_to t(:none),new_admin_answer_path(question_id: question),class: 'text-danger' %>
                 <% else %>
                   <%= link_to t(:exists),new_admin_answer_path(question_id: question),class: 'text-success'  %>
                 <% end %>
               </td>
-              <td class="text-right"><%= question.impressionist_count(:filter => :ip_address) %></td>
-              <td class="text-right"><%= I18n.l question.created_at.to_date, :format => :long %></td>
+              <td class="text-end"><%= question.impressionist_count(:filter => :ip_address) %></td>
+              <td class="text-end"><%= I18n.l question.created_at.to_date, :format => :long %></td>
               <% if can?(:update, notice) or can?(:delete, notice) %>
-                <td class="text-right">
+                <td class="text-end">
                   <% if can? :update, notice %>
                     <%= link_to edit_admin_question_path(question), :class => "btn btn-secondary" do %>
                       <%= t(:edit) %>

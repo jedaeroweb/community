@@ -2,9 +2,9 @@
   <% if talk.errors.any? %>
     <div id="error_explanation" class="alert alert-danger" role="alert">
       <button type="button" class="btn-close close" data-bs-dismiss="alert" aria-label="Close"></button>
-      <h2><%= pluralize(question.errors.count, "error") %> prohibited this request from being saved:</h2>
+      <h2><%= pluralize(talk.errors.count, "error") %> prohibited this request from being saved:</h2>
       <ul>
-        <% question.errors.full_messages.each do |msg| %>
+        <% talk.errors.full_messages.each do |msg| %>
           <li>
             <%= msg %>
           </li>

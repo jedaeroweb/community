@@ -24,8 +24,8 @@
           <th class="text-center"><%= t(:enable,scope:[:activerecord,:attributes,:address]) %></th>
           <th><%= t(:title,scope:[:activerecord,:attributes,:address]) %></th>
           <th><%= t(:parent_address_id,scope:[:activerecord,:attributes,:address]) %></th>
-          <th class="text-right"><%= t(:address_level_id,scope:[:activerecord,:attributes,:address]) %></th>
-          <th class="text-right"><%= t(:created_at,scope:[:activerecord,:attributes,:address]) %></th>
+          <th class="text-end"><%= t(:address_level_id,scope:[:activerecord,:attributes,:address]) %></th>
+          <th class="text-end"><%= t(:created_at,scope:[:activerecord,:attributes,:address]) %></th>
           <% if can?(:update, Job) || can?(:delete, Job) %>
             <th class="text-center"><%= t(:manage) %></th>
           <% end %>
@@ -44,10 +44,10 @@
               <td><%= link_to job.title,admin_job_path(job) %></td>
               <td>
               </td>
-              <td class="text-right"></td>
-              <td class="text-right"><%= I18n.l job.created_at.to_date, :format => :long %></td>
+              <td class="text-end"></td>
+              <td class="text-end"><%= I18n.l job.created_at.to_date, :format => :long %></td>
               <% if can?(:update, job) or can?(:delete, job) %>
-                <td class="text-right">
+                <td class="text-end">
                   <% if can? :update, job %>
                     <%= link_to edit_admin_job_path(job), :class => "btn btn-secondary" do %>
                       <%= t(:edit) %>

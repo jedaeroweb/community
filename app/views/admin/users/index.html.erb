@@ -23,11 +23,11 @@
     <tr>
       <th class="text-center"><%= t(:enable, scope: [:activerecord, :attributes, :user]) %></th>
       <th><%= t(:name, scope: [:activerecord, :attributes, :user]) %></th>
-      <th class="text-right"><%= t(:point, scope: [:activerecord, :attributes, :user]) %></th>
-      <th class="text-right"><%= t(:phone, scope: [:activerecord, :attributes, :user]) %></th>
-      <th class="text-right"><%= t(:birthday, scope: [:activerecord, :attributes, :user]) %></th>
-      <th class="text-right"><%= t(:updated_at, scope: [:activerecord, :attributes, :user]) %></th>
-      <th class="text-right"><%= t(:created_at, scope: [:activerecord, :attributes, :user]) %></th>
+      <th class="text-end"><%= t(:point, scope: [:activerecord, :attributes, :user]) %></th>
+      <th class="text-end"><%= t(:phone, scope: [:activerecord, :attributes, :user]) %></th>
+      <th class="text-end"><%= t(:birthday, scope: [:activerecord, :attributes, :user]) %></th>
+      <th class="text-end"><%= t(:updated_at, scope: [:activerecord, :attributes, :user]) %></th>
+      <th class="text-end"><%= t(:created_at, scope: [:activerecord, :attributes, :user]) %></th>
       <% if can?(:update, User) || can?(:delete, User) %>
         <th class="text-center"><%= t(:manage) %></th>
       <% end %>
@@ -49,19 +49,19 @@
             </div>
           </td>
           <td><%= link_to user.name, admin_user_path(user) %></td>
-          <td class="text-right"><%= number_to_currency user.point %></td>
-          <td class="text-right"><%= link_to user.phone, admin_user_path(user) %></td>
-          <td class="text-right">
+          <td class="text-end"><%= number_to_currency user.point %></td>
+          <td class="text-end"><%= link_to user.phone, admin_user_path(user) %></td>
+          <td class="text-end">
             <% if user.birthday.present? %>
               <%= I18n.l user.birthday.to_date, :format => :long %>
             <% else %>
               <%= t(:not_insert) %>
             <% end %>
           </td>
-          <td class="text-right"><%= I18n.l user.updated_at.to_date, :format => :long %></td>
-          <td class="text-right"><%= I18n.l user.created_at.to_date, :format => :long %></td>
+          <td class="text-end"><%= I18n.l user.updated_at.to_date, :format => :long %></td>
+          <td class="text-end"><%= I18n.l user.created_at.to_date, :format => :long %></td>
           <% if can?(:update, user) or can?(:delete, user) %>
-            <td class="text-right">
+            <td class="text-end">
               <% if can? :update, user %>
                 <%= link_to edit_admin_user_path(user), :class => "btn btn-secondary" do %>
                   <%= t(:edit) %>

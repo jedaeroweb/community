@@ -1,13 +1,10 @@
-<section id="edit-address" class="col-12">
+<section id="edit-talk" class="col-12">
   <div class="row">
-    <h2 class="col-12"><%= t(:edit_address) %></h2>
-  </div>
-  <div class="row">
-    <%= render :partial => 'layouts/notice', :locals => { :errors => @address.errors, :notice => notice, :alert => alert } %>
+    <h2 class="col-12"><%= t(:edit_talk) %></h2>
   </div>
   <div class="row">
     <div class="col-12">
-      <%= render 'form', address: @address %>
+      <%= render 'form', talk: @talk %>
     </div>
   </div>
 </section>
