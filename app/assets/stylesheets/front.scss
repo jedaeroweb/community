@@ -47,13 +47,21 @@
 }
 
 
-$default-bg : #eee;
+$default-bg : #ddd;
 $default-color: $body-color;
 $secondary-bg :#f1f1f1;
 $color-mode-type: data;
 $header_light_background: #C33;
 $header_light_default_color : #eee;
 $header_light_point_color : #333;
+
+.navbar-brand, .navbar-brand:hover, .navbar-brand:focus {
+  color: var(--bs-link-color);
+}
+
+.navbar-nav .nav-link,  .nav-link:focus {
+  color: var(--bs-link-color);
+}
 
 html,body {margin:0;padding:0; height:100%}
 body {background-color:$default-bg;color: $default-color; font-family: "Nanum Gothic", "나눔고딕", "Malgun Gothic", "맑은 고딕", "gulim","굴림","Dotum", "돋움", Arial, Helvetica, sans-serif}
@@ -104,36 +112,8 @@ mark, rp, rt, ruby, summary, time {display:inline;}
 
 #main-question li {list-style:none;margin:0;padding:0}
 
-#mobile-menu,#mobile-back {position: absolute; top:8px;z-index: 7}
-#mobile-menu span,#mobile-back span  {font-size:30px;cursor:pointer}
-#mobile-menu {right:20px}
-#mobile-back {left:0}
-#mobile-back a:hover span,#mobile-menu a:hover span {color:$header_light_default_color}
-#mobile-back span {font-size:40px;color:$header_light_default_color}
-
-#top-menu ul {margin:0 auto;padding:0;list-style:none;z-index:7;text-align: right;float:right;width:100%;}
-#top-menu li {float:left;margin:0;padding:0;line-height:100%}
-#top-menu li#user-info {margin-right:35px}
-#top-menu li a {text-decoration: none;vertical-align: bottom;display:block;padding:5px;}
-#top-menu li a i {text-align: center;vertical-align: bottom;margin-right:5px}
-
-.mobile-sub-menu {margin-bottom:0.3em}
-
-.nav-pills > li > a.active,
-.nav-pills > li > a.active:focus,
-.nav-pills > li > a.active:hover {
-  background: #f6f6f6;
-  color: #666;
-}
-.nav-pills .nav-link.active, .show > .nav-pills .nav-link {
-  background: #fff;
-  color:#333;
-  border:1px solid rgba(0,0,0,.125);
-}
-
 
 .no-display-title {font-size:18px;text-indent:-9999px}
-
 
 
 /* Common Class */
@@ -159,70 +139,7 @@ mark, rp, rt, ruby, summary, time {display:inline;}
 
 
 /* header */
-header {position:relative;display:flex;z-index:8;border-bottom:2px solid var(--bs-border-color);background-color:$secondary-bg}
-header h1 {margin-top:0;padding:0;text-align:left}
-header h1 a:hover {text-decoration: none}
-header h1 a:active {color:$header_light_default_color}
-#top-user-menu {display:none}
-
-header .nav > li {
-  position: relative
-}
-
-
-header nav ul {
-  margin: 0;
-  padding: 0
-}
-
-
-.nav > li > a {
-  position: relative;
-  display: block;
-  padding: 10px 15px;
-}
-
-header nav .dropdown-menu li {
-  white-space: nowrap;
-  padding: 3px 0;
-  text-align: center;
-}
-
-header nav ul li a {
-  white-space: nowrap;
-}
-
-header nav ul li ul {
-  top: 55px;
-  margin: 0;
-  padding:0;
-  list-style:none;
-  min-width:200px;
-}
-
-header nav ul li ul li {
-  width: 100%;
-  margin-bottom: 5px
-}
-
-header nav ul li ul li a {
-  float: none;
-  display: block;
-}
-
-header nav ul li ul li a:hover {
-  text-decoration: none
-}
-header nav ul li ul li.active a {
-  font-weight: bold
-}
-header nav ul.nav> li{
-  margin-left: 20px;
-  margin-right: 20px
-}
-
-header h1 {margin-top:0.5rem}
-header nav .active>a.main-menu {font-weight: bold;color:$header_light_point_color}
+#search-detail {display:none}
 
 .section-header {position:relative;margin-top:1.5rem;padding-top:1rem;margin-bottom:1rem}
 .section-header h2,.section-header h3 {font-weight:bold;padding-bottom:0.5em;border-bottom:1px solid $border-color}
@@ -317,7 +234,6 @@ article.talk .media,article.question .media {min-height:13em}
 #mobile-menu-back {position: fixed; top:0; left:0; width:100%; height:100%; background:#666; opacity: 0.7;z-index:6; display:none}
 
 @media (max-width: 767px) {
-  header {position: fixed;top:0;left:0;width:100%}
   #mom {padding-top:5rem}
   #main-menu h1 {margin-top:10px;margin-bottom:10px}
 
@@ -423,7 +339,7 @@ article.talk .media,article.question .media {min-height:13em}
 }
 
 @include color-mode(light) {
-  header {background: #fff}
+  header {background: #f1f1f1}
   footer {color:#666;border-top-color:#ddd}
   .nav-link.disabled {color:#eee}
   .sl_content_header,.sl_content_main,.media {background-color:#fff}
