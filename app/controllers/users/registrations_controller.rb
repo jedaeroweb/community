@@ -48,7 +48,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       end
     else
       clean_up_passwords resource
-      respond_with resource
+      render :new, status: :unprocessable_entity
     end
   end
 
