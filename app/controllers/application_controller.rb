@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   layout :layout
 
-  # before_action :set_locale
   before_action :normalize_seo_query_params
   before_action :before_init
   before_action :set_og_title
@@ -74,18 +73,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def set_locale
-    locale = params[:locale].presence || session[:locale].presence || I18n.default_locale
-    locale = locale.to_s
-
-    allowed = I18n.available_locales.map(&:to_s)
-    locale = I18n.default_locale.to_s unless allowed.include?(locale)
-
-    I18n.locale = locale
-    session[:locale] = locale
-  end
-
-  private
+  protected
 
   # 기본 locale 제거 + page=1 제거
   # 예:
@@ -157,8 +145,6 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to new_user_session_path, :notice => t(:login_first)
   end
-
-  protected
 
   def verify_turnstile
     token = params["cf-turnstile-response"]
