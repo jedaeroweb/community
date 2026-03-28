@@ -1,50 +1,143 @@
 class ApplicationController < ActionController::Base
   layout :layout
-  #before_action :set_locale
-  before_action :set_og_title
 
-  def initialize(*params)
-    super(*params)
-    before_init
-  end
+  before_action :normalize_seo_query_params
+  before_action :before_init
+  before_action :set_og_title
+  before_action :prepare_default_meta_tags
+
+  helper_method :seo_noindex?
 
   def before_init
-    @meta_robot='all, index, follow'
-    @meta_description=t(:meta_description)
-    @meta_keywords=t(:meta_keywords)
-    @meta_image=t(:meta_image)
-    @meta_url=t(:meta_url)
+    @meta_description = t(:meta_description)
+    @meta_keywords    = t(:meta_keywords)
+    @meta_image       = t(:meta_image)
+    @meta_url         = t(:meta_url)
+  end
+  
+  def prepare_default_meta_tags
+    meta_title = @title.presence || t(:default_title)
+    canonical  = canonical_url_for_current_page
 
-    @resource ||= User.new
+    set_meta_tags(
+      site: t(:application_name),
+      title: meta_title,
+      description: @meta_description,
+      keywords: @meta_keywords,
+      separator: t(:title_separator),
+      reverse: true,
+      canonical: canonical,
+      noindex: seo_noindex?,
+      follow: true,
+      viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
+      og: {
+        title: @og_title.presence || meta_title,
+        description: @meta_description,
+        url: canonical,
+        image: @meta_image,
+        type: 'website',
+        site_name: t(:application_name),
+        locale: I18n.locale.to_s
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: @og_title.presence || meta_title,
+        description: @meta_description,
+        image: @meta_image
+      }
+    )
+>>>>>>> 3e22a112f3ff253131bb32e5b378466df760ef15
   end
 
   def set_og_title
-    if @title
-      @og_title=@title
-    else
-      @og_title=t(:default_title)
-    end
+    @og_title = @title.presence || t(:default_title)
   end
 
-  def current_ability
-    @current_ability ||= UserAbility.new(current_user)
+  # 내부 링크에 locale 유지
+  # 단, 기본 언어는 URL에 붙이지 않음
+  def default_url_options(options = {})
+    opts = options ? options.dup : {}
+
+    locale = I18n.locale.to_s
+    if locale != I18n.default_locale.to_s
+      opts[:locale] ||= locale
+    end
+
+    opts
   end
 
   def layout
     if params[:no_layout]
-      return false
+      false
     else
-      return 'application'
+      'application'
     end
   end
 
+  protected
 
-  def set_og_title
-    if @title
-      @og_title=@title
-    else
-      @og_title=t(:default_title)
+  # 기본 locale 제거 + page=1 제거
+  # 예:
+  # /products?locale=ko&page=2 -> /products?page=2
+  # /products?page=1&locale=en -> /products?locale=en
+  def normalize_seo_query_params
+    clean = request.query_parameters.deep_dup
+    changed = false
+
+    # 기본 locale 제거
+    #    if clean["locale"].to_s == I18n.default_locale.to_s
+    #  clean.delete("locale")
+    #  changed = true
+    #end
+
+    # page=1 제거
+    if clean["page"].to_s == "1"
+      clean.delete("page")
+      changed = true
     end
+
+    return unless changed
+
+    uri = URI.parse(request.path)
+    uri.query = clean.to_query.presence
+
+    redirect_to uri.to_s, status: :moved_permanently
+  end
+
+  # 공통 noindex 규칙
+  # 필요하면 각 컨트롤러에서 override 가능
+  def seo_noindex?
+    return true if params[:no_layout].present?
+    return true if params[:sort].present?
+    return true if params[:q].present?
+
+    return true if controller_name == "tags"
+
+    filter_keys = %w[
+    list_type size brand price_min price_max
+    tag tags search keyword order direction
+    per view tab commit utf8
+  ]
+
+    (params.keys.map(&:to_s) & filter_keys).any?
+  end
+
+  # canonical에는 locale(비기본 언어만) + page(2 이상만)만 허용
+  # 나머지 sort/filter/q 등은 제거
+  def canonical_url_for_current_page
+    allowed = {}
+
+    page = params[:page].to_i
+    allowed[:page] = page if page > 1
+
+    locale = params[:locale].presence&.to_s
+    if locale.present? && locale != I18n.default_locale.to_s
+      allowed[:locale] = locale
+    end
+
+    uri = URI.parse(request.base_url + request.path)
+    uri.query = allowed.to_query.presence
+    uri.to_s
   end
 
   def current_ability
@@ -54,8 +147,6 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to new_user_session_path, :notice => t(:login_first)
   end
-
-  protected
 
   def verify_turnstile
     token = params["cf-turnstile-response"]
@@ -72,3 +163,4 @@ class ApplicationController < ActionController::Base
     json["success"] == true
   end
 end
+
