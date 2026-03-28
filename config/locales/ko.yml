@@ -1,12 +1,11 @@
 ko:
   application_name : '제대로 개발자모임'
   service_name : '제대로 개발자모임'
-  meta_description : 'Rails,RoR,RubyOnRails,ruby,Sinatra,개발,개발자'
-  meta_keywords : '개발자 커뮤니티, 개발자, 개발공부, ruby, nodejs, ror, sinatra'
+  meta_description : '제대로 개발자모임 커뮤니티. Ruby(Rails), Node.js 등 다양한 개발 언어를 학습하며, AI 바이브코딩에 최적인 Rails 관련 정보와 강좌, 질문·답변, 프로젝트 공유까지 초보자-개발자 중심 소통 공간입니다.'
   meta_image : 'https://assets.sleepinglion.pe.kr/sl.jpg'
   meta_url : 'https://community.jedaeroweb.co.kr'
   title_separator : '-'
-  default_title : '제대로 개발자모임'
+  default_title : 'AI 바이브코딩에 최적인 Rails 학습, 개발자 소통 및 애러·문제 해결 중심 커뮤니티'
 
   korean: '한국어'
   chineses: '汉语'
