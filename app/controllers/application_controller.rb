@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     @meta_image       = t(:meta_image)
     @meta_url         = t(:meta_url)
   end
-  
+
   def prepare_default_meta_tags
     meta_title = @title.presence || t(:default_title)
     canonical  = canonical_url_for_current_page
@@ -46,7 +46,6 @@ class ApplicationController < ActionController::Base
         image: @meta_image
       }
     )
->>>>>>> 3e22a112f3ff253131bb32e5b378466df760ef15
   end
 
   def set_og_title
