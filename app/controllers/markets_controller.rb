@@ -17,6 +17,7 @@ class MarketsController < ApplicationController
   # GET /notices/1
   # GET /notices/1.json
   def show
+    @title = @market.title
     @comment  = Comment.build_from(@market, current_user, "")
 
     respond_to do |format|

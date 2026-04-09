@@ -50,6 +50,7 @@ class QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.json
   def show
+    @title = @question.title
     @answers = Answer.where({question_id: @question})
   end
 
