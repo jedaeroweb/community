@@ -46,6 +46,45 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.sl_content_header {
+  position: relative;
+}
+
+.user-layer {
+  position: absolute;
+  right: 170px;
+  top: 100%; /* 바로 아래 */
+  margin-top: 0px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  list-style: none;
+  z-index: 10;
+  border-radius: 1rem;
+}
+
+.user-layer li {
+  margin-bottom: 6px;
+}
+
+.user-layer a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.user-layer a:hover {
+  color: #007bff;
+}
+
+.material-icons {
+  font-size: 18px;
+}
+
+.hidden {
+  display: none;
+}
+
 
 $default-bg : #ddd;
 $default-color: $body-color;

@@ -1,15 +1,38 @@
 <div id="show-question">
   <div class="row">
-    <article class="col-12 mb-3" itemscope itemprop="article" itemtype="http://schema.org/Article">
-      <div class="sl_content_header">
-        <h3 itemprop="name"><%= @talk.title %></h3>
+    <article class="col-12 mb-3">
+      <div class="sl_content_header" data-controller="user-layer">
+        <h3><%= @talk.title %></h3>
         <p class="text-end">
-          <span><%= t(:user_id, scope: [:activerecord, :attributes, :blog]) %> : <%=display_user_photo(@talk.user) %>&nbsp;&nbsp;<%= @talk.user.name.truncate_bytes(16) %></span>
+          <span data-action="click->user-layer#toggle"
+          style="cursor:pointer"><%= t(:user_id, scope: [:activerecord, :attributes, :blog]) %> : <%=display_user_photo(@talk.user) %>&nbsp;&nbsp;<%= @talk.user.name.truncate_bytes(16) %></span>
           <span style="margin-left:3rem"><%= t(:created_at, scope: [:activerecord, :attributes, :question]) %> : <%= I18n.l @talk.created_at.to_date, :format => :long %></span>
         </p>
+        <ul
+          id="user_layer"
+          data-user-layer-target="layer"
+          data-action="click->user-layer#hide"
+          class="user-layer hidden"
+        >
+          <li>
+            <a href="mailto:<%= @talk.user.email %>">
+              <span class="material-icons">email</span>
+              <span class="label"><%= @talk.user.email %></span>
+            </a>
+          </li>
+
+          <% if @talk.user.homepage.present? %>
+            <li>
+              <%= link_to @talk.user.homepage, target: "_blank", rel: "noopener" do %>
+                <span class="material-icons">home</span>
+                <span class="label">홈페이지</span>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
       </div>
       <div class="sl_content_main">
-        <div class="sl_content_text" itemprop="text"><%=simple_format sanitize(@talk.content.to_s.gsub(/\n/, '<br />'), :tags => %w(br img a)) %></div>
+        <div class="sl_content_text"><%=simple_format sanitize(@talk.content.to_s.gsub(/\n/, '<br />'), :tags => %w(br img a)) %></div>
         <div class="vote">
           <% if user_signed_in? %>
             <%= link_to like_talk_path(@talk), method: :put do %>
@@ -29,6 +52,18 @@
         Tags: <%= raw @talk.tags.map { |t| link_to t, tag_path(:tag=>t.name) }.join(', ') %>
       </p>
       <% end %>
+
+      <% if @related_talks.present? %>
+        <h3>관련 글</h3>
+        <ul>
+          <% @related_talks.each do |blog| %>
+            <li>
+              <%= link_to blog.title, blog_path(blog) %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+
     </article>
   </div>
   <script>

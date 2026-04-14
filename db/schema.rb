@@ -531,6 +531,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
     t.integer "point", default: 3000, null: false
     t.string "phone"
     t.string "address"
+    t.string "homepage"
     t.date "birthday"
     t.boolean "enable", default: true, null: false
     t.datetime "created_at", null: false

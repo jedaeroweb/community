@@ -36,11 +36,17 @@ class TalksController < ApplicationController
     end
   end
 
-  # GET /blogs/1
-  # GET /blogs/1.json
+  # GET /talks/1
+  # GET /talks/1.json
   def show
     @comment  = Comment.build_from(@talk, current_user, "")
     @title=@talk.title
+
+    @related_talks = Talk.joins(:tags)
+                         .where(tags: { id: @talk.tags.ids })
+                         .where.not(id: @talk.id)
+                         .distinct
+                         .limit(5)
 
     respond_to do |format|
       format.html # show.html.erb
