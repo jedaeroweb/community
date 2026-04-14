@@ -26,7 +26,6 @@ class TagsController < ApplicationController
       @talks = Talk.tagged_with(params[:tag]).page(params[:page]).per(params[:per_page])
       # @blogs = Blog.tagged_with(params[:tag]).page(params[:page]).per(15)
       #@blog_categories=BlogCategory.where(:leaf=>true).where(:enable=>true)
-      @meta_keywords=params[:tag]+','+t(:meta_keywords)
     else
       @talk_count=0
     end

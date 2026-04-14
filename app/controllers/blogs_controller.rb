@@ -51,8 +51,6 @@ class BlogsController < ApplicationController
   # GET /blogs/1.json
   def show
     @comment  = Comment.build_from(@blog, current_user, "")
-
-    @meta_keywords=@blog.tag_list+t(:meta_keywords)
     @title=@blog.title
 
     set_meta_tags canonical: blog_url(@blog)

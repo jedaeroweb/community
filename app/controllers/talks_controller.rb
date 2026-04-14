@@ -40,8 +40,6 @@ class TalksController < ApplicationController
   # GET /blogs/1.json
   def show
     @comment  = Comment.build_from(@talk, current_user, "")
-
-    @meta_keywords=@talk.tag_list+t(:meta_keywords)
     @title=@talk.title
 
     respond_to do |format|

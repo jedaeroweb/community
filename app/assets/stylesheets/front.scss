@@ -333,7 +333,7 @@ article.talk .media,article.question .media {min-height:13em}
   .box_header , .section-header h2,#no-sns-id-l {border-color:var(--bs-border-color)}
   .box_header {background: #666;}
   .box_header h2 {text-shadow: none;color:#ccc}
-  header nav .active > a.main-menu {color:#0cf}
+  header nav .active a {font-weight:bold;color:lightskyblue}
   footer {color:#666;border-top-color:#333}
 }
 
@@ -344,5 +344,6 @@ article.talk .media,article.question .media {min-height:13em}
   .sl_content_header,.sl_content_main,.media {background-color:#fff}
   .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link,.nav-tabs {border-color:#ccc}
   .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {border-bottom-color:#f1f1f1}
+  header nav .active a {font-weight:bold;color:lightskyblue}
   a.btn-primary,a.btn-primary:visited {color:#ccc}
 }
