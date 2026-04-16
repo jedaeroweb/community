@@ -1,12 +1,14 @@
 <div id="show-question">
   <div class="row">
     <article class="col-12 mb-3">
-      <div class="sl_content_header">
+      <div class="sl_content_header" data-controller="user-layer">
         <h3><%= @question.title %></h3>
         <p class="text-end">
-          <span><%= t(:user_id, scope: [:activerecord, :attributes, :blog]) %> : <%=display_user_photo(@question.user) %>&nbsp;&nbsp;<%= @question.user.name.truncate_bytes(16) %></span>
+          <span data-action="click->user-layer#toggle"
+                style="cursor:pointer"><%= t(:user_id, scope: [:activerecord, :attributes, :blog]) %> : <%=display_user_photo(@question.user) %>&nbsp;&nbsp;<%= @question.user.name.truncate_bytes(16) %></span>
           <span style="margin-left:3rem"><%= t(:created_at, scope: [:activerecord, :attributes, :question]) %> : <%= I18n.l @question.created_at.to_date, :format => :long %></span>
         </p>
+        <%= render "users/user_info", article: @question %>
       </div>
       <div class="sl_content_main">
         <div class="sl_content_text"><%=simple_format @question.content.to_s %></div>

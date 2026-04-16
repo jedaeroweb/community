@@ -58,8 +58,22 @@ SitemapGenerator::Sitemap.create do
   end
 
   Tag.find_each do |tag|
-    next if tag.taggings_count.zero?
+    taggings = tag.taggings.where(taggable_type: ["Blog", "Talk", "Question"])
 
-    add tag_path(:tag => tag.name), :lastmod => tag.taggings.first.created_at
+    next if taggings.count < 5
+
+    lastmod = {
+      "Blog" => Blog,
+      "Talk" => Talk,
+      "Question" => Question
+    }.map do |type, model|
+      model.where(id: taggings.where(taggable_type: type).select(:taggable_id))
+           .maximum(:updated_at)
+    end.compact.max
+
+    add tag_path(tag: tag.name),
+        priority: 0.6,
+        changefreq: 'weekly',
+        lastmod: lastmod
   end
 end
