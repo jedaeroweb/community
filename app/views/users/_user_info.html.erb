@@ -11,11 +11,11 @@
     </a>
   </li>
 
-  <% if article.user.homepage.present? %>
+  <% if article.user.url.present? %>
     <li>
-      <%= link_to article.user.homepage, target: "_blank", rel: "noopener" do %>
+      <%= link_to article.user.url, target: "_blank", rel: "noopener" do %>
         <span class="material-icons">home</span>
-        <span class="label">홈페이지</span>
+        <span class="label">URL</span>
       <% end %>
     </li>
   <% end %>

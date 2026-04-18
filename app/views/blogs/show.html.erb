@@ -39,7 +39,7 @@
   </div>
   <div class="row">
     <div class="btn-group btn-group-lg col-12" role="group" style="margin-top:3rem">
-      <%=link_to t(:link_list),blogs_path,{class: 'btn btn-secondary btn-large btn-block'} %>
+      <%=link_to t(:link_list),blogs_path(page: params[:page], category: @blog_category),{class: 'btn btn-secondary btn-large btn-block'} %>
     </div>
   </div>
 </div>

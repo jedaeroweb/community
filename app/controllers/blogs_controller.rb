@@ -53,6 +53,10 @@ class BlogsController < ApplicationController
     @comment  = Comment.build_from(@blog, current_user, "")
     @title=@blog.title
 
+    if params[:category]
+      @blog_category = BlogCategory.find(params[:category])
+    end
+
     set_meta_tags canonical: blog_url(@blog)
 
     respond_to do |format|

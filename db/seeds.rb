@@ -8,14 +8,14 @@ AuthenticationProvider.create!(name: 'github')
 
 Admin.create!(:id => 1, :email => 'admin1@jedaeroweb.co.kr', :name => '잠자는사자', :password => 'a12345', :password_confirmation => 'a12345')
 
-User.create!(:id => 1, :email => 'user1@jedaeroweb.co.kr', :name => '잠자는사자', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("public", "images", "1.jpg")) }], 'homepage'=>'https://www.sleepinglion.pe.kr')
+User.create!(:id => 1, :email => 'user1@jedaeroweb.co.kr', :name => '잠자는사자', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("public", "images", "1.jpg")) }], 'url'=>'https://www.sleepinglion.pe.kr')
 User.create!(:id => 2, :email => 'user2@jedaeroweb.co.kr', :name => '국뽕', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("public", "images", "2.jpg")) }])
 User.create!(:id => 3, :email => 'company1@jedaeroweb.co.kr', :name => '임민형', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("public", "images", "3.jpg")) }])
 User.create!(:id => 4, :email => 'company2@jedaeroweb.co.kr', :name => '김종근', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("public", "images", "4.jpg")) }])
 User.create!(:id => 5, :email => 'company3@jedaeroweb.co.kr', :name => '알콜중독자', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("public", "images", "5.jpg")) }])
 User.create!(:id => 6, :email => 'company4@jedaeroweb.co.kr', :name => '호갱갱갱', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("public", "images", "6.jpg")) }])
-User.create!(:id => 7, :email => 'company5@jedaeroweb.co.kr', :name => '회사5', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("public", "images", "7.jpg")) }])
-User.create!(:id => 8, :email => 'company6@jedaeroweb.co.kr', :name => '회사6', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("public", "images", "8.jpg")) }])
+User.create!(:id => 7, :email => 'company5@jedaeroweb.co.kr', :name => '저장강박증', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("public", "images", "7.jpg")) }], 'url'=>'https://www.sleepinglion.pe.kr')
+User.create!(:id => 8, :email => 'company6@jedaeroweb.co.kr', :name => '예쁜간호사', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("public", "images", "8.jpg")) }], 'url'=>'https://www.sleepinglion.pe.kr')
 User.create!(:id => 9, :email => 'company7@jedaeroweb.co.kr', :name => '회사7', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("public", "images", "9.jpg")) }])
 User.create!(:id => 10, :email => 'company8@jedaeroweb.co.kr', :name => '회사8', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("public", "images", "10.jpg")) }])
 User.create!(:id => 11, :email => 'company9@jedaeroweb.co.kr', :name => '회사9', :password => 'a12345', :password_confirmation => 'a12345',user_pictures_attributes: [{ picture: File.open(Rails.root.join("public", "images", "11.jpg")) }])
@@ -39,14 +39,14 @@ ProgramLanguage.create!(id: 5,:title=>'python',:link=>'https://www.python.org/',
 ProgramLanguage.create!(id: 6,:title=>'java',:link=>'https://www.java.com/',:enable=>1)
 ProgramLanguage.create!(id: 7,:title=>'CSS',:link=>nil,:enable=>1)
 
-ProgramCategory.create!(id: 1, program_language_id: 2,:title=>'Ruby on Rails',:link=>'http://rubyonrails.org/')
-ProgramCategory.create!(id: 2, program_language_id: 2,:title=>'Sinatra',:link=>'http://rubyonrails.org/')
+ProgramCategory.create!(id: 1, program_language_id: 2,:title=>'Ruby on Rails',:link=>'https://rubyonrails.org/')
+ProgramCategory.create!(id: 2, program_language_id: 2,:title=>'Sinatra',:link=>'https://rubyonrails.org/')
 ProgramCategory.create!(id: 3, program_language_id: 3,:title=>'laravel',:link=>'https://laravel.com/')
 ProgramCategory.create!(id: 4, program_language_id: 3,:title=>'Wordpress',:link=>'https://wordpress.org/')
 ProgramCategory.create!(id: 5, program_language_id: 3,:title=>'Mediawiki',:link=>'https://www.mediawiki.org/wiki/MediaWiki')
 ProgramCategory.create!(id: 6, program_language_id: 3,:title=>'Codeigniter',:link=>'https://codeigniter.com/')
 ProgramCategory.create!(id: 7, program_language_id: 3,:title=>'Pure PHP')
-ProgramCategory.create!(id: 8, program_language_id: 4,:title=>'Boostrap',:link=>'http://getbootstrap.com/',:main=>false)
+ProgramCategory.create!(id: 8, program_language_id: 4,:title=>'Boostrap',:link=>'https://getbootstrap.com/',:main=>false)
 ProgramCategory.create!(id: 9, program_language_id: 4,:title=>'Jquery',:link=>'https://jquery.com/',:main=>false)
 
 
@@ -602,7 +602,7 @@ QuestionCategory.create!(id: 6, title: '기타')
 Question.create!(id: 1, program_language_id: 2, question_category_id: 1, user_id: 1, title: 'capistrano deploy sshkit 애러', content: 'capistrano deploy하는데
 sshkit rescue in block (2 levels) : Exception while executing as deploy@deploy_server: fingerprint does not match xxx in execute SSHKit::Runner::ExecuteError
 애러 나오는면서 중지 되는데 어떻게 해결해야될까요?')
-Question.create!(id: 2, program_language_id: 2, question_category_id: 3, user_id: 2, title: 'GET으로 되어있는 삭제링크 처리', content: '
+Question.create!(id: 2, program_language_id: 2, question_category_id: 3, user_id: 6, title: 'GET으로 되어있는 삭제링크 처리', content: '
 게시판 페이지 작성 중, 글을 삭제할떄에
 location.href="delete_ok.php?no="+<?=$list_row[\'no\']?>;
 이런식으로 delete문이 있는 페이지에 get형식으로 값을 전달해서 삭제처리를 하게끔 해놓았는데요,,
@@ -621,7 +621,7 @@ javascript가 되던 안되던 완벽히 작동하는 좋은 품질을 만들 �
 http://jquery.malsup.com/form/
 ')
 
-Question.create!(id: 3, program_language_id: 2, question_category_id: 3, user_id: 3, title: 'php DOM, innerHTML같은 기능 없나요? ', content: '
+Question.create!(id: 3, program_language_id: 2, question_category_id: 3, user_id: 7, title: 'php DOM, innerHTML같은 기능 없나요? ', content: '
 PHP DOM으로 HTML문서의 특정 엘러먼트 안에 다른 문서의 내용을 넣고 싶습니다.
 즉 자바스크립트의 innerHTML같은 기능이 필요합니다.
 
@@ -638,7 +638,7 @@ PS. getElementById도 안되서 죽을 고생했었는데 알고보니 PHP에서
 Answer.create!(user_id:1, question_id: 3, content: '$dom->createDocumentFragment() 이렇게 처리하면 됩니다.')
 
 
-Question.create!(id: 4, program_language_id: 2, question_category_id: 3, user_id: 4, title: '날짜표시 예쁘게 하려면 어떻게 하나요?', content: '날짜 나오게 하면 2024-01-01 이런식으로 나오는데
+Question.create!(id: 4, program_language_id: 2, question_category_id: 3, user_id: 6, title: '날짜표시 예쁘게 하려면 어떻게 하나요?', content: '날짜 나오게 하면 2024-01-01 이런식으로 나오는데
 이거 다른 방법으로 예쁘게 나오게 만들수 있나요?')
 
 
@@ -667,13 +667,13 @@ config/locales/ko.yml 에서 설정하면 됩니다.
 ')
 
 
-Question.create!(id: 5, program_language_id: 1, question_category_id: 3, user_id: 2, title: 'HTML화면을 PDF로 전환, 다운받게하기', content: 'HTML화면을 PDF로 출력하여 다운로드 받게 하고 싶은데 어떻게 해야 될까요??')
+Question.create!(id: 5, program_language_id: 1, question_category_id: 3, user_id: 6, title: 'HTML화면을 PDF로 전환, 다운받게하기', content: 'HTML화면을 PDF로 출력하여 다운로드 받게 하고 싶은데 어떻게 해야 될까요??')
 
 Answer.create!(user_id:1, question_id: 5, content: 'HTML PDF로 만들기 wkhtmltopdf가 제일 좋습니다.
 해당 프로그램 프로그램별로 확장프로그램도 있어서 골라 쓰면 됩니다~
 ')
 
-Question.create!(id: 6, program_language_id: 1, question_category_id: 3, user_id: 2, title: 'PHP 서버 실행하려면 어떻게 해야되나요?', content: 'PHP개발을 하려고 서버를 돌려야 되는데 어떻게 해야될까요?')
+Question.create!(id: 6, program_language_id: 1, question_category_id: 3, user_id: 7, title: 'PHP 서버 실행하려면 어떻게 해야되나요?', content: 'PHP개발을 하려고 서버를 돌려야 되는데 어떻게 해야될까요?')
 Answer.create!( user_id:1, question_id: 6, content: '
 개발시 PHP서버 설정없이 서버 실행하는 법은 간단해요
 개발시에는 굳이 웹서버 돌릴 필요없고요
@@ -683,7 +683,7 @@ Answer.create!( user_id:1, question_id: 6, content: '
 ')
 
 
-Question.create!(id: 7, program_language_id: 1, question_category_id: 5, user_id: 2, title: 'unique FK관련 처리시 방법 문의드립니다.', content: '
+Question.create!(id: 7, program_language_id: 1, question_category_id: 5, user_id: 6, title: 'unique FK관련 처리시 방법 문의드립니다.', content: '
   unique한 FK가 있을때 처리하는 방법 문의드립니다.
   SELECT하고 해당 키가 있으면  INSERT하고  없으면 UPDATE하는 코드를 짜려고 하는데 저렇게 처리하면될까요??
 ')
@@ -696,7 +696,7 @@ Answer.create!( user_id:1, question_id: 7, content: '
 ')
 
 
-Question.create!(id: 8, program_language_id: 1, question_category_id: 6, user_id: 2, title: '기간별 예약 프로그램을 처리하려고 하는데요', content: '
+Question.create!(id: 8, program_language_id: 1, question_category_id: 6, user_id: 7, title: '기간별 예약 프로그램을 처리하려고 하는데요', content: '
 몇일 부터 몇일 까지 이렇게 선택하는데
 만약 2024 - 5 - 8 부터 2024 - 5 - 12 일 이라고 할때
 9일 10일 11일 은 예약을 못하잖아요 그럼 데이터베이스도 이 중간날자를 따로 구해서 데이터베이스에 예약정보를 넣고
@@ -710,7 +710,7 @@ Answer.create!( user_id:1, question_id: 8, content: '
 http://www.gurubee.net/article/50256
 ')
 
-Question.create!(id: 9, program_language_id: 2, question_category_id: 2, user_id: 2, title: 'rake 실행시 애러', content: '
+Question.create!(id: 9, program_language_id: 2, question_category_id: 2, user_id: 6, title: 'rake 실행시 애러', content: '
 rake 실행하는데 이런게 애러메시지 나면서 안되는데 어떻게 해야하나요?
 rake aborted!
 Gem::LoadError: You have already activated rake 13.2.1, but your Gemfile requires rake 13.1.0. Prepending `bundle exec` to your command may solve this. (Gem::LoadError)
@@ -721,7 +721,7 @@ Gemfile.lock의 rake버전과 현제 버전이 달라서 그런겁니다.
 다른 방법으로는 Gemfile.lock을 삭제하고 다시 bundle install해주면 그냥 rake를 쓸 수 있습니다.
 ')
 
-Question.create!(id: 10, program_language_id: 3, question_category_id: 4, user_id: 2, title: 'PHP에서 HTML로 나온 화면 출력을 PDF로 다운로드 받게 하려면?', content: '
+Question.create!(id: 10, program_language_id: 3, question_category_id: 4, user_id: 7, title: 'PHP에서 HTML로 나온 화면 출력을 PDF로 다운로드 받게 하려면?', content: '
 안녕하십니까.
 
 현재 PHP로 개발중입니다. 출력된 하면을 PDF로 생성하고 싶습니다.
@@ -734,7 +734,7 @@ Answer.create!( user_id:1, question_id: 10, content: '
 PDF로 출력 하려면  wkhtmltopdf가 제일 좋습니다.
 ')
 
-Question.create!(id: 11, program_language_id: 3, question_category_id: 4, user_id: 2, title: ' 폼 검사 문의 드립니다. ', content: '
+Question.create!(id: 11, program_language_id: 3, question_category_id: 4, user_id: 6, title: ' 폼 검사 문의 드립니다. ', content: '
 현재 HTML 폼 입력란이 많아서 테스트 할 때마다 계속 입력하고 테스트 할 수가 없는데
 어떻게 하시는지 궁금합니다.
 ')
@@ -753,7 +753,7 @@ https://www.seleniumhq.org/
 이 부분만으로도 많이 공부해야되고요, 대신 한번 해놓으면 다음부터는 자동으로 테스트 할 수 있습니다.
 ')
 
-Question.create!(id: 12, program_language_id: 3, question_category_id: 4, user_id: 2, title: 'jquery나 자바스크립트 소스코드 노출 방지방법?', content: '
+Question.create!(id: 12, program_language_id: 3, question_category_id: 4, user_id: 7, title: 'jquery나 자바스크립트 소스코드 노출 방지방법?', content: '
 자바스크립트로 만든 소스 이렇게 쓰여 있으면 소스 확인할 수 있잖아요?
 js파일 소스코드를 노출시키지 않는 방법이 있나요?
 ')

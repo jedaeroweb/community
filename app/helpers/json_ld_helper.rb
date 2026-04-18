@@ -66,8 +66,9 @@ module JsonLdHelper
       "image": post.blog_picture ? sl_get_thumb(post.blog_picture.picture.to_s,'medium') : '-',
       "author": {
         "@type": "Person",
-        "name": post.user&.name || "익명"
-      },
+        "name": post.user&.name || "익명",
+        "url": post.try(:user)&.url
+      }.compact,
       "publisher": {
         "@type": "Organization",
         "name": "My Blog",
@@ -139,8 +140,9 @@ module JsonLdHelper
       "description": truncate(strip_tags(record.try(:content) || ""), length: 150),
       "author": {
         "@type": "Person",
-        "name": record.try(:user)&.try(:name)
-      },
+        "name": record.try(:user)&.try(:name),
+        "url": record.try(:user)&.url
+      }.compact,
       "datePublished": record.created_at.iso8601,
       "dateModified": record.updated_at.iso8601,
       "mainEntityOfPage": {

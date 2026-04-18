@@ -50,6 +50,10 @@ class QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.json
   def show
+    if params[:category]
+      @question_category = QuestionCategory.find(params[:category])
+    end
+
     @title = @question.title
     @answers = Answer.where({question_id: @question})
   end

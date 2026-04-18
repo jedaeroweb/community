@@ -29,7 +29,7 @@
               <td><%=display_user_photo(blog.user) %>&nbsp;&nbsp;<%= blog.user.name.truncate_bytes(16) %></td>
               <td><%=blog.program_language.title %></td>
               <td><%=blog.blog_category.title %></td>
-              <td><%= link_to blog.title, blog, data: { action: "click->click-redirect#rowLink"} %></td>
+              <td><%= link_to blog.title,blog_path(blog,{:category=>@blog_category,:page=>params[:page]}) , data: { action: "click->click-redirect#rowLink"} %></td>
               <td class="text-end">
                 <% if blog.blog_picture.present? %>
                   <figure class="figure">

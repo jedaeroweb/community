@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-5 col-sm-12">
       <% if blog.blog_picture.present? %>
-        <%= link_to blog_path(blog) do %>
+        <%= link_to blog_path(blog,{:category=>@blog_category,:page=>params[:page]}) do %>
           <figure class="figure">
             <%= image_tag blog.blog_picture.picture.medium_thumb.url,width:300,height:300,class:  'figure-img img-fluid rounded'  %>
           </figure>
@@ -10,7 +10,7 @@
       <% end %>
     </div>
     <div class="col-7 col-sm-12">
-      <h3><%= link_to blog.title, blog_path(blog) %></h3>
+      <h3><%= link_to blog.title, blog_path(blog,{:category=>@blog_category,:page=>params[:page]})  %></h3>
     </div>
   </div>
 </article>

@@ -47,7 +47,7 @@ class CreateDeviseToUsers < ActiveRecord::Migration[6.0]
 
       t.string :phone
       t.string :address
-      t.string :homepage
+      t.string :url
       t.date :birthday
 
       # Uncomment below if timestamps were not included in your original model.
