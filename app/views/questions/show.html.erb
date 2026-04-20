@@ -1,15 +1,17 @@
 <div id="show-question">
   <div class="row">
-    <article class="col-12 mb-3" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-      <div class="sl_content_header">
-        <h3 itemprop="name"><%= @question.title %></h3>
+    <article class="col-12 mb-3">
+      <div class="sl_content_header" data-controller="user-layer">
+        <h3><%= @question.title %></h3>
         <p class="text-end">
-          <span><%= t(:user_id, scope: [:activerecord, :attributes, :blog]) %> : <%=display_user_photo(@question.user) %>&nbsp;&nbsp;<%= @question.user.name.truncate_bytes(16) %></span>
+          <span data-action="click->user-layer#toggle"
+                style="cursor:pointer"><%= t(:user_id, scope: [:activerecord, :attributes, :blog]) %> : <%=display_user_photo(@question.user) %>&nbsp;&nbsp;<%= @question.user.name.truncate_bytes(16) %></span>
           <span style="margin-left:3rem"><%= t(:created_at, scope: [:activerecord, :attributes, :question]) %> : <%= I18n.l @question.created_at.to_date, :format => :long %></span>
         </p>
+        <%= render "users/user_info", article: @question %>
       </div>
       <div class="sl_content_main">
-        <div class="sl_content_text" itemprop="text"><%=simple_format @question.content.to_s %></div>
+        <div class="sl_content_text"><%=simple_format @question.content.to_s %></div>
         <div class="vote">
           <% if user_signed_in? %>
             <%= link_to like_question_path(@question), method: :put do %>
@@ -27,8 +29,8 @@
     </article>
     <div class="answers">
       <% @answers.each do |answer| %>
-        <article class="answer media" <% if answer.accepted %>itemprop="acceptedAnswer"<% else %>itemprop="suggestedAnswer"<% end %> itemscope itemtype="https://schema.org/Answer">
-          <div itemprop="text">
+        <article class="answer media">
+          <div>
           <%=simple_format answer.content.to_s %>
           </div>
         </article>
@@ -43,7 +45,7 @@
   </div>
   <div class="row">
     <div class="btn-group btn-group-lg col-12" role="group" style="margin-top:1rem">
-      <%=link_to t(:link_list),questions_path,{class: 'btn btn-secondary btn-large btn-block'} %>
+      <%=link_to t(:link_list),questions_path(page: params[:page], category: @question_category),{class: 'btn btn-secondary btn-large btn-block'} %>
     </div>
   </div>
 </div>

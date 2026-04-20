@@ -9,8 +9,8 @@
     </div>
     <div class="col-12">
       <div class="media rounded-2 p-3">
-        <h3><%= link_to truncate(question.title,length: 25), question_path(question) %></h3>
-        <%= link_to question_path(question) do %>
+        <h3><%= link_to truncate(question.title,length: 25), question_path(question,{:category=>@question_category,:page=>params[:page]}) %></h3>
+        <%= link_to question_path(question,{:category=>@question_category,:page=>params[:page]}) do %>
           <%=truncate(strip_tags(question.content.to_s), escape: false, length: 50)  %>
         <% end %>
       </div>

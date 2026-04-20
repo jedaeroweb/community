@@ -17,6 +17,7 @@ class JobsController < ApplicationController
   # GET /notices/1
   # GET /notices/1.json
   def show
+    @title = @job.title
   end
 
   # GET /talks/new
