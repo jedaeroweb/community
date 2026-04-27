@@ -15,7 +15,7 @@
     <li>
       <%= link_to article.user.url, target: "_blank", rel: "noopener" do %>
         <span class="material-icons">home</span>
-        <span class="label">URL</span>
+        <span class="label"><%=article.user.url %></span>
       <% end %>
     </li>
   <% end %>
