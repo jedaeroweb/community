@@ -39,21 +39,35 @@ class UserPictureUploader < CarrierWave::Uploader::Base
 
   version :tiny_thumb do
     process resize_to_fill: [30, 30]
+    process convert: "webp"
+
+    def full_filename(filename)
+      "#{File.basename('tiny_thumb_'+filename, '.*')}.webp"
+    end
   end
 
-  # Create different versions of your uploaded files:
   version :small_thumb do
-    process resize_to_fill: [150, 150]
+    process resize_to_fill: [100, 100]
+    process convert: "webp"
+
+    def full_filename(filename)
+      "#{File.basename('small_thumb_'+filename, '.*')}.webp"
+    end
   end
 
   version :medium_thumb do
-    process resize_to_fill: [300, 300]
+    process resize_to_fill: [200, 200]
+    process convert: "webp"
+
+    def full_filename(filename)
+      "#{File.basename('mediume_thumb_'+filename, '.*')}.webp"
+    end
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_white_list
-    %w(jpg jpeg gif png)
+    %w[jpg jpeg png gif webp heic heif]
   end
 
   def filename

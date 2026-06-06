@@ -3,7 +3,11 @@ class TalkPictureUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
   #include CarrierWave::MiniMagick
 
-  storage :file
+  if Rails.env.production?
+    storage :fog
+  else
+    storage :file
+  end
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -27,28 +31,38 @@ class TalkPictureUploader < CarrierWave::Uploader::Base
     # do something
   end
 
-  # Create different versions of your uploaded files:
   version :tiny_thumb do
-    process resize_to_fill: [50, 50]
+    process resize_to_fill: [30, 30]
+    process convert: "webp"
+
+    def full_filename(filename)
+      "#{File.basename('tiny_thumb_'+filename, '.*')}.webp"
+    end
   end
 
   # Create different versions of your uploaded files:
   version :small_thumb do
-    process resize_to_fill: [150, 150]
+    process resize_to_fill: [100, 100]
+    process convert: "webp"
+
+    def full_filename(filename)
+      "#{File.basename('small_thumb_'+filename, '.*')}.webp"
+    end
   end
 
   version :medium_thumb do
-    process resize_to_fill: [300, 300]
-  end
+    process resize_to_fill: [200, 200]
+    process convert: "webp"
 
-  version :large_thumb do
-    process resize_to_fill: [800, 600]
+    def full_filename(filename)
+      "#{File.basename('medium_thumb_'+filename, '.*')}.webp"
+    end
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_white_list
-    %w(jpg jpeg gif png)
+    %w[jpg jpeg png gif webp heic heif]
   end
 
   def filename
