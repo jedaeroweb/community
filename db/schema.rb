@@ -479,7 +479,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_134915) do
     t.integer "user_id"
     t.integer "authentication_provider_id"
     t.string "uid"
-    t.string "token"
+    t.text "token"
     t.datetime "token_expires_at", precision: nil
     t.text "params"
     t.datetime "created_at", precision: nil, null: false

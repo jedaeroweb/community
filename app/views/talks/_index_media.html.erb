@@ -1,13 +1,6 @@
 <article class="talk col-12 col-sm-6 col-md-4 col-xl-3 col-xxl-2" data-controller="click-redirect" data-action="click->click-redirect#mediaClick">
   <div class="row">
     <div class="col-12">
-      <% unless talk.talk_pictures_count.zero? %>
-        <figure class="figure">
-          <%= image_tag talk.talk_pictures[0].picture.medium_thumb.url, width:200, height:200,class: 'figure-img img-fluid rounded'  %>
-        </figure>
-      <% end %>
-    </div>
-    <div class="col-12">
       <div class="media rounded-2 p-3">
         <h3>
           <% if talk.comment_threads.count.zero? %>
