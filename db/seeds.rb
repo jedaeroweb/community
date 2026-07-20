@@ -1184,6 +1184,14 @@ Talk.create!( user_id: 1, title: '북한의 현실과 반대인 정식명칭, �
 ')
 
 
+Talk.create!( user_id: 1, title: '바이브 코딩으로 간단한 웹게임 만들어 봤어요', tag_list: '바이브코딩,웹게임,쿠팡,지옥체험', content: '
+바이브 코딩으로 만든 웹게임
+쿠팡 알바 체험 게임입니다. 
+
+https://sorter.jedaeroweb.co.kr
+')
+
+
 Market.create!(id: 1, user_id: 4, title: '워드프레스사이트 제작', content: '
 워드프레스를 이용한 사이트 제작을 하려고 합니다.
 ', created_at: 7.day.ago)
