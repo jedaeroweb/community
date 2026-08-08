@@ -111,11 +111,7 @@ class ApplicationController < ActionController::Base
       return true if tag.taggings_count.to_i < 5
     end
 
-    filter_keys = %w[
-    list_type category brand price_min price_max
-    tag tags search keyword order direction
-    per view tab commit utf8
-  ]
+    filter_keys = %w[list_type category locale tag tags search search_type search_detail keyword order direction view tab page per_page utf8]
 
     (params.keys.map(&:to_s) & filter_keys).any?
   end

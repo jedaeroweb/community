@@ -34,8 +34,7 @@ then visit
 http://localhost:3000
 
 
-> 로컬 환경에서 바로 실행해볼 수 있습니다.
-
+> 로컬 환경에서 바로 실행해볼 수 있습니
 ---
 
 ## 📌 Server Requirements
