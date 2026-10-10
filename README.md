@@ -56,5 +56,9 @@ MIT License – completely free to use and modify
 
 ## ✍️ Author
 
+Jedaeroweb
+
 [Jedaeroweb](https://www.jedaeroweb.co.kr)
-> 작성자 = 제대로웹
+
+> Official website of Jedaeroweb.
+> 제대로웹

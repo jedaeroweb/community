@@ -30,7 +30,6 @@ Role.create!(id: 6, title: '알바생', role: 'reader')
 
 RoleAdmin.create!(role_id: 1, admin_id: 1)
 
-
 ProgramLanguage.create!(id: 1,:title=>'공통',:link=>nil,:enable=>1)
 ProgramLanguage.create!(id: 2,:title=>'ruby',:link=>'https://www.ruby-lang.org/',:enable=>1)
 ProgramLanguage.create!(id: 3,:title=>'PHP',:link=>'https://www.php.net/',:enable=>1)
@@ -776,7 +775,7 @@ Talk.create!(id: 1, user_id: 1, title: '주식이 코인보다 좋은이유', cr
 ')
 Talk.create!(id: 2, user_id: 1, title: '어제 지나가다 울던 아이', created_at: 22.day.ago, tag_list: '우주', content: '길에서 어떤 아이가 다른 애들이랑 놀다가 우는것 같더라고요
 엄마, 아빠가 달래고 있는데
-
+ㄴㅇㅎㄴㅇㅎsdgdgㄴㅇㄴㅇ
 
 아이의 말 : "나 다음에 쟤네들이랑 앞으로 안 놀꺼야"
 "다음에 보면 다 우주로 보내버릴꺼야~!!!"  <= ㅋㅋㅋㅋㅋ')
