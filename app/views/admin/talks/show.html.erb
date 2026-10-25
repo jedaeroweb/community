@@ -4,6 +4,7 @@
       <article class="card">
         <h3 class="card-header"><%=@talk.title %></h3>
         <div class="card-body">
+          <div class="sl_content_text"><%=simple_format sanitize(@talk.content.to_s.gsub(/\n/, '<br />'), :tags => %w(br img a)) %></div>
           <dl>
             <dt><%= t(:created_at, scope: [:activerecord, :attributes, :address]) %></dt>
             <dd><%= I18n.l @talk.created_at.to_date, :format => :long %></dd>
