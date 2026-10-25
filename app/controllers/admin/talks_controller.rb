@@ -78,6 +78,6 @@ class Admin::TalksController < Admin::AdminController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def talk_params
-    params.require(:talk).permit(:title, :size, :enable)
+    params.require(:talk).permit(:title, :description, :content, :enable, :tag_list)
   end
 end
